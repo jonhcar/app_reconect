@@ -22,9 +22,14 @@ export default function Login() {
         await base44.auth.loginViaEmailPassword(form.email, form.password);
         navigate("/");
       } else if (mode === "register") {
-        await base44.auth.register({ email: form.email, password: form.password, full_name: form.name });
-        setMode("otp");
-        setInfo("Te hemos enviado un código de 6 dígitos a tu correo 💌");
+        const data = await base44.auth.register({ email: form.email, password: form.password, full_name: form.name });
+        if (data?.session) {
+          // Confirmação de e-mail desativada: entra direto
+          navigate("/");
+        } else {
+          setMode("otp");
+          setInfo("Te hemos enviado un código de 6 dígitos a tu correo 💌");
+        }
       } else if (mode === "otp") {
         await base44.auth.verifyOtp({ email: form.email, otpCode: form.otp });
         navigate("/");
