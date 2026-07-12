@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&family=Playfair+Display:wght@600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-crema text-malva-800 font-sans antialiased;
+}
+
+.input {
+  @apply w-full border border-rosa-200 rounded-2xl px-4 py-3 text-malva-700 placeholder-malva-300 focus:outline-none focus:ring-2 focus:ring-rosa-300 bg-white;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
