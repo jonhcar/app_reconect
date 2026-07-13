@@ -4,6 +4,7 @@ import { ArrowLeft, Heart, CheckCircle2, Circle, Download, Printer, Mail, Star }
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 import AudioPlayer from "../components/AudioPlayer";
+import Journal from "../components/Journal";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -131,6 +132,9 @@ export default function ProductDetail() {
           </button>
         </div>
       </div>
+
+      {/* Diário interativo (produtos tipo "diario") */}
+      {product.type === "diario" && <Journal product={product} user={user} />}
 
       {/* Progresso */}
       {modules.length > 0 && (

@@ -85,6 +85,24 @@ export default function AdminProducts() {
     setModule(i, k, file_url);
   };
 
+  // --- Construtor do diário (journal_sections) ---
+  const sections = editing?.journal_sections || [];
+  const setSections = (next) => setEditing({ ...editing, journal_sections: next });
+  const addSection = () => setSections([...sections, { id: crypto.randomUUID(), title: "", fields: [] }]);
+  const setSection = (i, k, v) => {
+    const next = [...sections];
+    next[i] = { ...next[i], [k]: v };
+    setSections(next);
+  };
+  const removeSection = (i) => setSections(sections.filter((_, x) => x !== i));
+  const addField = (i) => setSection(i, "fields", [...(sections[i].fields || []), { id: crypto.randomUUID(), label: "", type: "textarea" }]);
+  const setField = (i, j, k, v) => {
+    const fields = [...(sections[i].fields || [])];
+    fields[j] = { ...fields[j], [k]: v };
+    setSection(i, "fields", fields);
+  };
+  const removeField = (i, j) => setSection(i, "fields", (sections[i].fields || []).filter((_, x) => x !== j));
+
   const addMaterial = (i) => setModule(i, "materials", [...(modules[i].materials || []), { name: "", url: "", is_printable: false }]);
   const setMaterial = (i, j, k, v) => {
     const mats = [...(modules[i].materials || [])];
@@ -163,6 +181,38 @@ export default function AdminProducts() {
                 <input type="file" accept="image/*" onChange={uploadCover} className="text-sm" />
               </div>
             </div>
+
+            {/* Construtor do diário (só para tipo "diario") */}
+            {editing.type === "diario" && (
+              <div className="border-t border-rosa-100 pt-4">
+                <div className="flex items-center justify-between mb-2">
+                  <p className="font-bold text-malva-700">Campos del diario (la usuaria los rellena en pantalla)</p>
+                  <button type="button" onClick={addSection} className="text-sm font-bold text-rosa-500">+ Añadir sección</button>
+                </div>
+                <div className="space-y-3">
+                  {sections.map((section, i) => (
+                    <div key={section.id} className="bg-rosa-50 rounded-2xl p-3 space-y-2">
+                      <div className="flex items-center gap-2">
+                        <input placeholder="Título de la sección (ej: Por la mañana)" value={section.title} onChange={(e) => setSection(i, "title", e.target.value)} className="input flex-1" />
+                        <button type="button" onClick={() => removeSection(i)}><Trash2 size={16} className="text-malva-400" /></button>
+                      </div>
+                      {(section.fields || []).map((field, j) => (
+                        <div key={field.id} className="flex items-center gap-2 text-sm">
+                          <input placeholder="Pregunta / etiqueta del campo" value={field.label} onChange={(e) => setField(i, j, "label", e.target.value)} className="input flex-1" />
+                          <select value={field.type} onChange={(e) => setField(i, j, "type", e.target.value)} className="input !w-auto">
+                            <option value="textarea">Texto largo</option>
+                            <option value="text">Texto corto</option>
+                            <option value="checkbox">Casilla ✓</option>
+                          </select>
+                          <button type="button" onClick={() => removeField(i, j)}><Trash2 size={14} className="text-malva-400" /></button>
+                        </div>
+                      ))}
+                      <button type="button" onClick={() => addField(i)} className="text-xs font-bold text-malva-400">+ campo</button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Módulos */}
             <div className="border-t border-rosa-100 pt-4">
