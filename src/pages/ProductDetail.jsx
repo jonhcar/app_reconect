@@ -6,6 +6,16 @@ import { useAuth } from "../context/AuthContext";
 import AudioPlayer from "../components/AudioPlayer";
 import Journal from "../components/Journal";
 
+// Converte qualquer link de vídeo (YouTube/Vimeo) para o formato embed
+function toEmbedUrl(url) {
+  if (!url) return url;
+  const yt = url.match(/(?:youtube\.com\/(?:watch\?.*v=|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+  if (yt) return `https://www.youtube.com/embed/${yt[1]}`;
+  const vimeo = url.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+  if (vimeo && !url.includes("player.vimeo.com")) return `https://player.vimeo.com/video/${vimeo[1]}`;
+  return url;
+}
+
 export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -166,7 +176,7 @@ export default function ProductDetail() {
           {mod.video_url && (
             <div className="aspect-video rounded-xl overflow-hidden bg-malva-800">
               <iframe
-                src={mod.video_url}
+                src={toEmbedUrl(mod.video_url)}
                 title={mod.title}
                 className="w-full h-full"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
