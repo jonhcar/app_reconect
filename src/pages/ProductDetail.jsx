@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useOutletContext, useNavigate } from "react-router-dom";
-import { ArrowLeft, Heart, CheckCircle2, Circle, Download, Printer, Mail, Star } from "lucide-react";
+import { ArrowLeft, Heart, CheckCircle2, Circle, Download, Printer, Mail, Star, Lock, ShieldCheck } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 import AudioPlayer from "../components/AudioPlayer";
@@ -20,7 +20,7 @@ export default function ProductDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const { user, isPremium } = useAuth();
-  const { openUnlock } = useOutletContext();
+  const { settings } = useOutletContext();
 
   const [product, setProduct] = useState(null);
   const [modules, setModules] = useState([]);
@@ -59,10 +59,81 @@ export default function ProductDetail() {
   if (loading) return <div className="py-20 text-center text-malva-400 animate-pulse">Cargando…</div>;
   if (!product) return <div className="py-20 text-center text-malva-400">Producto no encontrado.</div>;
 
+  // Página de vendas: quem ainda não comprou vê a copy + botão de compra
   if (!unlocked) {
-    openUnlock();
-    navigate("/");
-    return null;
+    const buyLink = product.checkout_url || settings?.hotmart_link;
+    const buyLabel = product.price ? `Quiero acceder por $${product.price}` : "Quiero acceder ahora";
+    return (
+      <div className="py-6 max-w-lg mx-auto space-y-6 pb-32">
+        <button onClick={() => navigate(-1)} className="flex items-center gap-1 text-malva-400 text-sm">
+          <ArrowLeft size={16} /> Volver
+        </button>
+
+        {/* Capa + título */}
+        <div className="text-center">
+          {product.cover_image && (
+            <img src={product.cover_image} alt="" className="w-44 mx-auto rounded-2xl shadow-lg" />
+          )}
+          <h1 className="font-display text-3xl text-malva-700 mt-5 leading-tight">{product.title}</h1>
+          {product.description && <p className="text-malva-400 mt-2">{product.description}</p>}
+        </div>
+
+        {/* Copy de vendas */}
+        {product.sales_copy && (
+          <div className="bg-white rounded-3xl p-6 shadow-sm text-malva-600 leading-relaxed whitespace-pre-line">
+            {product.sales_copy}
+          </div>
+        )}
+
+        {/* Prova social */}
+        {reviews.length > 0 && (
+          <section>
+            <h2 className="font-bold text-lg text-malva-700 mb-3">Lo que dicen ellas 💗</h2>
+            <div className="space-y-3">
+              {reviews.map((r) => (
+                <div key={r.id} className="bg-white rounded-2xl p-4 shadow-sm">
+                  <div className="flex items-center gap-2">
+                    <span className="font-bold text-sm text-malva-600">{r.user_name}</span>
+                    <span className="flex text-dorado">
+                      {Array.from({ length: r.rating }).map((_, i) => <Star key={i} size={14} fill="currentColor" />)}
+                    </span>
+                  </div>
+                  {r.comment && <p className="text-sm text-malva-500 mt-1">{r.comment}</p>}
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Botão de compra */}
+        {buyLink ? (
+          <div className="fixed bottom-16 inset-x-0 z-40 px-4 pb-3 pt-6 bg-gradient-to-t from-crema via-crema/95 to-transparent">
+            <div className="max-w-lg mx-auto">
+              <a
+                href={buyLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center animate-pulse-soft bg-rosa-500 hover:bg-rosa-400 text-white font-extrabold text-lg py-4 rounded-full shadow-lg"
+              >
+                {buyLabel}
+              </a>
+              <p className="flex items-center justify-center gap-1 text-xs text-malva-400 mt-2">
+                <ShieldCheck size={14} /> Pago seguro a través de Hotmart · Acceso inmediato
+              </p>
+            </div>
+          </div>
+        ) : (
+          <p className="text-center text-malva-400 flex items-center justify-center gap-2">
+            <Lock size={16} /> Muy pronto disponible 💗
+          </p>
+        )}
+
+        <p className="text-xs text-malva-400 text-center bg-rosa-50 rounded-2xl px-4 py-3">
+          Importante: compra con el mismo correo de tu cuenta (<b>{user.email}</b>) para que el acceso
+          se active automáticamente.
+        </p>
+      </div>
+    );
   }
 
   const done = (moduleId) => progress.find((pr) => pr.module_id === moduleId)?.completed;

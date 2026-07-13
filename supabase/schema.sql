@@ -51,6 +51,8 @@ create table public.products (
   featured boolean default false,
   hotmart_product_id text,
   price numeric,
+  checkout_url text, -- link de pago do produto na Hotmart
+  sales_copy text,   -- texto de venda mostrado a quem ainda não comprou
   journal_sections jsonb default '[]', -- [{id, title, fields: [{id, label, type}]}]
   created_at timestamptz default now()
 );
@@ -221,6 +223,38 @@ create table public.alma_messages (
   created_at timestamptz default now()
 );
 
+-- ------------------------------------------------------------
+-- 15. Pending Purchases (compra na Hotmart antes do cadastro)
+-- ------------------------------------------------------------
+create table public.pending_purchases (
+  id uuid default gen_random_uuid() primary key,
+  email text not null,
+  product_id uuid references public.products(id) on delete cascade,
+  hotmart_transaction_id text,
+  created_at timestamptz default now(),
+  unique(email, product_id)
+);
+
+-- Ao criar o perfil, libera as compras pendentes do mesmo e-mail
+create function public.claim_pending_purchases()
+returns trigger as $$
+begin
+  insert into public.access (user_id, product_id, active, hotmart_transaction_id)
+  select new.id, pp.product_id, true, pp.hotmart_transaction_id
+  from public.pending_purchases pp
+  where lower(pp.email) = lower(new.email)
+  on conflict (user_id, product_id)
+  do update set active = true;
+
+  delete from public.pending_purchases where lower(email) = lower(new.email);
+  return new;
+end;
+$$ language plpgsql security definer;
+
+create trigger on_profile_created_claim_purchases
+  after insert on public.profiles
+  for each row execute procedure public.claim_pending_purchases();
+
 -- ============================================================
 -- ROW LEVEL SECURITY (RLS)
 -- ============================================================
@@ -241,6 +275,7 @@ alter table public.alma_conversations enable row level security;
 alter table public.alma_messages enable row level security;
 alter table public.journal_entries enable row level security;
 alter table public.reading_progress enable row level security;
+alter table public.pending_purchases enable row level security; -- sem policies: só o service role acessa
 
 -- Profiles: cada uma vê/edita só o seu; admin vê todos
 create policy "profiles_select_own" on public.profiles for select using (auth.uid() = id or public.is_admin());

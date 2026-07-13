@@ -6,7 +6,7 @@ import ProductCard from "../components/ProductCard";
 
 export default function Home() {
   const { user, isPremium } = useAuth();
-  const { settings, openUnlock } = useOutletContext();
+  const { settings } = useOutletContext();
   const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [access, setAccess] = useState([]);
@@ -74,7 +74,7 @@ export default function Home() {
           <h2 className="font-bold text-lg text-malva-700 mb-3">{cat}</h2>
           <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
             {rest.filter((p) => p.category === cat).map((p) => (
-              <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} onLockedClick={openUnlock} />
+              <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} />
             ))}
           </div>
         </section>
@@ -85,7 +85,7 @@ export default function Home() {
           <h2 className="font-bold text-lg text-malva-700 mb-3">Para ti</h2>
           <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
             {uncategorized.map((p) => (
-              <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} onLockedClick={openUnlock} />
+              <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} />
             ))}
           </div>
         </section>

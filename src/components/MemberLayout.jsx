@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
-import { Home, Heart, Sparkles, MessageCircleHeart, User, Share2, Mail, Lock } from "lucide-react";
+import { Home, Heart, Sparkles, MessageCircleHeart, User, Share2, Mail } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
-import UnlockModal from "./UnlockModal";
 
 const SUPPORT_EMAIL = "soporte@reconectar.app"; // ajuste para o e-mail real
 const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true"; // Quiz del Día + Alma (requer chave da Anthropic)
 
 export default function MemberLayout() {
-  const { user, isPremium } = useAuth();
+  const { user } = useAuth();
   const [settings, setSettings] = useState(null);
-  const [unlockOpen, setUnlockOpen] = useState(false);
 
   useEffect(() => {
     base44.entities.AppSettings.list().then((rows) => setSettings(rows?.[0] || null)).catch(() => {});
@@ -60,18 +58,8 @@ export default function MemberLayout() {
       </header>
 
       <main className="max-w-5xl mx-auto px-4">
-        <Outlet context={{ settings, openUnlock: () => setUnlockOpen(true) }} />
+        <Outlet context={{ settings }} />
       </main>
-
-      {/* Botão flutuante pulsante (só para não-premium) */}
-      {!isPremium && (
-        <button
-          onClick={() => setUnlockOpen(true)}
-          className="fixed bottom-20 right-4 z-40 animate-pulse-soft bg-rosa-500 text-white font-bold px-5 py-3 rounded-full shadow-lg flex items-center gap-2"
-        >
-          <Lock size={18} /> Desbloquear todo
-        </button>
-      )}
 
       {/* Navegação inferior */}
       <nav className="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-rosa-100">
@@ -91,8 +79,6 @@ export default function MemberLayout() {
           ))}
         </div>
       </nav>
-
-      <UnlockModal open={unlockOpen} onClose={() => setUnlockOpen(false)} hotmartLink={settings?.hotmart_link} />
     </div>
   );
 }

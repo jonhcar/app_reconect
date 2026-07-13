@@ -1,19 +1,14 @@
 import { useNavigate } from "react-router-dom";
 import { Lock } from "lucide-react";
 
-export default function ProductCard({ product, unlocked, onLockedClick, size = "md" }) {
+export default function ProductCard({ product, unlocked, size = "md" }) {
   const navigate = useNavigate();
   const locked = !unlocked && !product.is_free;
-
-  const handleClick = () => {
-    if (locked) onLockedClick?.(product);
-    else navigate(`/producto/${product.id}`);
-  };
 
   const width = size === "lg" ? "w-full" : "w-40 sm:w-48 shrink-0";
 
   return (
-    <button onClick={handleClick} className={`${width} text-left group`}>
+    <button onClick={() => navigate(`/producto/${product.id}`)} className={`${width} text-left group`}>
       <div className="relative rounded-2xl overflow-hidden aspect-[3/4] bg-rosa-100 shadow-sm group-hover:shadow-lg transition-shadow">
         {product.cover_image ? (
           <img
@@ -32,6 +27,11 @@ export default function ProductCard({ product, unlocked, onLockedClick, size = "
               <Lock className="text-malva-600" size={22} />
             </div>
           </div>
+        )}
+        {locked && product.price && (
+          <span className="absolute bottom-2 right-2 bg-white/95 text-malva-700 text-xs font-extrabold px-2.5 py-1 rounded-full shadow">
+            ${product.price}
+          </span>
         )}
         {product.is_free && (
           <span className="absolute top-2 left-2 bg-dorado text-white text-xs font-bold px-2 py-1 rounded-full">Gratis</span>

@@ -5,6 +5,7 @@ import { base44 } from "../../api/supabaseClient";
 const EMPTY = {
   title: "", description: "", cover_image: "", type: "ebook", category: "",
   is_free: false, published: true, featured: false, hotmart_product_id: "", price: "",
+  checkout_url: "", sales_copy: "",
 };
 
 export default function AdminProducts() {
@@ -174,6 +175,23 @@ export default function AdminProducts() {
               </select>
               <input placeholder="ID producto Hotmart" value={editing.hotmart_product_id || ""} onChange={set("hotmart_product_id")} className="input" />
               <input placeholder="Precio (ej. 9.90)" value={editing.price ?? ""} onChange={set("price")} className="input" />
+            </div>
+
+            {/* Venda individual: link de checkout + copy de vendas */}
+            <div className="bg-rosa-50 rounded-2xl p-3 space-y-2">
+              <p className="text-sm font-bold text-malva-600">Página de venta (para quien aún no compró)</p>
+              <input
+                placeholder="Link de pago (checkout de Hotmart, ej. https://pay.hotmart.com/...)"
+                value={editing.checkout_url || ""}
+                onChange={set("checkout_url")}
+                className="input"
+              />
+              <textarea
+                placeholder="Texto de venta: qué va a lograr, qué incluye, para quién es… (se muestra antes del botón de compra)"
+                value={editing.sales_copy || ""}
+                onChange={set("sales_copy")}
+                className="input min-h-32"
+              />
             </div>
 
             <div className="flex flex-wrap gap-4 text-sm text-malva-600">
