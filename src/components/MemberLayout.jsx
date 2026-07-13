@@ -6,6 +6,7 @@ import { useAuth } from "../context/AuthContext";
 import UnlockModal from "./UnlockModal";
 
 const SUPPORT_EMAIL = "soporte@reconectar.app"; // ajuste para o e-mail real
+const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true"; // Quiz del Día + Alma (requer chave da Anthropic)
 
 export default function MemberLayout() {
   const { user, isPremium } = useAuth();
@@ -28,8 +29,10 @@ export default function MemberLayout() {
 
   const navItems = [
     { to: "/", icon: Home, label: "Inicio" },
-    { to: "/quiz-del-dia", icon: Sparkles, label: "Quiz" },
-    { to: "/alma", icon: MessageCircleHeart, label: "Alma" },
+    ...(IA_ENABLED ? [
+      { to: "/quiz-del-dia", icon: Sparkles, label: "Quiz" },
+      { to: "/alma", icon: MessageCircleHeart, label: "Alma" },
+    ] : []),
     { to: "/favoritos", icon: Heart, label: "Favoritos" },
     { to: "/perfil", icon: User, label: "Perfil" },
   ];

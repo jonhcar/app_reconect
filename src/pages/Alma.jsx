@@ -2,7 +2,17 @@ import { useEffect, useRef, useState } from "react";
 import { Send, Plus, MessageCircleHeart } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 
+const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true";
+
 export default function Alma() {
+  if (!IA_ENABLED) {
+    return (
+      <div className="py-20 text-center text-malva-400">
+        <MessageCircleHeart className="mx-auto mb-3 text-rosa-400" size={32} />
+        <p className="font-display text-xl text-malva-600">Alma llega pronto 💗</p>
+      </div>
+    );
+  }
   const [conversations, setConversations] = useState([]);
   const [current, setCurrent] = useState(null);
   const [messages, setMessages] = useState([]);

@@ -3,8 +3,18 @@ import { Sparkles } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 
+const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true";
+
 export default function DailyQuiz() {
   const { user } = useAuth();
+  if (!IA_ENABLED) {
+    return (
+      <div className="py-20 text-center text-malva-400">
+        <Sparkles className="mx-auto mb-3 text-dorado" size={32} />
+        <p className="font-display text-xl text-malva-600">El Quiz del Día llega pronto 💗</p>
+      </div>
+    );
+  }
   const [quiz, setQuiz] = useState(null);
   const [loading, setLoading] = useState(true);
   const [step, setStep] = useState(0);
