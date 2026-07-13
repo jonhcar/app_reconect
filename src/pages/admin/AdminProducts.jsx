@@ -33,8 +33,12 @@ export default function AdminProducts() {
   const uploadCover = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    const { file_url } = await base44.integrations.Core.UploadFile({ file });
-    setEditing({ ...editing, cover_image: file_url });
+    try {
+      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      setEditing({ ...editing, cover_image: file_url });
+    } catch (err) {
+      alert("Error al subir la imagen: " + err.message);
+    }
   };
 
   const save = async (e) => {
@@ -81,8 +85,12 @@ export default function AdminProducts() {
   };
 
   const uploadModuleFile = async (i, k, file) => {
-    const { file_url } = await base44.integrations.Core.UploadFile({ file });
-    setModule(i, k, file_url);
+    try {
+      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      setModule(i, k, file_url);
+    } catch (err) {
+      alert("Error al subir el archivo: " + err.message);
+    }
   };
 
   // --- Construtor do diário (journal_sections) ---
@@ -246,8 +254,12 @@ export default function AdminProducts() {
                           <input type="file" accept=".pdf,application/pdf" className="hidden" onChange={async (e) => {
                             const file = e.target.files?.[0];
                             if (!file) return;
-                            const { file_url } = await base44.integrations.Core.UploadFile({ file });
-                            setMaterial(i, j, "url", file_url);
+                            try {
+                              const { file_url } = await base44.integrations.Core.UploadFile({ file });
+                              setMaterial(i, j, "url", file_url);
+                            } catch (err) {
+                              alert("Error al subir el PDF: " + err.message);
+                            }
                           }} />
                         </label>
                         <label className="flex items-center gap-1 text-xs text-malva-500 whitespace-nowrap">

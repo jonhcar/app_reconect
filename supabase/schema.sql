@@ -277,6 +277,16 @@ create policy "admin_manage_reviews" on public.reviews for update using (public.
 create policy "admin_delete_reviews" on public.reviews for delete using (public.is_admin());
 create policy "admin_manage_access" on public.access for all using (public.is_admin());
 
+-- Storage: políticas do bucket "uploads" (crie o bucket público antes)
+create policy "uploads_insert_auth" on storage.objects
+  for insert to authenticated with check (bucket_id = 'uploads');
+create policy "uploads_read_public" on storage.objects
+  for select using (bucket_id = 'uploads');
+create policy "uploads_update_own" on storage.objects
+  for update to authenticated using (bucket_id = 'uploads' and owner = auth.uid());
+create policy "uploads_delete_own" on storage.objects
+  for delete to authenticated using (bucket_id = 'uploads' and owner = auth.uid());
+
 -- Config inicial
 insert into public.app_settings (welcome_message, hotmart_link)
 values ('Tu viaje empieza aquí 💗', '');

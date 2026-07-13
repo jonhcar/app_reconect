@@ -40,9 +40,13 @@ export default function Profile() {
   const uploadPhoto = async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
-    const { file_url } = await base44.integrations.Core.UploadFile({ file });
-    await base44.auth.updateMe({ photo_url: file_url });
-    await refreshUser();
+    try {
+      const { file_url } = await base44.integrations.Core.UploadFile({ file });
+      await base44.auth.updateMe({ photo_url: file_url });
+      await refreshUser();
+    } catch (err) {
+      alert("No se pudo subir la foto: " + err.message);
+    }
   };
 
   return (
