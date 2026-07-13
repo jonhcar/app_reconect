@@ -10,3 +10,13 @@
   from = "/*"
   to = "/index.html"
   status = 200
+
+# Cabeçalhos de segurança (aplicados a todas as respostas)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"                              # bloqueia clickjacking (impede embutir o app em iframe de terceiros)
+    X-Content-Type-Options = "nosniff"                          # impede o navegador de "adivinhar" tipos de arquivo
+    Referrer-Policy = "strict-origin-when-cross-origin"         # não vaza a URL interna para sites externos
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"  # o app não usa esses recursos
+    Content-Security-Policy = "frame-ancestors 'self'"          # reforço anti-clickjacking
