@@ -3,6 +3,7 @@ import { useNavigate, useOutletContext } from "react-router-dom";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 import ProductCard from "../components/ProductCard";
+import AutoScrollRow from "../components/AutoScrollRow";
 
 export default function Home() {
   const { user, isPremium } = useAuth();
@@ -72,22 +73,22 @@ export default function Home() {
       {categories.map((cat) => (
         <section key={cat}>
           <h2 className="font-bold text-lg text-malva-700 mb-3">{cat}</h2>
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+          <AutoScrollRow>
             {rest.filter((p) => p.category === cat).map((p) => (
               <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} />
             ))}
-          </div>
+          </AutoScrollRow>
         </section>
       ))}
 
       {uncategorized.length > 0 && (
         <section>
           <h2 className="font-bold text-lg text-malva-700 mb-3">Para ti</h2>
-          <div className="flex gap-4 overflow-x-auto scrollbar-hide pb-2">
+          <AutoScrollRow>
             {uncategorized.map((p) => (
               <ProductCard key={p.id} product={p} unlocked={hasAccess(p)} />
             ))}
-          </div>
+          </AutoScrollRow>
         </section>
       )}
 

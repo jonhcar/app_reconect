@@ -258,6 +258,10 @@ export default function ProductDetail() {
 
           {mod.audio_url && <AudioPlayer src={mod.audio_url} title={mod.title} />}
 
+          {(mod.audios || []).map((aud, j) => aud.url && (
+            <AudioPlayer key={j} src={aud.url} title={aud.name || `${mod.title} · ${j + 2}`} />
+          ))}
+
           {(mod.materials || []).map((mat, i) => (
             <div key={i} className="flex items-center justify-between bg-rosa-50 rounded-xl px-3 py-2">
               <span className="text-sm font-bold text-malva-600 truncate">{mat.name}</span>

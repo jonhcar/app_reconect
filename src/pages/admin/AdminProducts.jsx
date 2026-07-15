@@ -112,6 +112,14 @@ export default function AdminProducts() {
   };
   const removeField = (i, j) => setSection(i, "fields", (sections[i].fields || []).filter((_, x) => x !== j));
 
+  const addAudio = (i) => setModule(i, "audios", [...(modules[i].audios || []), { name: "", url: "" }]);
+  const setAudio = (i, j, k, v) => {
+    const auds = [...(modules[i].audios || [])];
+    auds[j] = { ...auds[j], [k]: v };
+    setModule(i, "audios", auds);
+  };
+  const removeAudio = (i, j) => setModule(i, "audios", (modules[i].audios || []).filter((_, x) => x !== j));
+
   const addMaterial = (i) => setModule(i, "materials", [...(modules[i].materials || []), { name: "", url: "", is_printable: false }]);
   const setMaterial = (i, j, k, v) => {
     const mats = [...(modules[i].materials || [])];
@@ -259,10 +267,31 @@ export default function AdminProducts() {
                     <div className="flex items-center gap-2">
                       <input placeholder="URL de audio MP3" value={mod.audio_url || ""} onChange={(e) => setModule(i, "audio_url", e.target.value)} className="input flex-1" />
                       <label className="text-xs font-bold text-rosa-500 cursor-pointer whitespace-nowrap">
-                        Subir MP3
+                        {mod.audio_url ? "MP3 ✓" : "Subir MP3"}
                         <input type="file" accept="audio/*" className="hidden" onChange={(e) => e.target.files?.[0] && uploadModuleFile(i, "audio_url", e.target.files[0])} />
                       </label>
                     </div>
+                    {/* Áudios adicionais */}
+                    {(mod.audios || []).map((aud, j) => (
+                      <div key={j} className="flex items-center gap-2">
+                        <input placeholder={`Nombre del audio ${j + 2} (ej: Meditación ${j + 2})`} value={aud.name} onChange={(e) => setAudio(i, j, "name", e.target.value)} className="input flex-1" />
+                        <label className="text-xs font-bold text-rosa-500 cursor-pointer whitespace-nowrap">
+                          {aud.url ? "MP3 ✓" : "Subir MP3"}
+                          <input type="file" accept="audio/*" className="hidden" onChange={async (e) => {
+                            const file = e.target.files?.[0];
+                            if (!file) return;
+                            try {
+                              const { file_url } = await base44.integrations.Core.UploadFile({ file });
+                              setAudio(i, j, "url", file_url);
+                            } catch (err) {
+                              alert("Error al subir el audio: " + err.message);
+                            }
+                          }} />
+                        </label>
+                        <button type="button" onClick={() => removeAudio(i, j)}><Trash2 size={14} className="text-malva-400" /></button>
+                      </div>
+                    ))}
+                    <button type="button" onClick={() => addAudio(i)} className="text-xs font-bold text-malva-400">+ audio</button>
                     {/* Materiais */}
                     {(mod.materials || []).map((mat, j) => (
                       <div key={j} className="flex items-center gap-2 text-sm">
