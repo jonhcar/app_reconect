@@ -78,6 +78,49 @@ Vertical 9:16 video, 8 seconds. Close-up over-the-shoulder shot of an elegant wo
 Vertical 9:16 video, 8 seconds. Macro close-up of a smartphone screen held in a woman's hand, displaying a feminine wellness app with warm cream background #FDF8F3. The screen shows a course page titled "Corazón Libre" in elegant serif typography with a soft rose book cover at the top, and below it a vertical list of module cards appearing one by one with a gentle fade-up animation, labeled in dark mauve bold text: "FASE 1", "FASE 2", "FASE 3", "FASE 4", then "BONO" cards with small gold gift icons. A finger taps the first card and a clean PDF reader opens with elegant text. Rose pink #D44D6E accent buttons, gold #C9A24B details. Soft warm light, shallow depth of field, blurred cozy bedroom background with a candle glowing. Premium, calm, feminine digital product aesthetic, smooth UI motion, photorealistic, 4k.
 ```
 
+## SEQUÊNCIA DE ANÚNCIO — 4 cortes interligados (mini-filme de ~32 s)
+
+Como usar: gere os 4 cortes NA ORDEM, um por vez, no Flow (Veo 3), formato 9:16, 8 s cada.
+A protagonista e o quarto são descritos IGUAIS em todos os prompts — é isso que mantém a
+continuidade. Se o Flow tiver o recurso de "ingredientes"/personagem consistente, use a
+mesma referência nos 4. Depois é só juntar os cortes no CapCut na ordem 1→2→3→4 e
+adicionar no final um texto com o preço ($9.90) — texto é melhor no CapCut, o Veo erra letras.
+
+Arco da história: espera dolorosa (escuro) → verdade que dói (vela acende) →
+descoberta do processo (luz cresce) → transformação (manhã dourada) + nome do produto.
+
+### CORTE 1 — La espera (noche, tono azul-oscuro)
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Night scene, dim cool blue tones. A beautiful latina woman in her early 40s, warm brown skin, shoulder-length dark curly hair, wearing a soft blush pink knit cardigan, sits alone on her bed in a cozy bedroom with cream walls and fairy lights turned off. She checks her smartphone, the screen glow lighting her sad, tired face — no new messages. She sighs, hugs a pillow, looks out the dark window. Rain drops on the glass. Slow push-in camera, shallow depth of field, melancholic and intimate atmosphere, photorealistic, 4k. She whispers softly in Spanish with a sad voice: "¿Otra vez esperando un mensaje que no llega?"
+```
+
+### CORTE 2 — La verdad (la vela se enciende)
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Same cozy bedroom with cream walls, same beautiful latina woman in her early 40s, warm brown skin, shoulder-length dark curly hair, soft blush pink knit cardigan. She stands in front of her bedroom mirror at night, eyes glassy with held-back tears, looking at her own reflection with honesty. Beside the mirror, a small candle flame flickers to life, casting the first warm golden glow on her face amid the cool blue shadows. She touches her chest gently. Slow camera orbit, intimate chiaroscuro lighting, emotional turning point atmosphere, photorealistic, 4k. A warm female narrator voice says in Spanish: "No es mala suerte. Te enseñaron a mendigar afecto."
+```
+
+### CORTE 3 — El proceso (la luz crece)
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Same cozy bedroom, now warmer: candles lit, fairy lights glowing soft gold. The same beautiful latina woman in her early 40s, warm brown skin, shoulder-length dark curly hair, soft blush pink knit cardigan, sits comfortably on the bed holding her smartphone. The screen shows a feminine wellness app with cream background and a rose-pink book cover titled "CORAZÓN LIBRE" with four numbered phase cards below it. She puts on white wireless headphones, closes her eyes and takes a deep calming breath, shoulders relaxing, a first hint of peace on her face. Warm golden light slowly grows brighter around her. Gentle push-in, hopeful intimate atmosphere, photorealistic, 4k. The warm female narrator says in Spanish: "Sanar no es leer más. Es un proceso — paso a paso."
+```
+
+### CORTE 4 — La luz (mañana dorada + producto)
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Same bedroom the next morning, flooded with golden sunlight through sheer curtains, dust particles floating in the light. The same beautiful latina woman in her early 40s, warm brown skin, shoulder-length dark curly hair, now wearing a fresh cream blouse, stands by the open window smiling with serene confidence, eyes closed, breathing in the morning — transformed, free, radiant. She opens her eyes and smiles gently at the camera. In the final two seconds, cut to an elegant product shot: a hardcover book with a rose-toned cover standing on a cream marble table beside a lit candle and soft pink flowers, warm golden backlight glow. Uplifting emotional atmosphere, photorealistic, 4k. The warm female narrator says in Spanish: "Corazón Libre. Deja de mendigar. Empieza a ser elegida."
+```
+
+### Montagem final (CapCut, 2 minutos)
+1. Junte os cortes na ordem 1→2→3→4
+2. No corte 4, adicione texto sobreposto: "CORAZÓN LIBRE" e depois "HOY $9.90 · GARANTÍA 7 DÍAS"
+3. Trilha suave de piano emocional por baixo (biblioteca do CapCut), volume baixo para não brigar com as falas
+4. Exporte 9:16 1080×1920
+
+---
+
 ## V3. Lifestyle — ouvindo o audiolibro / meditação
 
 ```
