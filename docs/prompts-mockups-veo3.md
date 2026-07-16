@@ -113,11 +113,31 @@ Vertical 9:16 cinematic video, 8 seconds. Same cozy bedroom, now warmer: candles
 Vertical 9:16 cinematic video, 8 seconds. Same bedroom the next morning, flooded with golden sunlight through sheer curtains, dust particles floating in the light. The same beautiful latina woman in her early 40s, warm brown skin, shoulder-length dark curly hair, now wearing a fresh cream blouse, stands by the open window smiling with serene confidence, eyes closed, breathing in the morning — transformed, free, radiant. She opens her eyes and smiles gently at the camera. In the final two seconds, cut to an elegant product shot: a hardcover book with a rose-toned cover standing on a cream marble table beside a lit candle and soft pink flowers, warm golden backlight glow. Uplifting emotional atmosphere, photorealistic, 4k. No dialogue, no speech — only soft morning ambience.
 ```
 
+### Narração (gerar no TopMediai — voz feminina latina, cálida, lenta)
+REGRA: sem preço e sem nome do produto no áudio — ninguém entra na rede social
+para comprar; o anúncio só gera o clique, a página de vendas vende.
+
+```
+¿Otra vez esperando un mensaje que no llega?
+¿Otra vez tú escribiendo primero... tú esperando... tú aguantando?
+
+Escúchame: no es mala suerte. Y no estás rota.
+Te enseñaron a mendigar afecto...
+y nadie te enseñó a dejar de hacerlo.
+
+Sanar no es leer un libro más.
+Es un proceso. Paso a paso, a tu ritmo, desde tu celular.
+
+Si esto te tocó el corazón...
+toca el botón de abajo y descubre cómo empezar hoy.
+```
+
 ### Montagem final (CapCut, 2 minutos)
-1. Junte os cortes na ordem 1→2→3→4
-2. No corte 4, adicione texto sobreposto: "CORAZÓN LIBRE" e depois "HOY $9.90 · GARANTÍA 7 DÍAS"
-3. Trilha suave de piano emocional por baixo (biblioteca do CapCut), volume baixo para não brigar com as falas
-4. Exporte 9:16 1080×1920
+1. Junte os cortes na ordem 1→2→3→4 e alinhe a narração (1 bloco por corte)
+2. Textos na tela (fonte serifada, branco com sombra leve): corte 2 "No estás rota." · corte 3 "PASO A PASO" · corte 4 "Toca en SABER MÁS 👇" (sem preço, sem nome do produto)
+3. Trilha suave de piano emocional por baixo, volume ~15%
+4. Legendas automáticas em espanhol (80% assiste sem som)
+5. Exporte 9:16 1080×1920
 
 ---
 
