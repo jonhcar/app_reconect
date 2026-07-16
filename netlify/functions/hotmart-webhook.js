@@ -45,15 +45,33 @@ export default async (req) => {
   const supabase = adminClient();
 
   // Produto do app vinculado a esse produto da Hotmart
-  const { data: product } = await supabase
+  let { data: product } = await supabase
     .from("products")
     .select("id")
     .eq("hotmart_product_id", hotmartProductId)
     .maybeSingle();
 
   if (!product) {
-    console.log(`Hotmart: produto ${hotmartProductId} não vinculado a nenhum produto do app. Evento: ${event}`);
-    return json({ ok: true, note: "unknown product" });
+    // Fallback: o painel da Hotmart mostra um ID diferente do que o webhook
+    // envia. O link de checkout (pay.hotmart.com/X123456789Y) carrega o ID
+    // numérico real, então tentamos casar por ele também.
+    const { data: candidates } = await supabase
+      .from("products")
+      .select("id, checkout_url")
+      .not("checkout_url", "is", null);
+    product = (candidates || []).find((p) => {
+      const m = (p.checkout_url || "").match(/pay\.hotmart\.com\/[A-Z]?(\d{6,12})[A-Z]?/i);
+      return m && m[1] === hotmartProductId;
+    }) || null;
+    if (product) {
+      // Memoriza o ID real para os próximos eventos casarem direto
+      await supabase.from("products").update({ hotmart_product_id: hotmartProductId }).eq("id", product.id);
+    }
+  }
+
+  if (!product) {
+    console.log(`Hotmart: produto ${hotmartProductId} não vinculado a nenhum produto do app. Evento: ${event}. Payload product: ${JSON.stringify(payload.data?.product || null)}`);
+    return json({ ok: true, note: "unknown product", received_product_id: hotmartProductId });
   }
 
   // Localiza a usuária pelo e-mail da compra
