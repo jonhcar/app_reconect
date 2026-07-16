@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit de Primeros Auxilios Emocionales — GRATIS | Reconectar</title>
+<meta name="description" content="Meditaciones SOS, Diario de Ansiedad y el reto 7 Días para Reconectar — gratis en la app Reconectar. Sin tarjeta, sin trampa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noche:#2b1220;--malva:#7a3b5e;--rosa:#d44d6e;--rosa-luz:#ff7a9c;
+    --dorado:#c9a24b;--oro-luz:#ffd98a;--crema:#fdf8f3;--tinta:#3a2230;--suave:#8a6577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:"Nunito Sans",system-ui,sans-serif;color:var(--tinta);background:var(--crema);line-height:1.65;overflow-x:hidden}
+  h1,h2,h3{font-family:"Playfair Display",Georgia,serif;text-wrap:balance;line-height:1.15}
+  section{padding:64px 20px}
+  .wrap{max-width:680px;margin:0 auto}
+  .eyebrow{display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:16px}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* HERO — regalo luminoso */
+  .hero{
+    position:relative;min-height:88vh;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--crema);
+    background:
+      radial-gradient(ellipse 65% 50% at 50% 35%, rgba(255,217,138,.30), transparent 65%),
+      radial-gradient(ellipse 50% 40% at 50% 40%, rgba(255,122,156,.28), transparent 70%),
+      linear-gradient(180deg,#1d0b16, var(--noche) 60%, #43152b);
+  }
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;padding:40px 0}
+  .hero .eyebrow{color:var(--oro-luz)}
+  .regalo-pill{
+    display:inline-block;font-weight:800;font-size:.85rem;letter-spacing:.16em;color:#4b3413;
+    background:linear-gradient(90deg,var(--oro-luz),#ffca7a);padding:7px 20px;border-radius:999px;
+    box-shadow:0 0 26px rgba(255,179,92,.55);margin-bottom:20px;
+  }
+  .hero h1{font-size:clamp(2.1rem,6.2vw,3.6rem);font-weight:900;color:#fff;text-shadow:0 0 40px rgba(255,122,156,.5),0 0 90px rgba(255,217,138,.3)}
+  .hero h1 em{font-style:italic;color:var(--oro-luz);text-shadow:0 0 32px rgba(255,217,138,.7)}
+  .hero p.sub{margin:20px auto 0;max-width:32em;font-size:1.12rem;color:#f4dbe4}
+  .anim-in{opacity:0;transform:translateY(18px);animation:entra .9s ease forwards}
+  .anim-in.d1{animation-delay:.15s}.anim-in.d2{animation-delay:.35s}.anim-in.d3{animation-delay:.6s}
+  @keyframes entra{to{opacity:1;transform:none}}
+  .cta{
+    display:inline-block;margin-top:32px;padding:18px 42px;border-radius:999px;
+    font-weight:800;font-size:1.1rem;color:#3a1420;text-decoration:none;
+    background:linear-gradient(115deg,var(--oro-luz),#ffb35c 45%,var(--rosa-luz));
+    background-size:200% 200%;
+    box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45);
+    animation:brillo 2.6s ease-in-out infinite, mareo 6s ease infinite;
+    transition:transform .25s ease;
+  }
+  .cta:hover{transform:translateY(-3px) scale(1.03)}
+  .cta small{display:block;font-weight:700;font-size:.78rem;opacity:.75}
+  @keyframes brillo{0%,100%{box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45)}50%{box-shadow:0 0 24px 6px rgba(255,179,92,.65),0 8px 44px rgba(255,122,156,.55)}}
+  @keyframes mareo{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .nota-cta{margin-top:14px;font-size:.85rem;color:#d9aebf}
+
+  /* EL KIT */
+  .kit{background:var(--crema);text-align:center}
+  .kit .eyebrow{color:var(--rosa)}
+  .kit h2{font-size:clamp(1.7rem,4.5vw,2.4rem)}
+  .kit .sub2{color:var(--suave);max-width:34em;margin:14px auto 0}
+  .grid-kit{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  @media(min-width:640px){.grid-kit{grid-template-columns:repeat(3,1fr)}}
+  .pieza{
+    background:#fff;border-radius:20px;padding:16px 14px 18px;position:relative;
+    box-shadow:0 4px 20px rgba(122,59,94,.10);transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .pieza:hover{transform:translateY(-6px);box-shadow:0 16px 34px rgba(201,162,75,.22)}
+  .pieza img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px}
+  .pieza .pill{
+    position:absolute;top:24px;left:50%;transform:translateX(-50%);
+    font-size:.62rem;font-weight:800;letter-spacing:.14em;color:#4b3413;
+    background:linear-gradient(90deg,var(--oro-luz),#ffca7a);padding:4px 12px;border-radius:999px;
+    box-shadow:0 2px 12px rgba(255,179,92,.5);
+  }
+  .pieza b{display:block;margin-top:12px;font-size:.98rem;color:var(--malva)}
+  .pieza span{font-size:.82rem;color:var(--suave)}
+  .mas{margin-top:22px;color:var(--suave);font-size:.95rem}
+
+  /* PASOS */
+  .pasos{background:#fff;text-align:center}
+  .pasos h2{font-size:clamp(1.7rem,4.5vw,2.3rem)}
+  .lista-pasos{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px;text-align:left}
+  @media(min-width:640px){.lista-pasos{grid-template-columns:repeat(3,1fr)}}
+  .paso{background:var(--crema);border-radius:18px;padding:24px 22px}
+  .paso .n{
+    width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:"Playfair Display",serif;font-weight:900;font-size:1.3rem;color:#fff;
+    background:linear-gradient(140deg,var(--rosa),var(--rosa-luz));
+    box-shadow:0 0 18px rgba(255,122,156,.4);margin-bottom:14px;
+  }
+  .paso b{color:var(--malva);font-size:1.02rem}
+  .paso p{font-size:.92rem;color:#5d3c4d;margin-top:6px}
+
+  /* POR QUÉ GRATIS */
+  .porque{
+    color:var(--crema);text-align:center;
+    background:
+      radial-gradient(ellipse 75% 60% at 50% 25%, rgba(255,122,156,.25), transparent 60%),
+      linear-gradient(160deg,var(--malva),#54263f)
+  }
+  .porque h2{font-size:clamp(1.7rem,4.6vw,2.3rem);color:#fff;text-shadow:0 0 26px rgba(255,122,156,.4)}
+  .porque p{max-width:34em;margin:16px auto 0;color:#f6e3ea;font-size:1.05rem}
+  .porque em{color:var(--oro-luz)}
+
+  /* CIERRE */
+  .cierre{
+    text-align:center;color:var(--crema);padding-bottom:84px;
+    background:
+      radial-gradient(ellipse 80% 65% at 50% 80%, rgba(255,217,138,.24), transparent 65%),
+      radial-gradient(ellipse 65% 55% at 50% 75%, rgba(255,122,156,.28), transparent 60%),
+      linear-gradient(180deg,#43152b,#6d2a47);
+  }
+  .cierre h2{font-size:clamp(1.8rem,5.2vw,2.6rem);color:#fff;text-shadow:0 0 30px rgba(255,122,156,.5)}
+  .cierre h2 em{color:var(--oro-luz);font-style:italic}
+  .cierre p{max-width:30em;margin:16px auto 0;color:#f4dbe4}
+  footer{background:#170a12;color:#a97f92;text-align:center;font-size:.82rem;padding:24px 20px}
+  footer a{color:#c9a3b5}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal,.anim-in{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="luces" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div class="regalo-pill anim-in">100% GRATIS · SIN TARJETA</div>
+    <h1 class="anim-in d1">Primeros auxilios<br><em>para tu corazón</em></h1>
+    <p class="sub anim-in d2">Cuando la ansiedad aprieta y el corazón pesa, necesitas alivio <strong>hoy</strong> — no algún día. Llévate gratis el kit: meditaciones SOS, un diario para soltar lo que duele y 7 días guiados para volver a ti.</p>
+    <div class="anim-in d3">
+      <a class="cta" href="https://app.clubdigital.site/login">Quiero mi kit gratis<small>acceso inmediato · sin tarjeta · sin trampa</small></a>
+      <p class="nota-cta">Solo creas tu cuenta con tu correo y entras. Nada más.</p>
+    </div>
+  </div>
+</header>
+
+<section class="kit">
+  <div class="wrap" style="max-width:860px">
+    <span class="eyebrow reveal">Lo que te llevas hoy</span>
+    <h2 class="reveal">Tu Kit de Primeros Auxilios Emocionales</h2>
+    <p class="sub2 reveal">Tres herramientas simples y directas, dentro de la app Reconectar, para empezar a sentirte mejor esta misma semana.</p>
+    <div class="grid-kit">
+      <div class="pieza reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/e2ccb307-14cd-48b6-b8fd-c9c1be565638.jpeg" alt="Meditaciones SOS para el Corazón" loading="lazy">
+        <b>Meditaciones SOS para el Corazón</b>
+        <span>Audios cortos para calmar la ansiedad en minutos — ponte los audífonos y respira</span>
+      </div>
+      <div class="pieza reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/4cc81b62-bed7-4271-b0da-1e3f7f4b3dcb.jpeg" alt="Diario de Ansiedad Consciente" loading="lazy">
+        <b>Diario de Ansiedad Consciente</b>
+        <span>Para imprimir y escribir: suelta en papel lo que ya no puedes cargar por dentro</span>
+      </div>
+      <div class="pieza reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/eeea34eb-fc94-4797-9f24-4fcbf19cc7a4.jpeg" alt="7 Días para Reconectar" loading="lazy">
+        <b>7 Días para Reconectar</b>
+        <span>Un reto guiado de una semana: un paso pequeño por día para volver a elegirte</span>
+      </div>
+    </div>
+    <p class="mas reveal">🎁 Y adentro te espera un regalo más: la <strong>Agenda Cristiana</strong>, tu encuentro diario con Dios.</p>
+  </div>
+</section>
+
+<section class="pasos">
+  <div class="wrap" style="max-width:860px">
+    <span class="eyebrow reveal" style="color:var(--dorado)">Así de simple</span>
+    <h2 class="reveal">En 2 minutos ya estás adentro</h2>
+    <div class="lista-pasos">
+      <div class="paso reveal"><div class="n">1</div><b>Crea tu cuenta gratis</b><p>Solo tu nombre y tu correo. Sin tarjeta, sin datos de pago, sin letra pequeña.</p></div>
+      <div class="paso reveal"><div class="n">2</div><b>Entra a la app</b><p>Funciona en tu celular o computadora, sin descargar nada de la tienda.</p></div>
+      <div class="paso reveal"><div class="n">3</div><b>Empieza hoy</b><p>Ponte los audífonos, respira, y da el primer paso de vuelta a ti.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="porque">
+  <div class="wrap">
+    <h2 class="reveal">¿Por qué es gratis?</h2>
+    <p class="reveal">Sin misterio: Reconectar es una app de bienestar emocional con procesos completos de sanación. Te regalamos el kit porque sabemos que, cuando sientas el primer alivio, vas a querer conocer el resto. <em>Y si no — el kit es tuyo igual, para siempre.</em></p>
+  </div>
+</section>
+
+<section class="cierre">
+  <div class="wrap">
+    <h2 class="reveal">Llevas mucho tiempo cuidando a todos.<br><em>Hoy te toca a ti.</em></h2>
+    <p class="reveal">Dos minutos, tu correo, y tu kit te está esperando.</p>
+    <div>
+      <a class="cta reveal" href="https://app.clubdigital.site/login">Crear mi cuenta gratis<small>acceso inmediato · sin tarjeta</small></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Reconectar — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
+  Este contenido no sustituye terapia psicológica profesional.
+</footer>
+
+<script>
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cv = document.getElementById("luces");
+  if (cv && !reduce) {
+    const ctx = cv.getContext("2d");
+    let W, H, parts;
+    const COLORS = ["255,217,138", "255,122,156", "253,248,243"];
+    function resize() {
+      W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight;
+      parts = Array.from({ length: Math.min(46, Math.floor(W / 22)) }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: 0.8 + Math.random() * 2.4,
+        vy: 0.12 + Math.random() * 0.4, vx: (Math.random() - 0.5) * 0.18,
+        c: COLORS[(Math.random() * COLORS.length) | 0],
+        tw: Math.random() * Math.PI * 2,
+      }));
+    }
+    resize();
+    addEventListener("resize", resize);
+    (function tick() {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of parts) {
+        p.y -= p.vy; p.x += p.vx; p.tw += 0.03;
+        if (p.y < -8) { p.y = H + 8; p.x = Math.random() * W; }
+        const a = 0.25 + 0.45 * Math.abs(Math.sin(p.tw));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${a})`;
+        ctx.shadowColor = `rgba(${p.c},.9)`;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+</script>
+</body>
+</html>
