@@ -132,6 +132,52 @@ Si esto te tocó el corazón...
 toca el botón de abajo y descubre cómo empezar hoy.
 ```
 
+## SEQUÊNCIA 2 — "La Invisible" (criativo-teste 2, outro ângulo de dor)
+
+Ângulo: não é a dor de amor romântico — é a mulher que cuida de todos e ninguém
+enxerga. Nova protagonista (cabelo liso, cardigã mostarda) descrita igual nos 4 cortes.
+
+### S2 CORTE 1 — La cena
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Evening scene, dim warm-grey tones. A beautiful latina woman in her late 30s, olive skin, long straight dark hair tied in a loose low bun, wearing a simple mustard cardigan over a white blouse, serves dinner to her family at a wooden kitchen table — everyone looks at their phones, nobody looks at her. She places the last plate, waits a second for a thank-you that never comes, and smiles a small tired smile that fades. Slow push-in on her face, shallow depth of field, quietly heartbreaking domestic atmosphere, photorealistic, 4k. No dialogue, no speech — only soft ambient sounds of cutlery and distant TV.
+```
+
+### S2 CORTE 2 — El reflejo
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Same kitchen later at night, lights dimmed, blue-grey tones. The same beautiful latina woman in her late 30s, olive skin, long straight dark hair in a loose low bun, mustard cardigan over white blouse, washes the last dishes alone. She lifts her eyes and catches her own reflection in the dark kitchen window — and stops, really seeing herself for the first time, eyes glassy. She turns off the tap. On the counter beside her, a small warm candle flame flickers, casting the first golden glow on her face. Slow camera push-in, intimate chiaroscuro lighting, emotional turning point, photorealistic, 4k. No dialogue, no speech — only soft ambient room tone and water dripping.
+```
+
+### S2 CORTE 3 — El primer paso
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Same home, now a cozy corner armchair by a lamp with warm golden light. The same beautiful latina woman in her late 30s, olive skin, long straight dark hair now loose over her shoulders, mustard cardigan, sits curled up with a cup of tea and her smartphone. The screen shows a feminine wellness app with cream background, a rose-pink book cover and numbered step cards below it. She puts on wireless headphones, closes her eyes, and takes a deep breath — her shoulders drop, releasing years of tension. The warm light around her grows softly brighter. Gentle slow push-in, hopeful intimate atmosphere, photorealistic, 4k. No dialogue, no speech — only soft ambient room tone.
+```
+
+### S2 CORTE 4 — Elegida por sí misma
+
+```
+Vertical 9:16 cinematic video, 8 seconds. Next morning, the same home flooded with golden sunlight through sheer curtains, dust particles floating in the light. The same beautiful latina woman in her late 30s, olive skin, long straight dark hair loose, now wearing a fresh soft rose blouse, sits at the kitchen table writing in a beautiful journal with a gold pen, a peaceful confident smile on her face — this time the table is set for HER: one nice cup of coffee, a small vase with fresh flowers. She looks up toward the window light and smiles with serene self-love. In the final two seconds, cut to an elegant product shot: a hardcover book with a rose-toned cover standing on a cream marble table beside a lit candle and soft pink flowers, warm golden backlight. Uplifting emotional atmosphere, photorealistic, 4k. No dialogue, no speech — only soft morning ambience with birds.
+```
+
+### S2 Narração (TopMediai — mesma voz cálida e lenta)
+
+```
+¿Cuándo fue la última vez que alguien te preguntó cómo estás tú?
+
+Cuidas a todos... resuelves todo... aguantas todo.
+Y al final del día, la única que se olvida de ti... eres tú.
+
+Escúchame: dar amor no debería costarte desaparecer.
+Volver a ti también es un proceso... paso a paso, a tu ritmo, desde tu celular.
+
+Si sentiste esto en el pecho...
+toca el botón de abajo y descubre cómo empezar hoy.
+```
+
+Textos na tela: corte 2 "¿Y tú?" · corte 3 "PASO A PASO" · corte 4 "Toca en SABER MÁS 👇"
+
 ### Montagem final (CapCut, 2 minutos)
 1. Junte os cortes na ordem 1→2→3→4 e alinhe a narração (1 bloco por corte)
 2. Textos na tela (fonte serifada, branco com sombra leve): corte 2 "No estás rota." · corte 3 "PASO A PASO" · corte 4 "Toca en SABER MÁS 👇" (sem preço, sem nome do produto)
