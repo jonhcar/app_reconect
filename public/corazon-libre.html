@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Corazón Libre — Deja de mendigar afecto</title>
+<meta name="description" content="El Proceso Corazón Libre: 4 fases guiadas para dejar de mendigar afecto y atraer el amor que mereces. Hoy por $9.90.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --noche:#2b1220;        /* fundo profundo (la sombra) */
+    --malva:#7a3b5e;
+    --rosa:#d44d6e;
+    --rosa-luz:#ff7a9c;     /* rosa luminoso p/ brillos */
+    --dorado:#c9a24b;
+    --oro-luz:#ffd98a;      /* dorado incandescente */
+    --crema:#fdf8f3;
+    --tinta:#3a2230;        /* texto sobre crema */
+    --suave:#8a6577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Nunito Sans",system-ui,sans-serif;
+    color:var(--tinta);background:var(--noche);
+    line-height:1.65;overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Playfair Display",Georgia,serif;text-wrap:balance;line-height:1.15}
+  section{padding:72px 20px}
+  .wrap{max-width:680px;margin:0 auto}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.18em;
+    text-transform:uppercase;margin-bottom:18px;
+  }
+
+  /* ---------- revelado al hacer scroll ---------- */
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:none}
+  .reveal:nth-child(2){transition-delay:.1s}
+  .reveal:nth-child(3){transition-delay:.2s}
+
+  /* ---------- HERO: la sombra que se enciende ---------- */
+  .hero{
+    position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:var(--crema);
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 38%, rgba(212,77,110,.38), transparent 65%),
+      radial-gradient(ellipse 45% 35% at 50% 40%, rgba(255,217,138,.20), transparent 70%),
+      linear-gradient(180deg,#1d0b16 0%, var(--noche) 55%, #43152b 100%);
+  }
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;padding:40px 0}
+  .hero .eyebrow{color:var(--oro-luz)}
+  .hero h1{
+    font-size:clamp(2.3rem,6.5vw,3.9rem);font-weight:900;color:#fff;
+    text-shadow:0 0 42px rgba(255,122,156,.55),0 0 90px rgba(212,77,110,.35);
+  }
+  .hero h1 em{font-style:italic;color:var(--oro-luz);text-shadow:0 0 34px rgba(255,217,138,.7)}
+  .hero p.sub{margin:22px auto 0;max-width:34em;font-size:1.12rem;color:#f4dbe4}
+  .anim-in{opacity:0;transform:translateY(18px);animation:entra .9s ease forwards}
+  .anim-in.d1{animation-delay:.15s}.anim-in.d2{animation-delay:.35s}.anim-in.d3{animation-delay:.6s}
+  @keyframes entra{to{opacity:1;transform:none}}
+
+  /* ---------- CTA luminoso ---------- */
+  .cta{
+    display:inline-block;margin-top:34px;padding:18px 42px;border-radius:999px;
+    font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.02em;
+    color:#3a1420;text-decoration:none;
+    background:linear-gradient(115deg,var(--oro-luz),#ffb35c 45%,var(--rosa-luz));
+    background-size:200% 200%;
+    box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45);
+    animation:brillo 2.6s ease-in-out infinite, mareo 6s ease infinite;
+    transition:transform .25s ease;
+  }
+  .cta:hover{transform:translateY(-3px) scale(1.03)}
+  .cta small{display:block;font-weight:700;font-size:.78rem;opacity:.75;letter-spacing:.06em}
+  @keyframes brillo{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45)}
+    50%{box-shadow:0 0 24px 6px rgba(255,179,92,.65),0 8px 44px rgba(255,122,156,.55)}
+  }
+  @keyframes mareo{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .nota-cta{margin-top:14px;font-size:.85rem;color:#d9aebf}
+
+  /* ---------- DOLOR (crema) ---------- */
+  .dolor{background:var(--crema)}
+  .dolor .eyebrow{color:var(--rosa)}
+  .dolor h2{font-size:clamp(1.7rem,4.5vw,2.4rem);margin-bottom:26px}
+  .lista-dolor{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:8px}
+  .lista-dolor li{
+    background:#fff;border-left:4px solid var(--rosa);border-radius:14px;
+    padding:16px 20px;font-size:1.04rem;box-shadow:0 3px 16px rgba(122,59,94,.08);
+  }
+  .lista-dolor b{color:var(--malva)}
+
+  /* ---------- NO ES TU CULPA (malva radiante) ---------- */
+  .culpa{
+    color:var(--crema);text-align:center;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 20%, rgba(255,122,156,.28), transparent 60%),
+      linear-gradient(160deg,var(--malva),#54263f 80%);
+  }
+  .culpa h2{font-size:clamp(1.8rem,5vw,2.6rem);color:#fff;text-shadow:0 0 30px rgba(255,122,156,.45)}
+  .culpa h2 em{color:var(--oro-luz);font-style:italic}
+  .culpa p{max-width:36em;margin:18px auto 0;font-size:1.08rem;color:#f6e3ea}
+
+  /* ---------- PROCESO: 4 fases ---------- */
+  .proceso{background:var(--crema)}
+  .proceso .eyebrow{color:var(--dorado)}
+  .proceso h2{font-size:clamp(1.7rem,4.5vw,2.4rem)}
+  .proceso .intro{margin-top:14px;color:var(--suave);max-width:38em}
+  .fases{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  @media(min-width:640px){.fases{grid-template-columns:1fr 1fr}}
+  .fase{
+    position:relative;background:#fff;border-radius:20px;padding:26px 24px 24px;
+    box-shadow:0 4px 22px rgba(122,59,94,.09);overflow:hidden;
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .fase:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(212,77,110,.18)}
+  .fase::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--rosa-luz),var(--oro-luz));
+  }
+  .fase .num{
+    font-family:"Playfair Display",serif;font-weight:900;font-size:2rem;color:var(--rosa);
+    text-shadow:0 0 18px rgba(255,122,156,.35);
+  }
+  .fase h3{font-size:1.18rem;margin:6px 0 8px;color:var(--malva)}
+  .fase p{font-size:.97rem;color:#5d3c4d}
+
+  /* ---------- POR QUÉ UN LIBRO NO TE CURÓ ---------- */
+  .libro{background:#fff}
+  .libro blockquote{
+    font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.3rem,3.6vw,1.7rem);
+    color:var(--malva);border-left:4px solid var(--dorado);padding-left:22px;margin-bottom:22px;
+  }
+  .libro p{max-width:40em}
+
+  /* ---------- STACK (noche incandescente) ---------- */
+  .stack{
+    color:var(--crema);
+    background:
+      radial-gradient(ellipse 75% 60% at 50% 8%, rgba(255,217,138,.16), transparent 60%),
+      linear-gradient(180deg,#43152b,var(--noche));
+  }
+  .stack h2{text-align:center;font-size:clamp(1.8rem,5vw,2.5rem);color:#fff}
+  .caja-oferta{
+    margin-top:36px;border-radius:24px;padding:3px;
+    background:linear-gradient(120deg,var(--oro-luz),var(--rosa-luz),var(--oro-luz));
+    background-size:250% 250%;animation:mareo 5s ease infinite;
+    box-shadow:0 0 46px rgba(255,179,92,.28);
+  }
+  .caja-oferta .dentro{background:#31101f;border-radius:21px;padding:30px 26px}
+  .item{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .item:last-of-type{border-bottom:none}
+  .item .que{font-size:1.02rem}
+  .item .que b{color:var(--oro-luz)}
+  .item .valor{font-weight:800;color:#caa3b3;white-space:nowrap;text-decoration:line-through;font-variant-numeric:tabular-nums}
+  .total{display:flex;justify-content:space-between;padding-top:18px;font-weight:800;font-size:1.05rem;color:#e8c9d5}
+  .total .tachado{text-decoration:line-through;opacity:.7}
+  .precio-hoy{text-align:center;margin-top:22px}
+  .precio-hoy .hoy{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--rosa-luz)}
+  .precio-hoy .cifra{
+    font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,10vw,4.4rem);color:#fff;
+    text-shadow:0 0 40px rgba(255,217,138,.65),0 0 80px rgba(255,122,156,.4);
+  }
+  .precio-hoy .unica{color:#d9aebf;font-size:.92rem}
+  .urgencia{margin-top:26px;text-align:center;color:#f2d4a6;font-size:.98rem;max-width:34em;margin-left:auto;margin-right:auto}
+
+  /* ---------- GARANTÍA ---------- */
+  .garantia{background:var(--crema);text-align:center}
+  .sello{
+    width:92px;height:92px;margin:0 auto 20px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%,var(--oro-luz),var(--dorado));
+    box-shadow:0 0 34px rgba(201,162,75,.5);
+    font-family:"Playfair Display",serif;font-weight:900;font-size:1.6rem;color:#4b3413;
+  }
+  .garantia h2{font-size:clamp(1.6rem,4.2vw,2.1rem)}
+  .garantia p{max-width:36em;margin:16px auto 0}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff}
+  .faq h2{font-size:clamp(1.6rem,4.2vw,2.1rem);margin-bottom:26px}
+  .faq details{border-bottom:1px solid #eadfe5;padding:16px 4px}
+  .faq summary{
+    cursor:pointer;font-weight:800;color:var(--malva);font-size:1.03rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  .faq summary::after{content:"+";font-size:1.4rem;color:var(--rosa);transition:transform .3s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:10px;color:#5d3c4d}
+
+  /* ---------- CIERRE ---------- */
+  .cierre{
+    text-align:center;color:var(--crema);padding-bottom:88px;
+    background:
+      radial-gradient(ellipse 80% 65% at 50% 80%, rgba(255,217,138,.24), transparent 65%),
+      radial-gradient(ellipse 65% 55% at 50% 75%, rgba(255,122,156,.30), transparent 60%),
+      linear-gradient(180deg,var(--noche) 0%, #4d1a30 70%, #6d2a47 100%);
+  }
+  .cierre h2{font-size:clamp(1.9rem,5.5vw,2.8rem);color:#fff;text-shadow:0 0 34px rgba(255,122,156,.5)}
+  .cierre h2 em{color:var(--oro-luz);font-style:italic}
+  .cierre p{max-width:32em;margin:18px auto 0;color:#f4dbe4;font-size:1.08rem}
+  .ya-compre{margin-top:30px;font-size:.92rem}
+  .ya-compre a{color:var(--oro-luz)}
+  footer{background:#170a12;color:#a97f92;text-align:center;font-size:.82rem;padding:26px 20px}
+  footer a{color:#c9a3b5}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .anim-in{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== HERO ======== -->
+<header class="hero">
+  <canvas id="luces" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow anim-in">Para la mujer que ya dio demasiado</span>
+    <h1 class="anim-in d1">Deja de mendigar afecto.<br><em>Empieza a ser elegida.</em></h1>
+    <p class="sub anim-in d2">No es mala suerte. La carencia emocional te enseñó a rogar amor — y nadie te enseñó a dejar de hacerlo. El <strong>Proceso Corazón Libre</strong> te guía paso a paso, en 4 fases, para sanar y atraer el amor que mereces.</p>
+    <div class="anim-in d3">
+      <a class="cta" href="https://pay.hotmart.com/X101409312X?checkoutMode=10">Quiero sanar mi corazón por $9.90<small>acceso inmediato · pago único</small></a>
+      <p class="nota-cta">Garantía total de 7 días. Si no es para ti, te devolvemos todo.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ======== DOLOR ======== -->
+<section class="dolor">
+  <div class="wrap">
+    <span class="eyebrow reveal">¿Te suena?</span>
+    <h2 class="reveal">Das todo… y recibes migajas.</h2>
+    <ul class="lista-dolor">
+      <li class="reveal">Revisas el celular esperando un mensaje que <b>nunca llega</b> — y cuando llega, corres a responder en segundos.</li>
+      <li class="reveal">Dices «está bien» cuando <b>nada está bien</b>, con miedo de que se moleste y se aleje.</li>
+      <li class="reveal">Te esfuerzas por ser suficiente para alguien que <b>ni siquiera pregunta cómo estás</b>.</li>
+      <li class="reveal">Terminas cada relación pensando lo mismo: <b>«¿qué hice mal esta vez?»</b></li>
+      <li class="reveal">Lees libros, lloras, subrayas frases… y a la semana <b>vuelves a lo mismo</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======== NO ES TU CULPA ======== -->
+<section class="culpa">
+  <div class="wrap">
+    <h2 class="reveal">No estás rota. <em>Te enseñaron a mendigar.</em></h2>
+    <p class="reveal">La carencia emocional es una sombra silenciosa: aprende desde niña que el amor hay que ganárselo, y de adulta lo persigue, lo ruega, lo mendiga. No es un defecto tuyo — es un patrón. Y todo patrón aprendido <strong>se puede desaprender</strong>.</p>
+    <p class="reveal">Por eso los libros no te curaron: te explicaron el problema, pero explicar no es sanar. Sanar necesita un <strong>proceso guiado</strong>, con pasos, con práctica, con acompañamiento.</p>
+  </div>
+</section>
+
+<!-- ======== EL PROCESO ======== -->
+<section class="proceso">
+  <div class="wrap">
+    <span class="eyebrow reveal">El método</span>
+    <h2 class="reveal">El Proceso Corazón Libre — 4 fases guiadas</h2>
+    <p class="intro reveal">Dentro de la app Reconectar, avanzas fase por fase, a tu ritmo, con lecturas directas, ejercicios y meditaciones.</p>
+    <div class="fases">
+      <div class="fase reveal">
+        <div class="num">1</div>
+        <h3>Detecta la Carencia</h3>
+        <p>Descubre cómo la carencia emocional controla tus decisiones sin que lo notes — y por qué siempre terminas rogando amor.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="num">2</div>
+        <h3>Blinda tu Corazón</h3>
+        <p>El blindaje emocional: protege tu paz sin cerrarte al amor. Aprende a decir «no» sin culpa.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="num">3</div>
+        <h3>Reescribe tu Historia</h3>
+        <p>Suelta las memorias de amor tóxico, la culpa y la vergüenza. Perdónate y libérate del pasado.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="num">4</div>
+        <h3>Atrae el Amor que Mereces</h3>
+        <p>Conviértete en una mujer magnética: relaciones sanas y recíprocas, donde no tienes que rogar nada.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== LIBRO NO CURA ======== -->
+<section class="libro">
+  <div class="wrap">
+    <blockquote class="reveal">«El libro era bueno… pero no curó mi corazón partido.»</blockquote>
+    <p class="reveal">Eso escriben miles de lectoras sobre los libros de siempre. Corazón Libre es diferente porque <strong>no es solo un libro</strong>: es un proceso dentro de una app, con fases numeradas, audiolibro para escuchar donde quieras, un diario para escribir tu propia sanación y herramientas para aplicar cada día. Al grano, sin relleno, sin frases motivacionales vacías.</p>
+  </div>
+</section>
+
+<!-- ======== STACK / OFERTA ======== -->
+<section class="stack" id="oferta">
+  <div class="wrap">
+    <h2 class="reveal">Todo lo que recibes hoy</h2>
+    <div class="caja-oferta reveal">
+      <div class="dentro">
+        <div class="item"><span class="que"><b>El Proceso Corazón Libre</b> — 4 fases guiadas en la app</span><span class="valor">$37</span></div>
+        <div class="item"><span class="que"><b>BONO 1:</b> Corazón Libre en versión AUDIO — escúchalo incluso con los ojos cerrados</span><span class="valor">$17</span></div>
+        <div class="item"><span class="que"><b>BONO 2:</b> Diario de Amor Propio para imprimir</span><span class="valor">$15</span></div>
+        <div class="item"><span class="que"><b>BONO 3:</b> Checklist «10 Señales de que Estás Mendigando Afecto»</span><span class="valor">$9</span></div>
+        <div class="total"><span>Valor total</span><span class="tachado">$78</span></div>
+        <div class="precio-hoy">
+          <div class="hoy">Hoy, precio de lanzamiento</div>
+          <div class="cifra">$9.90</div>
+          <div class="unica">pago único · acceso completo e inmediato</div>
+        </div>
+      </div>
+    </div>
+    <p class="urgencia reveal">⚠ Este es el precio real de lanzamiento. Cuando termine esta etapa, sube. Si estás viendo esta página, todavía llegas a tiempo.</p>
+    <div style="text-align:center">
+      <a class="cta reveal" href="https://pay.hotmart.com/X101409312X?checkoutMode=10">Sí, quiero empezar hoy por $9.90<small>pago seguro vía Hotmart</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== GARANTÍA ======== -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="sello reveal">7<span style="font-size:.75rem;margin-left:2px">días</span></div>
+    <h2 class="reveal">Garantía total de 7 días</h2>
+    <p class="reveal">Entra y haz la <strong>Fase 1 completa</strong>. Si no sientes que algo empezó a cambiar, pides tu reembolso en un clic dentro de Hotmart y te devolvemos todo. Sin preguntas, sin complicaciones. El riesgo es todo nuestro.</p>
+  </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="reveal">Preguntas frecuentes</h2>
+    <details class="reveal">
+      <summary>¿Cómo recibo el acceso?</summary>
+      <p>Inmediatamente después del pago, crea tu cuenta gratis en <a href="https://app.clubdigital.site/login">app.clubdigital.site</a> usando <strong>el mismo correo de la compra</strong> — el acceso se abre solo, de forma automática. Si ya tienes cuenta, solo vuelve a entrar.</p>
+    </details>
+    <details class="reveal">
+      <summary>¿Necesito tiempo o experiencia?</summary>
+      <p>No. Las lecturas son cortas y directas («una o dos páginas por tema»), pensadas para mujeres con la vida llena. Avanzas a tu ritmo: 10-15 minutos al día alcanzan.</p>
+    </details>
+    <details class="reveal">
+      <summary>¿Ya leí libros de autoayuda, esto es igual?</summary>
+      <p>No. Los libros explican; este es un <strong>proceso guiado en 4 fases</strong> con ejercicios, audiolibro y diario. La diferencia entre entender tu herida y sanarla.</p>
+    </details>
+    <details class="reveal">
+      <summary>¿Y si no me funciona?</summary>
+      <p>Tienes 7 días de garantía total. Haz la Fase 1; si no sientes el cambio, Hotmart te devuelve el 100% en un clic.</p>
+    </details>
+    <details class="reveal">
+      <summary>¿El pago es seguro?</summary>
+      <p>Sí. El pago se procesa por <strong>Hotmart</strong>, una de las plataformas de productos digitales más grandes de Latinoamérica, con tarjeta o los métodos locales de tu país.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ======== CIERRE ======== -->
+<section class="cierre">
+  <div class="wrap">
+    <h2 class="reveal">Tú no naciste para mendigar afecto.<br><em>Naciste para ser amada.</em></h2>
+    <p class="reveal">Empezando por ti. Hoy puede ser el día en que tu historia con el amor cambia de dirección — por menos de lo que cuesta una pizza.</p>
+    <div>
+      <a class="cta reveal" href="https://pay.hotmart.com/X101409312X?checkoutMode=10">Quiero mi Corazón Libre por $9.90<small>garantía de 7 días · acceso inmediato</small></a>
+    </div>
+    <p class="ya-compre reveal">¿Ya compraste? <a href="https://app.clubdigital.site/login">Entra a la app aquí</a></p>
+  </div>
+</section>
+
+<footer>
+  Reconectar · Corazón Libre — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
+  Pago procesado por Hotmart. Este producto no sustituye terapia psicológica profesional.
+</footer>
+
+<script>
+  // Revelado al hacer scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // Partículas de luz en el hero (respeta reduced motion)
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cv = document.getElementById("luces");
+  if (cv && !reduce) {
+    const ctx = cv.getContext("2d");
+    let W, H, parts;
+    const COLORS = ["255,217,138", "255,122,156", "253,248,243"];
+    function resize() {
+      W = cv.width = cv.offsetWidth;
+      H = cv.height = cv.offsetHeight;
+      parts = Array.from({ length: Math.min(46, Math.floor(W / 22)) }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: 0.8 + Math.random() * 2.4,
+        vy: 0.12 + Math.random() * 0.4, vx: (Math.random() - 0.5) * 0.18,
+        c: COLORS[(Math.random() * COLORS.length) | 0],
+        tw: Math.random() * Math.PI * 2,
+      }));
+    }
+    resize();
+    addEventListener("resize", resize);
+    (function tick() {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of parts) {
+        p.y -= p.vy; p.x += p.vx; p.tw += 0.03;
+        if (p.y < -8) { p.y = H + 8; p.x = Math.random() * W; }
+        const a = 0.25 + 0.45 * Math.abs(Math.sin(p.tw));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${a})`;
+        ctx.shadowColor = `rgba(${p.c},.9)`;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+</script>
+</body>
+</html>
