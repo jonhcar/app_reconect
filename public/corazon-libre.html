@@ -137,6 +137,60 @@
   }
   .libro p{max-width:40em}
 
+  /* ---------- ASÍ SE VE POR DENTRO (teléfono animado) ---------- */
+  .dentro-app{
+    color:var(--crema);text-align:center;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 45%, rgba(255,122,156,.25), transparent 65%),
+      linear-gradient(180deg,#54263f,#43152b);
+  }
+  .dentro-app h2{font-size:clamp(1.8rem,5vw,2.5rem);color:#fff;text-shadow:0 0 28px rgba(255,122,156,.4)}
+  .dentro-app .sub2{color:#f0d7e1;max-width:34em;margin:14px auto 0}
+  .escena{display:flex;flex-direction:column;align-items:center;gap:34px;margin-top:44px}
+  @media(min-width:820px){.escena{flex-direction:row;justify-content:center;align-items:center;gap:56px}}
+  .telefono{
+    position:relative;width:272px;border-radius:42px;padding:12px;
+    background:linear-gradient(160deg,#241019,#3a1626);
+    box-shadow:0 0 60px rgba(255,122,156,.35),0 0 120px rgba(255,217,138,.18),0 24px 60px rgba(0,0,0,.5);
+    animation:flota 5.5s ease-in-out infinite;
+  }
+  @keyframes flota{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+  .telefono .muesca{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:96px;height:22px;background:#241019;border-radius:0 0 16px 16px;z-index:3}
+  .pantalla{
+    background:var(--crema);border-radius:32px;overflow:hidden;text-align:left;
+    color:var(--tinta);padding:34px 16px 18px;min-height:480px;
+  }
+  .pantalla .app-header{font-family:"Playfair Display",serif;font-weight:700;font-size:1.15rem;color:var(--malva);margin-bottom:10px}
+  .pantalla .portada{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+  .pantalla .portada img{width:64px;height:86px;object-fit:cover;border-radius:10px;box-shadow:0 4px 12px rgba(122,59,94,.25)}
+  .pantalla .portada .t{font-family:"Playfair Display",serif;font-weight:700;font-size:1.02rem;color:var(--tinta);line-height:1.25}
+  .pantalla .portada .badge{display:inline-block;margin-top:6px;font-size:.6rem;font-weight:800;letter-spacing:.12em;color:#fff;background:linear-gradient(90deg,var(--rosa),var(--rosa-luz));padding:3px 9px;border-radius:999px}
+  .fila{
+    display:flex;align-items:center;gap:10px;background:#fff;border-radius:13px;
+    padding:10px 12px;margin-bottom:8px;box-shadow:0 2px 10px rgba(122,59,94,.09);
+    opacity:0;animation:fila-in 9s ease-in-out infinite;
+  }
+  .fila .ico{
+    flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-weight:800;font-size:.85rem;color:#fff;background:linear-gradient(140deg,var(--rosa),var(--rosa-luz));
+  }
+  .fila.bono .ico{background:linear-gradient(140deg,var(--dorado),var(--oro-luz));color:#4b3413;font-size:.72rem}
+  .fila .tx b{display:block;font-size:.8rem;color:var(--malva);line-height:1.25}
+  .fila .tx span{font-size:.68rem;color:var(--suave)}
+  .fila.f1{animation-delay:.2s}.fila.f2{animation-delay:.7s}.fila.f3{animation-delay:1.2s}
+  .fila.f4{animation-delay:1.7s}.fila.f5{animation-delay:2.3s}.fila.f6{animation-delay:2.8s}.fila.f7{animation-delay:3.3s}
+  @keyframes fila-in{
+    0%{opacity:0;transform:translateY(14px)}
+    5%,86%{opacity:1;transform:none}
+    94%,100%{opacity:0;transform:translateY(-6px)}
+  }
+  .puntos{list-style:none;text-align:left;max-width:300px;display:flex;flex-direction:column;gap:16px}
+  .puntos li{padding-left:30px;position:relative;color:#f6e3ea;font-size:1.02rem}
+  .puntos li::before{
+    content:"✦";position:absolute;left:0;top:0;color:var(--oro-luz);
+    text-shadow:0 0 12px rgba(255,217,138,.8);
+  }
+
   /* ---------- STACK (noche incandescente) ---------- */
   .stack{
     color:var(--crema);
@@ -292,6 +346,40 @@
   <div class="wrap">
     <blockquote class="reveal">«El libro era bueno… pero no curó mi corazón partido.»</blockquote>
     <p class="reveal">Eso escriben miles de lectoras sobre los libros de siempre. Corazón Libre es diferente porque <strong>no es solo un libro</strong>: es un proceso dentro de una app, con fases numeradas, audiolibro para escuchar donde quieras, un diario para escribir tu propia sanación y herramientas para aplicar cada día. Al grano, sin relleno, sin frases motivacionales vacías.</p>
+  </div>
+</section>
+
+<!-- ======== ASÍ SE VE POR DENTRO ======== -->
+<section class="dentro-app">
+  <div class="wrap" style="max-width:900px">
+    <span class="eyebrow reveal" style="color:var(--oro-luz)">Tu espacio de sanación</span>
+    <h2 class="reveal">Así se ve por dentro</h2>
+    <p class="sub2 reveal">Todo vive en la app Reconectar: entras desde tu celular y avanzas fase por fase.</p>
+    <div class="escena">
+      <div class="telefono reveal" aria-hidden="true">
+        <div class="muesca"></div>
+        <div class="pantalla">
+          <div class="app-header">Reconectar</div>
+          <div class="portada">
+            <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/4bfa85cd-c74a-4b58-90d5-40756d857164.jpeg" alt="">
+            <div class="t">Corazón Libre<br><span class="badge">ACCESO COMPLETO</span></div>
+          </div>
+          <div class="fila f1"><div class="ico">1</div><div class="tx"><b>FASE 1 — Detecta la Carencia</b><span>Capítulos 1 y 2 · lectura guiada</span></div></div>
+          <div class="fila f2"><div class="ico">2</div><div class="tx"><b>FASE 2 — Blinda tu Corazón</b><span>Ejercicios y meditaciones</span></div></div>
+          <div class="fila f3"><div class="ico">3</div><div class="tx"><b>FASE 3 — Reescribe tu Historia</b><span>Suelta el pasado</span></div></div>
+          <div class="fila f4"><div class="ico">4</div><div class="tx"><b>FASE 4 — Atrae el Amor que Mereces</b><span>Relaciones sanas y recíprocas</span></div></div>
+          <div class="fila bono f5"><div class="ico">♪</div><div class="tx"><b>BONO: Audiolibro completo</b><span>Escúchalo donde quieras</span></div></div>
+          <div class="fila bono f6"><div class="ico">✎</div><div class="tx"><b>BONO: Diario de Amor Propio</b><span>Para imprimir</span></div></div>
+          <div class="fila bono f7"><div class="ico">✓</div><div class="tx"><b>BONO: 10 Señales</b><span>Checklist de autoevaluación</span></div></div>
+        </div>
+      </div>
+      <ul class="puntos">
+        <li class="reveal">Entras desde tu celular o computadora, <strong>sin descargar nada</strong></li>
+        <li class="reveal">Avanzas <strong>a tu ritmo</strong> — las fases te esperan, nada expira</li>
+        <li class="reveal">Lectura, audio y diario, <strong>todo en un solo lugar</strong></li>
+        <li class="reveal">Tu acceso queda guardado en tu cuenta <strong>para siempre</strong></li>
+      </ul>
+    </div>
   </div>
 </section>
 
