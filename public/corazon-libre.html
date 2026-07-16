@@ -222,6 +222,28 @@
   .precio-hoy .unica{color:#d9aebf;font-size:.92rem}
   .urgencia{margin-top:26px;text-align:center;color:#f2d4a6;font-size:.98rem;max-width:34em;margin-left:auto;margin-right:auto}
 
+  /* ---------- REGALOS (grátis com a conta) ---------- */
+  .regalos{background:var(--crema);text-align:center}
+  .regalos .eyebrow{color:var(--dorado)}
+  .regalos h2{font-size:clamp(1.7rem,4.5vw,2.3rem)}
+  .regalos .sub3{color:var(--suave);max-width:36em;margin:14px auto 0}
+  .grid-regalos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+  @media(min-width:760px){.grid-regalos{grid-template-columns:repeat(4,1fr)}}
+  .regalo{
+    background:#fff;border-radius:18px;padding:14px 12px 16px;position:relative;
+    box-shadow:0 4px 18px rgba(122,59,94,.09);transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .regalo:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(201,162,75,.22)}
+  .regalo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
+  .regalo .pill{
+    position:absolute;top:20px;left:50%;transform:translateX(-50%);
+    font-size:.62rem;font-weight:800;letter-spacing:.14em;color:#4b3413;
+    background:linear-gradient(90deg,var(--oro-luz),#ffca7a);padding:4px 12px;border-radius:999px;
+    box-shadow:0 2px 12px rgba(255,179,92,.5);
+  }
+  .regalo b{display:block;margin-top:10px;font-size:.88rem;color:var(--malva);line-height:1.3}
+  .regalo span{font-size:.76rem;color:var(--suave)}
+
   /* ---------- GARANTÍA ---------- */
   .garantia{background:var(--crema);text-align:center}
   .sello{
@@ -404,6 +426,41 @@
     <p class="urgencia reveal">⚠ Este es el precio real de lanzamiento. Cuando termine esta etapa, sube. Si estás viendo esta página, todavía llegas a tiempo.</p>
     <div style="text-align:center">
       <a class="cta reveal" href="https://pay.hotmart.com/X101409312X?checkoutMode=10">Sí, quiero empezar hoy por $9.90<small>pago seguro vía Hotmart</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== REGALOS GRATIS ======== -->
+<section class="regalos">
+  <div class="wrap" style="max-width:860px">
+    <span class="eyebrow reveal">Y eso no es todo</span>
+    <h2 class="reveal">Tu cuenta también incluye estos regalos</h2>
+    <p class="sub3 reveal">Al entrar a la app Reconectar, desbloqueas gratis estas herramientas para acompañarte mientras sanas — sin pagar nada extra.</p>
+    <div class="grid-regalos">
+      <div class="regalo reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/eeea34eb-fc94-4797-9f24-4fcbf19cc7a4.jpeg" alt="7 Días para Reconectar" loading="lazy">
+        <b>7 Días para Reconectar</b>
+        <span>Tu primera semana de vuelta a ti</span>
+      </div>
+      <div class="regalo reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/e2ccb307-14cd-48b6-b8fd-c9c1be565638.jpeg" alt="Meditaciones SOS para el Corazón" loading="lazy">
+        <b>Meditaciones SOS</b>
+        <span>Audios para calmar el corazón en minutos</span>
+      </div>
+      <div class="regalo reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/4cc81b62-bed7-4271-b0da-1e3f7f4b3dcb.jpeg" alt="Diario de Ansiedad Consciente" loading="lazy">
+        <b>Diario de Ansiedad Consciente</b>
+        <span>Para imprimir y soltar lo que pesa</span>
+      </div>
+      <div class="regalo reveal">
+        <span class="pill">GRATIS</span>
+        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/24d898df-73ff-41ba-89a0-6fa3d5fcc427.jpeg" alt="Agenda Cristiana" loading="lazy">
+        <b>Agenda Cristiana</b>
+        <span>Tu encuentro diario con Dios</span>
+      </div>
     </div>
   </div>
 </section>
