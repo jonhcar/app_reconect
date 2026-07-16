@@ -22,8 +22,16 @@ export default function AdminProducts() {
   useEffect(load, []);
 
   const openEdit = async (p) => {
-    setEditing(p ? { ...p } : { ...EMPTY });
-    setModules(p ? await base44.entities.Module.filter({ product_id: p.id }, "order") : []);
+    if (!p) {
+      setEditing({ ...EMPTY });
+      setModules([]);
+      return;
+    }
+    // Recarrega o produto direto do banco: evita sobrescrever campos
+    // (copy, precio) alterados fora desta pantalla desde que ela foi aberta
+    const fresh = await base44.entities.Product.get(p.id).catch(() => null);
+    setEditing({ ...(fresh || p) });
+    setModules(await base44.entities.Module.filter({ product_id: p.id }, "order"));
   };
 
   const set = (k) => (e) => {
