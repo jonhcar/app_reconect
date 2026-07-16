@@ -8,6 +8,18 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1527332844902396');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'product', value: 9.90, currency: 'USD'});
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1527332844902396&ev=PageView&noscript=1"></noscript>
 <style>
   :root{
     --noche:#2b1220;        /* fundo profundo (la sombra) */
@@ -519,6 +531,13 @@
 </footer>
 
 <script>
+  // Pixel: clique nos botões de compra
+  document.querySelectorAll(".cta").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (window.fbq) fbq("track", "InitiateCheckout", { content_name: "Corazon Libre", value: 9.90, currency: "USD" });
+    });
+  });
+
   // Revelado al hacer scroll
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
