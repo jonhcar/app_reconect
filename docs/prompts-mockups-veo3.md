@@ -58,6 +58,28 @@ Elegant product mockup photography of a hardcover checklist guide standing uprig
 
 ---
 
+## 9. Estática de anúncio — grade da oferta (estilo concorrente "14 cuadernillos")
+
+Formato: 4:5 (1080×1350). As letrinhas das mini-capas saem borradas (normal, ignore);
+o que precisa sair certo é o TÍTULO grande e o PREÇO — se errarem, gere de novo 2-3×.
+
+### 9a. Com textos
+
+```
+Vertical 4:5 advertising poster for a digital self-help bundle, elegant feminine design on a warm cream #FDF8F3 background with soft watercolor flower accents in the corners. At the top, large elegant serif typography in deep mauve #7A3B5E that reads exactly: "EL PROCESO CORAZÓN LIBRE" on the first lines and "+ BONOS Y REGALOS" below, with a large shiny gold circular badge in the top right corner that reads exactly "$9.90 USD" in white letters with golden glow. Below the title, a neat grid of 8 small digital booklet covers (2 rows of 4), each cover a soft feminine watercolor illustration in rose pink #D44D6E, mauve and cream tones showing women in moments of self-love: a woman breaking free from soft chains, a woman listening with headphones, a woman writing in a journal, a woman hugging herself, a woman meditating at sunrise, praying hands with golden light, a serene face with closed eyes, a heart being mended with gold. At the bottom of the poster, a beautiful serene latina woman in her 40s with warm brown skin and soft curly hair, eyes closed, gently hugging herself with a peaceful healing smile, wearing a blush knit sweater, soft golden light on her face. Warm, premium, emotional wellness aesthetic, cohesive rose-gold-cream palette, high-end digital product advertisement, photorealistic woman with illustrated covers, 4k.
+```
+
+### 9b. Sem texto (escrever título/preço depois no Canva — letra perfeita)
+
+```
+Vertical 4:5 advertising poster background for a digital self-help bundle, elegant feminine design on a warm cream #FDF8F3 background with soft watercolor flower accents. Large EMPTY space at the top for a headline, and an empty shiny gold circular badge in the top right corner with golden glow. In the middle, a neat grid of 8 small digital booklet covers (2 rows of 4), each a soft feminine watercolor illustration in rose pink #D44D6E, mauve and cream tones showing women in moments of self-love and emotional healing, covers WITHOUT any readable text. At the bottom, a beautiful serene latina woman in her 40s with warm brown skin and soft curly hair, eyes closed, gently hugging herself with a peaceful healing smile, wearing a blush knit sweater, soft golden light. Warm, premium, emotional wellness aesthetic, cohesive rose-gold-cream palette, no text anywhere, 4k.
+```
+
+Textos para sobrepor na 9b: "EL PROCESO CORAZÓN LIBRE + BONOS Y REGALOS" (título) ·
+"$9.90 USD" (selo) · "Garantía 7 días · Acceso inmediato" (rodapé).
+
+---
+
 # Prompts de VÍDEO (Veo 3) — mostrando a interface do app
 
 Como usar: no Flow, crie um vídeo novo (8 s), cole o prompt em inglês e gere.
