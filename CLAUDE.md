@@ -12,7 +12,7 @@ React (Vite) + Tailwind · Supabase (banco/auth/storage) · Netlify (hosting + f
 - Admin: jonhnetia@gmail.com (role=admin) — painel em `/admin`
 - **Modelo de venda: por produto** — cada produto tem `checkout_url` + `sales_copy` + `price` (campos no admin); produto bloqueado abre página de vendas com botão de compra individual; webhook Hotmart libera/revoga acesso por produto (via `hotmart_product_id`); compra antes do cadastro cai em `pending_purchases` e é liberada por trigger no signup. Flag `premium` do profile virou "acesso total" manual/legado
 - Ghostscript instalado (`C:\Program Files\gs\gs10.07.1`) para comprimir PDFs (limite Supabase: 50 MB/arquivo)
-- E-mail de suporte é placeholder `soporte@reconectar.app` em `src/components/MemberLayout.jsx` e `src/pages/Profile.jsx`
+- E-mail de suporte real: `soporte.reconectar@gmail.com` (Gmail criado pelo João) em `src/components/MemberLayout.jsx` e `src/pages/Profile.jsx`
 
 ## Próximos passos combinados
 1. **Hotmart**: João tem 3 produtos criados (vai subir o restante). Para cada um: pegar link de checkout + ID do produto → preencher no admin; configurar webhook (Ferramentas → Webhook v2.0) → `https://app.clubdigital.site/.netlify/functions/hotmart-webhook` + Hottok em `HOTMART_WEBHOOK_SECRET` (Netlify env)
