@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Outlet, NavLink, Link } from "react-router-dom";
 import { Home, Heart, Sparkles, MessageCircleHeart, User, Share2, Mail } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 
-const SUPPORT_EMAIL = "soporte@reconectar.app"; // ajuste para o e-mail real
-const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true"; // Quiz del Día + Alma (requer chave da Anthropic)
+const SUPPORT_EMAIL = "soporte.reconectar@gmail.com";
+const IA_ENABLED = import.meta.env.VITE_ENABLE_IA === "true"; // Quiz del DÃ­a + Alma (requer chave da Anthropic)
 
 export default function MemberLayout() {
   const { user } = useAuth();
@@ -16,12 +16,12 @@ export default function MemberLayout() {
   }, []);
 
   const share = async () => {
-    const shareData = { title: "Reconectar", text: "Comparte con más personas", url: window.location.origin };
+    const shareData = { title: "Reconectar", text: "Comparte con mÃ¡s personas", url: window.location.origin };
     if (navigator.share) {
       try { await navigator.share(shareData); } catch { /* cancelado */ }
     } else {
       await navigator.clipboard.writeText(window.location.origin);
-      alert("Enlace copiado 💗");
+      alert("Enlace copiado ðŸ’—");
     }
   };
 
@@ -61,7 +61,7 @@ export default function MemberLayout() {
         <Outlet context={{ settings }} />
       </main>
 
-      {/* Navegação inferior */}
+      {/* NavegaÃ§Ã£o inferior */}
       <nav className="fixed bottom-0 inset-x-0 z-30 bg-white border-t border-rosa-100">
         <div className="max-w-5xl mx-auto flex justify-around py-2">
           {navItems.map(({ to, icon: Icon, label }) => (

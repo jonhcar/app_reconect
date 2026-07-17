@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+﻿import { useEffect, useState } from "react";
 import { Mail, LogOut, Camera, Sparkles } from "lucide-react";
 import { base44 } from "../api/supabaseClient";
 import { useAuth } from "../context/AuthContext";
 
-const SUPPORT_EMAIL = "soporte@reconectar.app"; // ajuste para o e-mail real
+const SUPPORT_EMAIL = "soporte.reconectar@gmail.com";
 
 export default function Profile() {
   const { user, refreshUser, isPremium } = useAuth();
@@ -71,7 +71,7 @@ export default function Profile() {
             <p className="font-bold text-malva-700">{user?.full_name || "Sin nombre"}</p>
             <p className="text-sm text-malva-400">{user?.email}</p>
             <span className={`inline-block mt-1 text-xs font-bold px-2 py-0.5 rounded-full ${isPremium ? "bg-dorado text-white" : "bg-rosa-100 text-malva-500"}`}>
-              {isPremium ? "Premium ✨" : "Gratuita"}
+              {isPremium ? "Premium âœ¨" : "Gratuita"}
             </span>
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Profile() {
         <form onSubmit={saveName} className="mt-5 flex gap-2">
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Tu nombre" className="input" />
           <button disabled={saving} className="bg-rosa-500 text-white font-bold px-5 rounded-2xl text-sm disabled:opacity-50">
-            {saved ? "✓" : "Guardar"}
+            {saved ? "âœ“" : "Guardar"}
           </button>
         </form>
       </div>
@@ -88,18 +88,18 @@ export default function Profile() {
       <div className="bg-white rounded-3xl p-6 shadow-sm">
         <h2 className="font-bold text-malva-700 mb-2">Mi progreso</h2>
         <p className="text-malva-500 text-sm">
-          Has completado <span className="font-bold text-rosa-500">{progressSummary ?? "…"}</span> módulos. ¡Sigue así! 💪
+          Has completado <span className="font-bold text-rosa-500">{progressSummary ?? "â€¦"}</span> mÃ³dulos. Â¡Sigue asÃ­! ðŸ’ª
         </p>
       </div>
 
-      {/* Histórico de quizzes */}
+      {/* HistÃ³rico de quizzes */}
       {quizHistory.length > 0 && (
         <div className="bg-white rounded-3xl p-6 shadow-sm">
           <h2 className="font-bold text-malva-700 mb-3 flex items-center gap-2"><Sparkles size={18} /> Mis quizzes</h2>
           <ul className="space-y-2">
             {quizHistory.map((q) => (
               <li key={q.id} className="text-sm">
-                <span className="text-malva-300">{q.quiz_date}</span>{" · "}
+                <span className="text-malva-300">{q.quiz_date}</span>{" Â· "}
                 <span className="font-bold text-malva-600">{q.profile_name}</span>
               </li>
             ))}
@@ -118,7 +118,7 @@ export default function Profile() {
         onClick={() => base44.auth.logout()}
         className="flex items-center justify-center gap-2 w-full text-malva-400 font-bold py-3 rounded-full hover:bg-rosa-50"
       >
-        <LogOut size={18} /> Cerrar sesión
+        <LogOut size={18} /> Cerrar sesiÃ³n
       </button>
     </div>
   );
