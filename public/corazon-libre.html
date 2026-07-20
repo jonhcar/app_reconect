@@ -316,7 +316,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     <h1 class="anim-in d1">Deja de mendigar afecto.<br><em>Empieza a ser elegida.</em></h1>
     <p class="sub anim-in d2">No es mala suerte. La carencia emocional te enseñó a rogar amor — y nadie te enseñó a dejar de hacerlo. El <strong>Proceso Corazón Libre</strong> te guía paso a paso, en 4 fases, para sanar y atraer el amor que mereces.</p>
     <div class="anim-in d3">
-      <a class="cta" href="https://pay.hotmart.com/X101409312X?checkoutMode=10&bid=1784405674343">Quiero sanar mi corazón por $6.90<small>acceso inmediato · pago único</small></a>
+      <a class="cta" href="https://app.clubdigital.site/login">Quiero comenzar mi proceso<small>crea tu cuenta gratis · acceso inmediato</small></a>
       <p class="nota-cta">Garantía total de 7 días. Si no es para ti, te devolvemos todo.</p>
     </div>
   </div>
@@ -441,7 +441,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     <p class="metodos reveal">💳 Paga como te sea más fácil: tarjeta, OXXO, PSE o transferencia — todo procesado de forma segura por Hotmart.</p>
     <p class="urgencia reveal">⚠ Este es el precio real de lanzamiento. Cuando termine esta etapa, sube. Si estás viendo esta página, todavía llegas a tiempo.</p>
     <div style="text-align:center">
-      <a class="cta reveal" href="https://pay.hotmart.com/X101409312X?checkoutMode=10&bid=1784405674343">Sí, quiero empezar hoy por $6.90<small>pago seguro vía Hotmart</small></a>
+      <a class="cta reveal" href="https://app.clubdigital.site/login">Sí, quiero empezar hoy<small>crea tu cuenta gratis en 2 minutos</small></a>
     </div>
   </div>
 </section>
@@ -495,8 +495,8 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   <div class="wrap">
     <h2 class="reveal">Preguntas frecuentes</h2>
     <details class="reveal">
-      <summary>¿Cómo recibo el acceso?</summary>
-      <p>Inmediatamente después del pago, crea tu cuenta gratis en <a href="https://app.clubdigital.site/login">app.clubdigital.site</a> usando <strong>el mismo correo de la compra</strong> — el acceso se abre solo, de forma automática. Si ya tienes cuenta, solo vuelve a entrar.</p>
+      <summary>¿Cómo funciona?</summary>
+      <p>Creas tu cuenta gratis en <a href="https://app.clubdigital.site/login">app.clubdigital.site</a> — sin tarjeta. Adentro puedes ver todo el contenido y desbloquear Corazón Libre cuando quieras, con pago 100% seguro vía Hotmart.</p>
     </details>
     <details class="reveal">
       <summary>¿Necesito tiempo o experiencia?</summary>
@@ -523,9 +523,9 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     <h2 class="reveal">Tú no naciste para mendigar afecto.<br><em>Naciste para ser amada.</em></h2>
     <p class="reveal">Empezando por ti. Hoy puede ser el día en que tu historia con el amor cambia de dirección — por menos de lo que cuesta una pizza.</p>
     <div>
-      <a class="cta reveal" href="https://pay.hotmart.com/X101409312X?checkoutMode=10&bid=1784405674343">Quiero mi Corazón Libre por $6.90<small>garantía de 7 días · acceso inmediato</small></a>
+      <a class="cta reveal" href="https://app.clubdigital.site/login">Quiero mi Corazón Libre<small>garantía de 7 días · crea tu cuenta gratis</small></a>
     </div>
-    <p class="ya-compre reveal">¿Ya compraste? <a href="https://app.clubdigital.site/login">Entra a la app aquí</a></p>
+    <p class="ya-compre reveal">¿Ya tienes cuenta? <a href="https://app.clubdigital.site/login">Entra a la app aquí</a></p>
   </div>
 </section>
 
@@ -535,10 +535,10 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
 </footer>
 
 <script>
-  // Pixel: clique nos botões de compra
+  // Pixel: clique en los botones que llevan a crear cuenta en la app
   document.querySelectorAll(".cta").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (window.fbq) fbq("track", "InitiateCheckout", { content_name: "Corazon Libre", value: 6.90, currency: "USD" });
+      if (window.fbq) fbq("track", "Lead", { content_name: "Corazon Libre - crear cuenta" });
     });
   });
 
