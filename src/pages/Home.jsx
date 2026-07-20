@@ -25,10 +25,12 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, [user.id]);
 
-  const hasAccess = (p) => isPremium || p.is_free || access.some((a) => a.product_id === p.id);
+  // Los productos gratis solo desbloquean después de cualquier compra
+  const hasAnyPurchase = access.length > 0;
+  const hasAccess = (p) => isPremium || (p.is_free ? hasAnyPurchase : access.some((a) => a.product_id === p.id));
 
-  const freeProduct = products.find((p) => p.is_free && p.featured) || products.find((p) => p.is_free);
-  const rest = products.filter((p) => p.id !== freeProduct?.id);
+  const featuredProduct = products.find((p) => p.featured && !p.is_free) || products.find((p) => p.featured);
+  const rest = products.filter((p) => p.id !== featuredProduct?.id);
 
   const categories = [...new Set(rest.map((p) => p.category).filter(Boolean))];
   const uncategorized = rest.filter((p) => !p.category);
@@ -47,22 +49,22 @@ export default function Home() {
         <p className="text-malva-400 mt-1">{settings?.welcome_message || "Tu viaje empieza aquí"}</p>
       </div>
 
-      {/* Destaque: produto gratuito (isca) */}
-      {freeProduct && (
+      {/* Destaque: producto principal (punto de entrada) */}
+      {featuredProduct && (
         <button
-          onClick={() => navigate(`/producto/${freeProduct.id}`)}
+          onClick={() => navigate(`/producto/${featuredProduct.id}`)}
           className="w-full text-left relative rounded-3xl overflow-hidden bg-gradient-to-r from-malva-600 to-rosa-500 text-white shadow-lg"
         >
           <div className="flex items-center gap-4 p-5">
-            {freeProduct.cover_image && (
-              <img src={freeProduct.cover_image} alt="" className="w-24 h-32 object-cover rounded-xl shadow" />
+            {featuredProduct.cover_image && (
+              <img src={featuredProduct.cover_image} alt="" className="w-24 h-32 object-cover rounded-xl shadow" />
             )}
             <div className="flex-1">
-              <span className="text-xs font-bold bg-dorado px-2 py-1 rounded-full">GRATIS PARA TI</span>
-              <h2 className="font-display text-2xl mt-2 leading-tight">{freeProduct.title}</h2>
-              <p className="text-sm text-white/80 mt-1 line-clamp-2">{freeProduct.description}</p>
+              <span className="text-xs font-bold bg-dorado px-2 py-1 rounded-full">COMIENZA AQUÍ</span>
+              <h2 className="font-display text-2xl mt-2 leading-tight">{featuredProduct.title}</h2>
+              <p className="text-sm text-white/80 mt-1 line-clamp-2">{featuredProduct.description}</p>
               <span className="inline-block mt-3 bg-white text-malva-600 font-bold text-sm px-4 py-2 rounded-full">
-                Empezar a leer →
+                Descubrir →
               </span>
             </div>
           </div>

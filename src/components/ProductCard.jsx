@@ -3,7 +3,7 @@ import { Lock } from "lucide-react";
 
 export default function ProductCard({ product, unlocked, size = "md" }) {
   const navigate = useNavigate();
-  const locked = !unlocked && !product.is_free;
+  const locked = !unlocked;
 
   const width = size === "lg" ? "w-full" : "w-40 sm:w-48 shrink-0";
 
@@ -32,9 +32,6 @@ export default function ProductCard({ product, unlocked, size = "md" }) {
           <span className="absolute bottom-2 right-2 bg-white/95 text-malva-700 text-xs font-extrabold px-2.5 py-1 rounded-full shadow">
             ${product.price}
           </span>
-        )}
-        {product.is_free && (
-          <span className="absolute top-2 left-2 bg-dorado text-white text-xs font-bold px-2 py-1 rounded-full">Gratis</span>
         )}
         {product.featured && !product.is_free && (
           <span className="absolute top-2 left-2 bg-rosa-500 text-white text-xs font-bold px-2 py-1 rounded-full">Destacado</span>

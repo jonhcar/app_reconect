@@ -42,14 +42,17 @@ export default function ProductDetail() {
           base44.entities.Progress.filter({ user_id: user.id, product_id: id }),
           base44.entities.Review.filter({ product_id: id, status: "approved" }, "-created_at", 10),
           base44.entities.Favorite.filter({ user_id: user.id, product_id: id }),
-          base44.entities.Access.filter({ user_id: user.id, product_id: id, active: true }).catch(() => []),
+          // Todos os acessos ativos da usuária (não só deste produto): os produtos
+          // gratuitos só desbloqueiam depois de QUALQUER compra
+          base44.entities.Access.filter({ user_id: user.id, active: true }).catch(() => []),
         ]);
         setProduct(p);
         setModules(mods);
         setProgress(prog);
         setReviews(revs);
         setFavorite(favs[0] || null);
-        setUnlocked(isPremium || p.is_free || acc.length > 0);
+        const hasAnyPurchase = acc.length > 0;
+        setUnlocked(isPremium || (p.is_free ? hasAnyPurchase : acc.some((a) => a.product_id === id)));
       } finally {
         setLoading(false);
       }
@@ -59,7 +62,38 @@ export default function ProductDetail() {
   if (loading) return <div className="py-20 text-center text-malva-400 animate-pulse">Cargando…</div>;
   if (!product) return <div className="py-20 text-center text-malva-400">Producto no encontrado.</div>;
 
-  // Página de vendas: quem ainda não comprou vê a copy + botão de compra
+  // Regalo bloqueado: solo se desbloquea después de cualquier compra
+  if (!unlocked && product.is_free) {
+    return (
+      <div className="py-6 max-w-lg mx-auto space-y-6 pb-32 text-center">
+        <button onClick={() => navigate(-1)} className="flex items-center gap-1 text-malva-400 text-sm">
+          <ArrowLeft size={16} /> Volver
+        </button>
+        {product.cover_image && (
+          <div className="relative w-44 mx-auto">
+            <img src={product.cover_image} alt="" className="w-44 rounded-2xl shadow-lg brightness-75" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-14 h-14 rounded-full bg-white/90 flex items-center justify-center shadow">
+                <Lock className="text-malva-600" size={26} />
+              </div>
+            </div>
+          </div>
+        )}
+        <h1 className="font-display text-2xl text-malva-700 mt-4">{product.title}</h1>
+        <div className="bg-white rounded-3xl p-6 shadow-sm text-malva-600 leading-relaxed">
+          Este regalo se desbloquea automáticamente en cuanto adquieres cualquiera de nuestros programas — sin pagar nada extra.
+        </div>
+        <button
+          onClick={() => navigate("/")}
+          className="inline-block bg-rosa-500 hover:bg-rosa-400 text-white font-extrabold text-lg px-8 py-4 rounded-full shadow-lg"
+        >
+          Ver programas disponibles
+        </button>
+      </div>
+    );
+  }
+
+  // Página de vendas: quem ainda não comprou vê a copy + botón de compra
   if (!unlocked) {
     const buyLink = product.checkout_url || settings?.hotmart_link;
     const buyLabel = product.price ? `Quiero acceder por $${product.price}` : "Quiero acceder ahora";
