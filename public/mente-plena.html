@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Corazón Libre — Deja de mendigar afecto</title>
-<meta name="description" content="El Proceso Corazón Libre: 4 fases guiadas para dejar de mendigar afecto y atraer el amor que mereces. Hoy por $6.90.">
+<title>Método Mente Plena — Diario de Ansiedad Consciente</title>
+<meta name="description" content="Método Mente Plena: el diario guiado para entender tu ansiedad, tus disparadores y encontrar calma día a día.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,500;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -17,7 +17,7 @@ t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
 document,'script','https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1527332844902396');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'product', value: 6.90, currency: 'USD'});
+fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: 'product', value: 6.90, currency: 'USD'});
 </script>
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1527332844902396&ev=PageView&noscript=1"></noscript>
 <style>
@@ -50,12 +50,10 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   /* ---------- revelado al hacer scroll ---------- */
   .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
   .reveal.visible{opacity:1;transform:none}
-  .reveal:nth-child(2){transition-delay:.1s}
-  .reveal:nth-child(3){transition-delay:.2s}
 
   /* ---------- HERO: la sombra que se enciende ---------- */
   .hero{
-    position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;
+    position:relative;min-height:80vh;display:flex;align-items:center;justify-content:center;
     text-align:center;color:var(--crema);
     background:
       radial-gradient(ellipse 70% 55% at 50% 38%, rgba(212,77,110,.38), transparent 65%),
@@ -66,7 +64,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   .hero .wrap{position:relative;z-index:2;padding:40px 0}
   .hero .eyebrow{color:var(--oro-luz)}
   .hero h1{
-    font-size:clamp(2.3rem,6.5vw,3.9rem);font-weight:900;color:#fff;
+    font-size:clamp(2.2rem,6.2vw,3.7rem);font-weight:900;color:#fff;
     text-shadow:0 0 42px rgba(255,122,156,.55),0 0 90px rgba(212,77,110,.35);
   }
   .hero h1 em{font-style:italic;color:var(--oro-luz);text-shadow:0 0 34px rgba(255,217,138,.7)}
@@ -95,6 +93,27 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   @keyframes mareo{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
   .nota-cta{margin-top:14px;font-size:.85rem;color:#d9aebf}
 
+  /* ---------- VSL (video) ---------- */
+  .vsl{background:var(--noche);text-align:center}
+  .vsl-caja{
+    max-width:720px;margin:0 auto;border-radius:20px;padding:3px;
+    background:linear-gradient(120deg,var(--oro-luz),var(--rosa-luz),var(--oro-luz));
+    background-size:250% 250%;animation:mareo 5s ease infinite;
+    box-shadow:0 0 50px rgba(255,122,156,.25);
+  }
+  .vsl-video{
+    position:relative;width:100%;padding-top:56.25%;background:#1c0b13;border-radius:18px;overflow:hidden;
+  }
+  .vsl-placeholder{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#e8c9d5;
+  }
+  .vsl-placeholder .play{
+    width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;
+    border:2px solid var(--oro-luz);
+  }
+  .vsl-placeholder .play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--oro-luz);margin-left:4px}
+  .vsl-placeholder span{font-size:.85rem;max-width:22em}
+
   /* ---------- DOLOR (crema) ---------- */
   .dolor{background:var(--crema)}
   .dolor .eyebrow{color:var(--rosa)}
@@ -106,7 +125,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   }
   .lista-dolor b{color:var(--malva)}
 
-  /* ---------- NO ES TU CULPA (malva radiante) ---------- */
+  /* ---------- NO ESTÁS LOCA (malva radiante) ---------- */
   .culpa{
     color:var(--crema);text-align:center;
     background:
@@ -117,7 +136,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   .culpa h2 em{color:var(--oro-luz);font-style:italic}
   .culpa p{max-width:36em;margin:18px auto 0;font-size:1.08rem;color:#f6e3ea}
 
-  /* ---------- PROCESO: 4 fases ---------- */
+  /* ---------- MÉTODO: 4 herramientas ---------- */
   .proceso{background:var(--crema)}
   .proceso .eyebrow{color:var(--dorado)}
   .proceso h2{font-size:clamp(1.7rem,4.5vw,2.4rem)}
@@ -134,22 +153,19 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     content:"";position:absolute;top:0;left:0;right:0;height:5px;
     background:linear-gradient(90deg,var(--rosa-luz),var(--oro-luz));
   }
-  .fase .num{
-    font-family:"Playfair Display",serif;font-weight:900;font-size:2rem;color:var(--rosa);
-    text-shadow:0 0 18px rgba(255,122,156,.35);
-  }
-  .fase h3{font-size:1.18rem;margin:6px 0 8px;color:var(--malva)}
-  .fase p{font-size:.97rem;color:#5d3c4d}
+  .fase .ico{font-size:1.8rem}
+  .fase h3{font-size:1.12rem;margin:6px 0 8px;color:var(--malva)}
+  .fase p{font-size:.95rem;color:#5d3c4d}
 
-  /* ---------- POR QUÉ UN LIBRO NO TE CURÓ ---------- */
+  /* ---------- AUTENTICIDAD ---------- */
   .libro{background:#fff}
   .libro blockquote{
-    font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.3rem,3.6vw,1.7rem);
+    font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.2rem,3.4vw,1.55rem);
     color:var(--malva);border-left:4px solid var(--dorado);padding-left:22px;margin-bottom:22px;
   }
   .libro p{max-width:40em}
 
-  /* ---------- ASÍ SE VE POR DENTRO (teléfono animado) ---------- */
+  /* ---------- ASÍ SE VE POR DENTRO ---------- */
   .dentro-app{
     color:var(--crema);text-align:center;
     background:
@@ -180,7 +196,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   .fila{
     display:flex;align-items:center;gap:10px;background:#fff;border-radius:13px;
     padding:10px 12px;margin-bottom:8px;box-shadow:0 2px 10px rgba(122,59,94,.09);
-    opacity:0;animation:fila-in 9s ease-in-out infinite;
+    opacity:0;animation:fila-in 8s ease-in-out infinite;
   }
   .fila .ico{
     flex:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;
@@ -189,8 +205,8 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   .fila.bono .ico{background:linear-gradient(140deg,var(--dorado),var(--oro-luz));color:#4b3413;font-size:.72rem}
   .fila .tx b{display:block;font-size:.8rem;color:var(--malva);line-height:1.25}
   .fila .tx span{font-size:.68rem;color:var(--suave)}
-  .fila.f1{animation-delay:.2s}.fila.f2{animation-delay:.7s}.fila.f3{animation-delay:1.2s}
-  .fila.f4{animation-delay:1.7s}.fila.f5{animation-delay:2.3s}.fila.f6{animation-delay:2.8s}.fila.f7{animation-delay:3.3s}
+  .fila.f1{animation-delay:.2s}.fila.f2{animation-delay:.6s}.fila.f3{animation-delay:1s}
+  .fila.f4{animation-delay:1.4s}.fila.f5{animation-delay:1.8s}.fila.f6{animation-delay:2.2s}
   @keyframes fila-in{
     0%{opacity:0;transform:translateY(14px)}
     5%,86%{opacity:1;transform:none}
@@ -232,31 +248,7 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     text-shadow:0 0 40px rgba(255,217,138,.65),0 0 80px rgba(255,122,156,.4);
   }
   .precio-hoy .unica{color:#d9aebf;font-size:.92rem}
-  .precio-hoy .dia{color:var(--oro-luz);font-size:.88rem;font-weight:700;margin-top:6px}
-  .metodos{margin-top:22px;text-align:center;color:#e8c9d5;font-size:.92rem}
-  .urgencia{margin-top:14px;text-align:center;color:#f2d4a6;font-size:.98rem;max-width:34em;margin-left:auto;margin-right:auto}
-
-  /* ---------- REGALOS (grátis com a conta) ---------- */
-  .regalos{background:var(--crema);text-align:center}
-  .regalos .eyebrow{color:var(--dorado)}
-  .regalos h2{font-size:clamp(1.7rem,4.5vw,2.3rem)}
-  .regalos .sub3{color:var(--suave);max-width:36em;margin:14px auto 0}
-  .grid-regalos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
-  @media(min-width:760px){.grid-regalos{grid-template-columns:repeat(4,1fr)}}
-  .regalo{
-    background:#fff;border-radius:18px;padding:14px 12px 16px;position:relative;
-    box-shadow:0 4px 18px rgba(122,59,94,.09);transition:transform .3s ease,box-shadow .3s ease;
-  }
-  .regalo:hover{transform:translateY(-5px);box-shadow:0 14px 30px rgba(201,162,75,.22)}
-  .regalo img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:12px}
-  .regalo .pill{
-    position:absolute;top:20px;left:50%;transform:translateX(-50%);
-    font-size:.62rem;font-weight:800;letter-spacing:.14em;color:#4b3413;
-    background:linear-gradient(90deg,var(--oro-luz),#ffca7a);padding:4px 12px;border-radius:999px;
-    box-shadow:0 2px 12px rgba(255,179,92,.5);
-  }
-  .regalo b{display:block;margin-top:10px;font-size:.88rem;color:var(--malva);line-height:1.3}
-  .regalo span{font-size:.76rem;color:var(--suave)}
+  .urgencia{margin-top:20px;text-align:center;color:#f2d4a6;font-size:.98rem;max-width:34em;margin-left:auto;margin-right:auto}
 
   /* ---------- GARANTÍA ---------- */
   .garantia{background:var(--crema);text-align:center}
@@ -312,107 +304,121 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
 <header class="hero">
   <canvas id="luces" aria-hidden="true"></canvas>
   <div class="wrap">
-    <span class="eyebrow anim-in">Para la mujer que ya dio demasiado</span>
-    <h1 class="anim-in d1">Deja de mendigar afecto.<br><em>Empieza a ser elegida.</em></h1>
-    <p class="sub anim-in d2">No es mala suerte. La carencia emocional te enseñó a rogar amor — y nadie te enseñó a dejar de hacerlo. El <strong>Proceso Corazón Libre</strong> te guía paso a paso, en 4 fases, para sanar y atraer el amor que mereces.</p>
+    <span class="eyebrow anim-in">Para la mujer que vive con ansiedad</span>
+    <h1 class="anim-in d1">Tu ansiedad no es un misterio.<br><em>Es un patrón que puedes aprender a leer.</em></h1>
+    <p class="sub anim-in d2">No estás exagerando. El <strong>Método Mente Plena</strong> es el diario guiado, escrito por alguien que también convive con la ansiedad, para entender tus disparadores y encontrar calma día a día.</p>
     <div class="anim-in d3">
-      <a class="cta" href="https://app.clubdigital.site/login">Quiero comenzar mi proceso<small>crea tu cuenta gratis · acceso inmediato</small></a>
+      <a class="cta" href="#oferta">Quiero mi Método Mente Plena<small>hoy por $6.90 · acceso inmediato</small></a>
       <p class="nota-cta">Garantía total de 7 días. Si no es para ti, te devolvemos todo.</p>
     </div>
   </div>
 </header>
 
-<!-- ======== DOLOR ======== -->
-<section class="dolor">
+<!-- ======== VSL ======== -->
+<section class="vsl">
   <div class="wrap">
-    <span class="eyebrow reveal">¿Te suena?</span>
-    <h2 class="reveal">Das todo… y recibes migajas.</h2>
-    <ul class="lista-dolor">
-      <li class="reveal">Revisas el celular esperando un mensaje que <b>nunca llega</b> — y cuando llega, corres a responder en segundos.</li>
-      <li class="reveal">Dices «está bien» cuando <b>nada está bien</b>, con miedo de que se moleste y se aleje.</li>
-      <li class="reveal">Te esfuerzas por ser suficiente para alguien que <b>ni siquiera pregunta cómo estás</b>.</li>
-      <li class="reveal">Terminas cada relación pensando lo mismo: <b>«¿qué hice mal esta vez?»</b></li>
-      <li class="reveal">Lees libros, lloras, subrayas frases… y a la semana <b>vuelves a lo mismo</b>.</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ======== NO ES TU CULPA ======== -->
-<section class="culpa">
-  <div class="wrap">
-    <h2 class="reveal">No estás rota. <em>Te enseñaron a mendigar.</em></h2>
-    <p class="reveal">La carencia emocional es una sombra silenciosa: aprende desde niña que el amor hay que ganárselo, y de adulta lo persigue, lo ruega, lo mendiga. No es un defecto tuyo — es un patrón. Y todo patrón aprendido <strong>se puede desaprender</strong>.</p>
-    <p class="reveal">Por eso los libros no te curaron: te explicaron el problema, pero explicar no es sanar. Sanar necesita un <strong>proceso guiado</strong>, con pasos, con práctica, con acompañamiento.</p>
-  </div>
-</section>
-
-<!-- ======== EL PROCESO ======== -->
-<section class="proceso">
-  <div class="wrap">
-    <span class="eyebrow reveal">El método</span>
-    <h2 class="reveal">El Proceso Corazón Libre — 4 fases guiadas</h2>
-    <p class="intro reveal">Dentro de la app Reconectar, avanzas fase por fase, a tu ritmo, con lecturas directas, ejercicios y meditaciones.</p>
-    <div class="fases">
-      <div class="fase reveal">
-        <div class="num">1</div>
-        <h3>Detecta la Carencia</h3>
-        <p>Descubre cómo la carencia emocional controla tus decisiones sin que lo notes — y por qué siempre terminas rogando amor.</p>
-      </div>
-      <div class="fase reveal">
-        <div class="num">2</div>
-        <h3>Blinda tu Corazón</h3>
-        <p>El blindaje emocional: protege tu paz sin cerrarte al amor. Aprende a decir «no» sin culpa.</p>
-      </div>
-      <div class="fase reveal">
-        <div class="num">3</div>
-        <h3>Reescribe tu Historia</h3>
-        <p>Suelta las memorias de amor tóxico, la culpa y la vergüenza. Perdónate y libérate del pasado.</p>
-      </div>
-      <div class="fase reveal">
-        <div class="num">4</div>
-        <h3>Atrae el Amor que Mereces</h3>
-        <p>Conviértete en una mujer magnética: relaciones sanas y recíprocas, donde no tienes que rogar nada.</p>
+    <div class="vsl-caja reveal">
+      <div class="vsl-video">
+        <!-- 🎥 PEGAR AQUÍ EL EMBED DE VTURB (reemplazar todo este div .vsl-placeholder) -->
+        <div class="vsl-placeholder">
+          <div class="play"></div>
+          <span>Aquí va el video VSL — pega el código de VTurb en este espacio</span>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ======== LIBRO NO CURA ======== -->
+<!-- ======== DOLOR ======== -->
+<section class="dolor">
+  <div class="wrap">
+    <span class="eyebrow reveal">¿Te suena?</span>
+    <h2 class="reveal">Sientes que tu mente nunca descansa.</h2>
+    <ul class="lista-dolor">
+      <li class="reveal">El corazón se acelera <b>sin razón aparente</b>, y no sabes por qué justo hoy.</li>
+      <li class="reveal">Sientes que todos te miran o te juzgan, aunque <b>nadie dijo nada</b>.</li>
+      <li class="reveal">Te cuesta dormir porque tu mente <b>repite la misma preocupación</b> una y otra vez.</li>
+      <li class="reveal">Buscaste ayuda, leíste consejos genéricos… y <b>nada se sintió hecho para ti</b>.</li>
+      <li class="reveal">Terminas el día agotada de <b>fingir que estás bien</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======== NO ESTÁS LOCA ======== -->
+<section class="culpa">
+  <div class="wrap">
+    <h2 class="reveal">No estás loca. <em>No estás exagerando.</em></h2>
+    <p class="reveal">La ansiedad no avisa, y casi nunca viene con explicación. Pero tiene patrones — disparadores, horarios, pensamientos que se repiten — y cuando aprendes a verlos, empiezas a recuperar el control.</p>
+    <p class="reveal">Por eso los consejos genéricos no funcionan: nunca fueron pensados para <strong>tu</strong> ansiedad. Necesitas un método guiado, escrito por alguien que entiende lo que sientes porque también lo vive.</p>
+  </div>
+</section>
+
+<!-- ======== EL MÉTODO ======== -->
+<section class="proceso">
+  <div class="wrap">
+    <span class="eyebrow reveal">El método</span>
+    <h2 class="reveal">Método Mente Plena — 4 herramientas para cada día</h2>
+    <p class="intro reveal">Tu diario guiado, dentro de la app Reconectar, con ejercicios prácticos y directos.</p>
+    <div class="fases">
+      <div class="fase reveal">
+        <div class="ico">📅</div>
+        <h3>Rastreador de Ansiedad</h3>
+        <p>Un calendario de 12 meses para registrar tu nivel de ansiedad día a día, y por fin ver tus propios patrones con claridad.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">🔍</div>
+        <h3>Comprende tus Disparadores</h3>
+        <p>Ejercicios guiados para identificar qué activa tu ansiedad, por qué ocurre y cómo te hace sentir.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">🌙</div>
+        <h3>Rutinas de Calma</h3>
+        <p>Organiza tu sueño, tu relajación y tu meditación — a tu ritmo, sin presión ni perfección.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">✍️</div>
+        <h3>Diario de Pensamientos</h3>
+        <p>Un espacio diario para soltar lo que cargas en la mente, sin juzgarte, sin filtro.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== AUTENTICIDAD ======== -->
 <section class="libro">
   <div class="wrap">
-    <blockquote class="reveal">«El libro era bueno… pero no curó mi corazón partido.»</blockquote>
-    <p class="reveal">Eso escriben miles de lectoras sobre los libros de siempre. Corazón Libre es diferente porque <strong>no es solo un libro</strong>: es un proceso dentro de una app, con fases numeradas, audiolibro para escuchar donde quieras, un diario para escribir tu propia sanación y herramientas para aplicar cada día. Al grano, sin relleno, sin frases motivacionales vacías.</p>
+    <blockquote class="reveal">«Convivo con la ansiedad desde mi infancia, y también soy una Persona Altamente Sensible. Durante años pensé que había algo mal en mí — hasta que entendí que no.»</blockquote>
+    <p class="reveal">Este diario no lo escribió alguien que solo estudió la ansiedad — lo escribió alguien que <strong>la vive</strong>. Por eso no vas a encontrar frases motivacionales vacías, sino herramientas reales para entender tu mente y acompañarte en el proceso, un día a la vez.</p>
   </div>
 </section>
 
 <!-- ======== ASÍ SE VE POR DENTRO ======== -->
 <section class="dentro-app">
   <div class="wrap" style="max-width:900px">
-    <span class="eyebrow reveal" style="color:var(--oro-luz)">Tu espacio de sanación</span>
+    <span class="eyebrow reveal" style="color:var(--oro-luz)">Tu espacio de calma</span>
     <h2 class="reveal">Así se ve por dentro</h2>
-    <p class="sub2 reveal">Todo vive en la app Reconectar: entras desde tu celular y avanzas fase por fase.</p>
+    <p class="sub2 reveal">Todo vive en la app Reconectar: entras desde tu celular y avanzas a tu ritmo.</p>
     <div class="escena">
       <div class="telefono reveal" aria-hidden="true">
         <div class="muesca"></div>
         <div class="pantalla">
           <div class="app-header">Reconectar</div>
           <div class="portada">
-            <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/4bfa85cd-c74a-4b58-90d5-40756d857164.jpeg" alt="">
-            <div class="t">Corazón Libre<br><span class="badge">ACCESO COMPLETO</span></div>
+            <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/4cc81b62-bed7-4271-b0da-1e3f7f4b3dcb.jpeg" alt="">
+            <div class="t">Método Mente Plena<br><span class="badge">ACCESO COMPLETO</span></div>
           </div>
-          <div class="fila f1"><div class="ico">1</div><div class="tx"><b>FASE 1 — Detecta la Carencia</b><span>Capítulos 1 y 2 · lectura guiada</span></div></div>
-          <div class="fila f2"><div class="ico">2</div><div class="tx"><b>FASE 2 — Blinda tu Corazón</b><span>Ejercicios y meditaciones</span></div></div>
-          <div class="fila f3"><div class="ico">3</div><div class="tx"><b>FASE 3 — Reescribe tu Historia</b><span>Suelta el pasado</span></div></div>
-          <div class="fila f4"><div class="ico">4</div><div class="tx"><b>FASE 4 — Atrae el Amor que Mereces</b><span>Relaciones sanas y recíprocas</span></div></div>
-          <div class="fila bono f5"><div class="ico">♪</div><div class="tx"><b>BONO: Audiolibro completo</b><span>Escúchalo donde quieras</span></div></div>
-          <div class="fila bono f6"><div class="ico">✎</div><div class="tx"><b>BONO: Diario de Amor Propio</b><span>Para imprimir</span></div></div>
-          <div class="fila bono f7"><div class="ico">✓</div><div class="tx"><b>BONO: 10 Señales</b><span>Checklist de autoevaluación</span></div></div>
+          <div class="fila f1"><div class="ico">📅</div><div class="tx"><b>Rastreador de Ansiedad</b><span>Calendario de 12 meses</span></div></div>
+          <div class="fila f2"><div class="ico">🔍</div><div class="tx"><b>Comprende tus Disparadores</b><span>Ejercicios guiados</span></div></div>
+          <div class="fila f3"><div class="ico">🌙</div><div class="tx"><b>Rutinas de Calma</b><span>Sueño · relajación · meditación</span></div></div>
+          <div class="fila f4"><div class="ico">✍️</div><div class="tx"><b>Diario de Pensamientos</b><span>Espacio diario para soltar</span></div></div>
+          <div class="fila bono f5"><div class="ico">💬</div><div class="tx"><b>BONO: Guía de Comunicación Emocional</b><span>Expresa lo que sientes sin culpa</span></div></div>
+          <div class="fila bono f6"><div class="ico">🎧</div><div class="tx"><b>BONO: Audio de Respiración y Calma</b><span>10 minutos para bajar la ansiedad</span></div></div>
         </div>
       </div>
       <ul class="puntos">
         <li class="reveal">Entras desde tu celular o computadora, <strong>sin descargar nada</strong></li>
-        <li class="reveal">Avanzas <strong>a tu ritmo</strong> — las fases te esperan, nada expira</li>
-        <li class="reveal">Lectura, audio y diario, <strong>todo en un solo lugar</strong></li>
+        <li class="reveal">Avanzas <strong>a tu ritmo</strong> — el diario te espera, nada expira</li>
+        <li class="reveal">Lectura, audio y ejercicios, <strong>todo en un solo lugar</strong></li>
         <li class="reveal">Tu acceso queda guardado en tu cuenta <strong>para siempre</strong></li>
       </ul>
     </div>
@@ -425,52 +431,21 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
     <h2 class="reveal">Todo lo que recibes hoy</h2>
     <div class="caja-oferta reveal">
       <div class="dentro">
-        <div class="item"><span class="que"><b>Método Corazón Libre</b> — protocolo guiado de 4 fases en la app</span><span class="valor">$37</span></div>
-        <div class="item"><span class="que"><b>BONO 1 — Tu terapia de bolsillo:</b> Corazón Libre en AUDIO, para escuchar mientras cocinas, manejas o te duermes (no necesitas «tiempo libre» para sanar)</span><span class="valor">$17</span></div>
-        <div class="item"><span class="que"><b>BONO 2 — Para que no se te olvide:</b> Bitácora de 21 Días para sostener el cambio (imprimible)</span><span class="valor">$15</span></div>
-        <div class="item"><span class="que"><b>BONO 3 — Tu respuesta en 2 minutos:</b> Test «¿Estás Mendigando Afecto?» — sabe si esto te pasa a ti, hoy mismo</span><span class="valor">$9</span></div>
-        <div class="total"><span>Valor total</span><span class="tachado">$78</span></div>
+        <div class="item"><span class="que"><b>Método Mente Plena</b> — diario guiado de ansiedad consciente</span><span class="valor">$27</span></div>
+        <div class="item"><span class="que"><b>BONO 1:</b> Guía y Ejercicios de Comunicación Emocional — expresa lo que sientes sin culpa</span><span class="valor">$17</span></div>
+        <div class="item"><span class="que"><b>BONO 2:</b> Audio guiado de respiración y calma — 10 minutos para bajar la ansiedad</span><span class="valor">$15</span></div>
+        <div class="item"><span class="que"><b>BONO 3:</b> 100 Mensajes que Reconectan — para reconectar con quienes amas</span><span class="valor">$9</span></div>
+        <div class="total"><span>Valor total</span><span class="tachado">$68</span></div>
         <div class="precio-hoy">
           <div class="hoy">Hoy, precio de lanzamiento</div>
           <div class="cifra">$6.90</div>
           <div class="unica">pago único · acceso completo e inmediato</div>
-          <div class="dia">Menos de $0.25 al día durante tu primer mes</div>
         </div>
       </div>
     </div>
-    <p class="metodos reveal">💳 Paga como te sea más fácil: tarjeta, OXXO, PSE o transferencia — todo procesado de forma segura por Hotmart.</p>
     <p class="urgencia reveal">⚠ Este es el precio real de lanzamiento. Cuando termine esta etapa, sube. Si estás viendo esta página, todavía llegas a tiempo.</p>
     <div style="text-align:center">
-      <a class="cta reveal" href="https://app.clubdigital.site/login">Sí, quiero empezar hoy<small>crea tu cuenta gratis en 2 minutos</small></a>
-    </div>
-  </div>
-</section>
-
-<!-- ======== REGALOS GRATIS ======== -->
-<section class="regalos">
-  <div class="wrap" style="max-width:860px">
-    <span class="eyebrow reveal">Y eso no es todo</span>
-    <h2 class="reveal">Cuando entras, también desbloqueas estos regalos</h2>
-    <p class="sub3 reveal">En cuanto adquieres tu proceso, la app te regala estas herramientas extra para acompañarte mientras sanas — sin pagar nada más.</p>
-    <div class="grid-regalos">
-      <div class="regalo reveal">
-        <span class="pill">REGALO</span>
-        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/eeea34eb-fc94-4797-9f24-4fcbf19cc7a4.jpeg" alt="7 Días para Reconectar" loading="lazy">
-        <b>7 Días para Reconectar</b>
-        <span>Tu primera semana de vuelta a ti</span>
-      </div>
-      <div class="regalo reveal">
-        <span class="pill">REGALO</span>
-        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/e2ccb307-14cd-48b6-b8fd-c9c1be565638.jpeg" alt="Meditaciones SOS para el Corazón" loading="lazy">
-        <b>Meditaciones SOS</b>
-        <span>Audios para calmar el corazón en minutos</span>
-      </div>
-      <div class="regalo reveal">
-        <span class="pill">REGALO</span>
-        <img src="https://kkvjuqhbihcbkhozcqip.supabase.co/storage/v1/object/public/uploads/24d898df-73ff-41ba-89a0-6fa3d5fcc427.jpeg" alt="Agenda Cristiana" loading="lazy">
-        <b>Agenda Cristiana</b>
-        <span>Tu encuentro diario con Dios</span>
-      </div>
+      <a class="cta reveal" href="https://app.clubdigital.site/login">Sí, quiero empezar hoy por $6.90<small>pago seguro vía Hotmart</small></a>
     </div>
   </div>
 </section>
@@ -479,8 +454,8 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
 <section class="garantia">
   <div class="wrap">
     <div class="sello reveal">7<span style="font-size:.75rem;margin-left:2px">días</span></div>
-    <h2 class="reveal">Garantía doble: cero riesgo para ti</h2>
-    <p class="reveal">Entra y haz la <strong>Fase 1 completa</strong>. Si no sientes que algo empezó a cambiar, pides tu reembolso en un clic dentro de Hotmart y te devolvemos el 100% — <strong>y te dejas quedarte con tus 3 bonos igual, de regalo, solo por intentarlo.</strong> No arriesgas nada. El riesgo es todo nuestro.</p>
+    <h2 class="reveal">Garantía total de 7 días</h2>
+    <p class="reveal">Entra y usa tu rastreador de ansiedad esta semana. Si no sientes que algo empezó a cambiar, pides tu reembolso en un clic dentro de Hotmart y te devolvemos todo. Sin preguntas. El riesgo es todo nuestro.</p>
   </div>
 </section>
 
@@ -489,20 +464,20 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
   <div class="wrap">
     <h2 class="reveal">Preguntas frecuentes</h2>
     <details class="reveal">
-      <summary>¿Cómo funciona?</summary>
-      <p>Creas tu cuenta gratis en <a href="https://app.clubdigital.site/login">app.clubdigital.site</a> — sin tarjeta. Adentro puedes ver todo el contenido y desbloquear Corazón Libre cuando quieras, con pago 100% seguro vía Hotmart.</p>
+      <summary>¿Cómo recibo el acceso?</summary>
+      <p>Inmediatamente después del pago, crea tu cuenta en <a href="https://app.clubdigital.site/login">app.clubdigital.site</a> usando <strong>el mismo correo de la compra</strong> — el acceso se abre solo. Si ya tienes cuenta, solo vuelve a entrar.</p>
     </details>
     <details class="reveal">
       <summary>¿Necesito tiempo o experiencia?</summary>
-      <p>No. Las lecturas son cortas y directas («una o dos páginas por tema»), pensadas para mujeres con la vida llena. Avanzas a tu ritmo: 10-15 minutos al día alcanzan.</p>
+      <p>No. Cada ejercicio toma solo unos minutos al día. Avanzas a tu ritmo, sin presión ni perfección.</p>
     </details>
     <details class="reveal">
-      <summary>¿Ya leí libros de autoayuda, esto es igual?</summary>
-      <p>No. Los libros explican; este es un <strong>proceso guiado en 4 fases</strong> con ejercicios, audiolibro y diario. La diferencia entre entender tu herida y sanarla.</p>
+      <summary>¿Es un diario físico o digital?</summary>
+      <p>Es 100% digital, dentro de la app. Puedes usarlo desde tu celular o computadora, e imprimir las páginas que quieras.</p>
     </details>
     <details class="reveal">
       <summary>¿Y si no me funciona?</summary>
-      <p>Tienes 7 días de garantía total. Haz la Fase 1; si no sientes el cambio, Hotmart te devuelve el 100% en un clic.</p>
+      <p>Tienes 7 días de garantía total. Si no sientes el cambio, Hotmart te devuelve el 100% en un clic.</p>
     </details>
     <details class="reveal">
       <summary>¿El pago es seguro?</summary>
@@ -514,25 +489,25 @@ fbq('track', 'ViewContent', {content_name: 'Corazon Libre', content_type: 'produ
 <!-- ======== CIERRE ======== -->
 <section class="cierre">
   <div class="wrap">
-    <h2 class="reveal">Tú no naciste para mendigar afecto.<br><em>Naciste para ser amada.</em></h2>
-    <p class="reveal">Empezando por ti. Hoy puede ser el día en que tu historia con el amor cambia de dirección — por menos de lo que cuesta una pizza.</p>
+    <h2 class="reveal">No naciste para vivir así.<br><em>Mereces entender tu mente.</em></h2>
+    <p class="reveal">Hoy puede ser el día en que empiezas a ver tus propios patrones — por menos de lo que cuesta una pizza.</p>
     <div>
-      <a class="cta reveal" href="https://app.clubdigital.site/login">Quiero mi Corazón Libre<small>garantía de 7 días · crea tu cuenta gratis</small></a>
+      <a class="cta reveal" href="https://app.clubdigital.site/login">Quiero mi Método Mente Plena<small>garantía de 7 días · $6.90</small></a>
     </div>
-    <p class="ya-compre reveal">¿Ya tienes cuenta? <a href="https://app.clubdigital.site/login">Entra a la app aquí</a></p>
+    <p class="ya-compre reveal">¿Ya compraste? <a href="https://app.clubdigital.site/login">Entra a la app aquí</a></p>
   </div>
 </section>
 
 <footer>
-  Reconectar · Corazón Libre — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
+  Reconectar · Método Mente Plena — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
   Pago procesado por Hotmart. Este producto no sustituye terapia psicológica profesional.
 </footer>
 
 <script>
-  // Pixel: clique en los botones que llevan a crear cuenta en la app
+  // Pixel: clique nos botões de compra
   document.querySelectorAll(".cta").forEach((btn) => {
     btn.addEventListener("click", () => {
-      if (window.fbq) fbq("track", "Lead", { content_name: "Corazon Libre - crear cuenta" });
+      if (window.fbq) fbq("track", "InitiateCheckout", { content_name: "Metodo Mente Plena", value: 6.90, currency: "USD" });
     });
   });
 
