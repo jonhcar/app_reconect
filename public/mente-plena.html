@@ -102,17 +102,8 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
     box-shadow:0 0 50px rgba(255,122,156,.25);
   }
   .vsl-video{
-    position:relative;width:100%;padding-top:56.25%;background:#1c0b13;border-radius:18px;overflow:hidden;
+    background:#1c0b13;border-radius:18px;overflow:hidden;
   }
-  .vsl-placeholder{
-    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#e8c9d5;
-  }
-  .vsl-placeholder .play{
-    width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;
-    border:2px solid var(--oro-luz);
-  }
-  .vsl-placeholder .play::after{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--oro-luz);margin-left:4px}
-  .vsl-placeholder span{font-size:.85rem;max-width:22em}
 
   /* ---------- DOLOR (crema) ---------- */
   .dolor{background:var(--crema)}
@@ -319,11 +310,7 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
   <div class="wrap">
     <div class="vsl-caja reveal">
       <div class="vsl-video">
-        <!-- 🎥 PEGAR AQUÍ EL EMBED DE VTURB (reemplazar todo este div .vsl-placeholder) -->
-        <div class="vsl-placeholder">
-          <div class="play"></div>
-          <span>Aquí va el video VSL — pega el código de VTurb en este espacio</span>
-        </div>
+        <vturb-smartplayer id="vid-6a692069012b4f056ee44423" style="display: block; margin: 0 auto; width: 100%; "><div class="vturb-player-placeholder" style="position: relative; width: 100%; padding: 56.25% 0 0; z-index: 0; background-color: black;"></div></vturb-smartplayer>
       </div>
     </div>
   </div>
@@ -502,6 +489,11 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
   Reconectar · Método Mente Plena — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
   Pago procesado por Hotmart. Este producto no sustituye terapia psicológica profesional.
 </footer>
+
+<!-- Player VTurb (VSL) -->
+<script type="text/javascript">
+var s=document.createElement("script"); s.src="https://scripts.converteai.net/a142e135-1e15-4835-9618-1c78298e47c2/players/6a692069012b4f056ee44423/v4/player.js", s.async=!0,document.head.appendChild(s);
+</script>
 
 <script>
   // Pixel: clique nos botões de compra
