@@ -287,6 +287,9 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
     .anim-in{opacity:1;transform:none}
     html{scroll-behavior:auto}
   }
+
+  /* ---------- Revelado automático tras el pitch (VTurb) ---------- */
+  .hide{display:none}
 </style>
 </head>
 <body>
@@ -299,14 +302,14 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
     <h1 class="anim-in d1">Tu ansiedad no es un misterio.<br><em>Es un patrón que puedes aprender a leer.</em></h1>
     <p class="sub anim-in d2">No estás exagerando. El <strong>Método Mente Plena</strong> es el diario guiado, escrito por alguien que también convive con la ansiedad, para entender tus disparadores y encontrar calma día a día.</p>
     <div class="anim-in d3">
-      <a class="cta" href="#oferta">Quiero mi Método Mente Plena<small>hoy por $6.90 · acceso inmediato</small></a>
+      <a class="cta" href="#video">Ver cómo funciona ↓<small>Método Mente Plena · descúbrelo en el video</small></a>
       <p class="nota-cta">Garantía total de 7 días. Si no es para ti, te devolvemos todo.</p>
     </div>
   </div>
 </header>
 
 <!-- ======== VSL ======== -->
-<section class="vsl">
+<section class="vsl" id="video">
   <div class="wrap">
     <div class="vsl-caja reveal">
       <div class="vsl-video">
@@ -315,6 +318,23 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
     </div>
   </div>
 </section>
+
+<!-- Player VTurb (VSL) -->
+<script type="text/javascript">
+var s=document.createElement("script"); s.src="https://scripts.converteai.net/a142e135-1e15-4835-9618-1c78298e47c2/players/6a692069012b4f056ee44423/v4/player.js", s.async=!0,document.head.appendChild(s);
+</script>
+
+<!-- Revela automáticamente el resto de la página en el minuto 5:13 del pitch -->
+<script>
+  var delaySeconds = 313; // 5:13
+  var player = document.querySelector("vturb-smartplayer");
+  player.addEventListener("player:ready", function () {
+    player.displayHiddenElements(delaySeconds, [".hide"], { persist: true });
+  });
+</script>
+
+<!-- ======== A PARTIR DE AQUÍ, TODO PERMANECE OCULTO HASTA EL MINUTO 5:13 ======== -->
+<div class="hide">
 
 <!-- ======== DOLOR ======== -->
 <section class="dolor">
@@ -490,10 +510,8 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
   Pago procesado por Hotmart. Este producto no sustituye terapia psicológica profesional.
 </footer>
 
-<!-- Player VTurb (VSL) -->
-<script type="text/javascript">
-var s=document.createElement("script"); s.src="https://scripts.converteai.net/a142e135-1e15-4835-9618-1c78298e47c2/players/6a692069012b4f056ee44423/v4/player.js", s.async=!0,document.head.appendChild(s);
-</script>
+</div>
+<!-- ======== FIN DEL CONTENIDO OCULTO ======== -->
 
 <script>
   // Pixel: clique nos botões de compra
