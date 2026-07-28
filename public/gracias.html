@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>¡Gracias por tu compra! — Reconectar</title>
+<meta name="description" content="Tu compra fue exitosa. Entra a la app Reconectar para acceder a tu contenido.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!-- Meta Pixel: solo PageView — el evento Purchase ya se registra por el lado de Hotmart (server-side), no lo dupliques aquí -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1527332844902396');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1527332844902396&ev=PageView&noscript=1"></noscript>
+<style>
+  :root{
+    --malva:#7a3b5e;
+    --rosa:#d44d6e;
+    --rosa-luz:#ff7a9c;
+    --dorado:#c9a24b;
+    --oro-luz:#ffd98a;
+    --crema:#fdf8f3;
+    --tinta:#3a2230;
+    --suave:#8a6577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:"Nunito Sans",system-ui,sans-serif;
+    color:var(--tinta);background:var(--crema);
+    line-height:1.65;overflow-x:hidden;
+    min-height:100vh;display:flex;flex-direction:column;
+  }
+  h1,h2,.display{font-family:"Playfair Display",Georgia,serif;text-wrap:balance;line-height:1.15}
+
+  /* ---------- HERO: amanecer dorado ---------- */
+  .hero{
+    position:relative;flex:1;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#fff;padding:64px 20px 56px;
+    background:
+      radial-gradient(ellipse 75% 60% at 50% 25%, rgba(255,217,138,.55), transparent 65%),
+      radial-gradient(ellipse 60% 45% at 50% 45%, rgba(255,122,156,.35), transparent 70%),
+      linear-gradient(180deg,#6d2a47 0%, var(--malva) 55%, #a85a7c 100%);
+  }
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .inner{position:relative;z-index:2;max-width:560px}
+  .sello{
+    width:88px;height:88px;margin:0 auto 26px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:2.6rem;
+    background:radial-gradient(circle at 35% 30%,var(--oro-luz),var(--dorado));
+    box-shadow:0 0 50px rgba(255,217,138,.7);
+    animation:pop .6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+  @keyframes pop{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
+  .anim-in{opacity:0;transform:translateY(18px);animation:entra .8s ease forwards}
+  .anim-in.d1{animation-delay:.15s}.anim-in.d2{animation-delay:.35s}.anim-in.d3{animation-delay:.55s}
+  @keyframes entra{to{opacity:1;transform:none}}
+  .hero .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--oro-luz);margin-bottom:14px;
+  }
+  .hero h1{font-size:clamp(2rem,6vw,3rem);font-weight:900;text-shadow:0 0 40px rgba(255,122,156,.5)}
+  .hero p.sub{margin:20px auto 0;max-width:30em;font-size:1.08rem;color:#f8e6ee}
+
+  /* ---------- PASOS ---------- */
+  .pasos{background:#fff;padding:56px 20px}
+  .wrap{max-width:640px;margin:0 auto}
+  .pasos h2{text-align:center;font-size:clamp(1.5rem,4vw,2rem);color:var(--malva)}
+  .lista-pasos{display:grid;grid-template-columns:1fr;gap:16px;margin-top:34px;text-align:left}
+  @media(min-width:640px){.lista-pasos{grid-template-columns:repeat(3,1fr)}}
+  .paso{background:var(--crema);border-radius:18px;padding:22px 20px}
+  .paso .n{
+    width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    font-family:"Playfair Display",serif;font-weight:900;font-size:1.2rem;color:#fff;
+    background:linear-gradient(140deg,var(--rosa),var(--rosa-luz));
+    box-shadow:0 0 16px rgba(255,122,156,.4);margin-bottom:12px;
+  }
+  .paso b{color:var(--malva);font-size:.98rem}
+  .paso p{font-size:.88rem;color:#5d3c4d;margin-top:5px}
+
+  .aviso{
+    margin-top:30px;background:#fff8ef;border:1.5px solid var(--dorado);border-radius:16px;
+    padding:16px 20px;font-size:.9rem;color:var(--tinta);text-align:center;
+  }
+  .aviso b{color:var(--malva)}
+
+  /* ---------- CTA ---------- */
+  .cta-wrap{text-align:center;margin-top:40px}
+  .cta{
+    display:inline-block;padding:19px 46px;border-radius:999px;
+    font-weight:800;font-size:1.15rem;color:#3a1420;text-decoration:none;
+    background:linear-gradient(115deg,var(--oro-luz),#ffb35c 45%,var(--rosa-luz));
+    background-size:200% 200%;
+    box-shadow:0 8px 30px rgba(212,77,110,.35);
+    animation:mareo 6s ease infinite;
+    transition:transform .25s ease;
+  }
+  .cta:hover{transform:translateY(-3px) scale(1.03)}
+  @keyframes mareo{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .cta-nota{margin-top:14px;font-size:.85rem;color:var(--suave)}
+
+  /* ---------- SOPORTE ---------- */
+  .soporte{text-align:center;padding:36px 20px 8px;font-size:.88rem;color:var(--suave)}
+  .soporte a{color:var(--rosa);font-weight:700;text-decoration:none}
+
+  footer{background:#170a12;color:#a97f92;text-align:center;font-size:.8rem;padding:22px 20px}
+  footer a{color:#c9a3b5}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .anim-in{opacity:1;transform:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <canvas id="luces" aria-hidden="true"></canvas>
+  <div class="inner">
+    <div class="sello anim-in">✓</div>
+    <span class="eyebrow anim-in d1">Compra confirmada</span>
+    <h1 class="anim-in d2">¡Gracias! Tu compra fue exitosa 🎉</h1>
+    <p class="sub anim-in d3">Tu proceso ya te está esperando dentro de la app. Solo faltan 2 minutos para empezar.</p>
+  </div>
+</header>
+
+<section class="pasos">
+  <div class="wrap">
+    <h2>Cómo acceder a tu contenido</h2>
+    <div class="lista-pasos">
+      <div class="paso">
+        <div class="n">1</div>
+        <b>Entra a la app</b>
+        <p>Desde tu celular o computadora, sin descargar nada.</p>
+      </div>
+      <div class="paso">
+        <div class="n">2</div>
+        <b>Crea tu cuenta</b>
+        <p>Usa <strong>el mismo correo</strong> con el que hiciste tu compra.</p>
+      </div>
+      <div class="paso">
+        <div class="n">3</div>
+        <b>¡Listo!</b>
+        <p>Tu acceso se abre solo, de forma automática.</p>
+      </div>
+    </div>
+
+    <div class="aviso">
+      ⚠️ <b>Importante:</b> si usas un correo diferente al de tu compra, el sistema no podrá reconocerte. Si ya tienes cuenta, solo vuelve a entrar con tu correo habitual.
+    </div>
+
+    <div class="cta-wrap">
+      <a class="cta" href="https://app.clubdigital.site/login">Entrar a la app →</a>
+      <p class="cta-nota">app.clubdigital.site</p>
+    </div>
+
+    <p class="soporte">¿Tienes dudas o no encuentras tu acceso?<br>Escríbenos a <a href="mailto:soporte.reconectar@gmail.com">soporte.reconectar@gmail.com</a> 💗</p>
+  </div>
+</section>
+
+<footer>
+  Reconectar — <a href="https://app.clubdigital.site">app.clubdigital.site</a>
+</footer>
+
+<script>
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cv = document.getElementById("luces");
+  if (cv && !reduce) {
+    const ctx = cv.getContext("2d");
+    let W, H, parts;
+    const COLORS = ["255,217,138", "255,122,156", "255,255,255"];
+    function resize() {
+      W = cv.width = cv.offsetWidth; H = cv.height = cv.offsetHeight;
+      parts = Array.from({ length: Math.min(60, Math.floor(W / 16)) }, () => ({
+        x: Math.random() * W, y: Math.random() * H - H,
+        r: 1 + Math.random() * 3,
+        vy: 0.5 + Math.random() * 1.4, vx: (Math.random() - 0.5) * 0.6,
+        c: COLORS[(Math.random() * COLORS.length) | 0],
+        tw: Math.random() * Math.PI * 2,
+      }));
+    }
+    resize();
+    addEventListener("resize", resize);
+    (function tick() {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of parts) {
+        p.y += p.vy; p.x += p.vx; p.tw += 0.04;
+        if (p.y > H + 8) { p.y = -8; p.x = Math.random() * W; }
+        const a = 0.35 + 0.45 * Math.abs(Math.sin(p.tw));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${a})`;
+        ctx.shadowColor = `rgba(${p.c},.9)`;
+        ctx.shadowBlur = 8;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+</script>
+</body>
+</html>
