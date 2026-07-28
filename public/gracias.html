@@ -69,6 +69,28 @@ fbq('track', 'PageView');
   .hero h1{font-size:clamp(2rem,6vw,3rem);font-weight:900;text-shadow:0 0 40px rgba(255,122,156,.5)}
   .hero p.sub{margin:20px auto 0;max-width:30em;font-size:1.08rem;color:#f8e6ee}
 
+  /* ---------- ENTREGA: destaque inmediato en el hero ---------- */
+  .entrega{
+    margin:30px auto 0;max-width:420px;background:#fff;border-radius:20px;padding:22px 24px;
+    box-shadow:0 14px 40px rgba(0,0,0,.25);
+  }
+  .entrega .tag{
+    display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;letter-spacing:.1em;
+    text-transform:uppercase;color:#4b3413;background:linear-gradient(90deg,var(--oro-luz),#ffca7a);
+    padding:5px 14px;border-radius:999px;margin-bottom:12px;
+  }
+  .entrega p{color:var(--tinta);font-size:.98rem;line-height:1.5}
+  .entrega p b{color:var(--malva)}
+  .cta-hero{
+    display:block;margin-top:18px;padding:16px 20px;border-radius:14px;text-align:center;
+    font-weight:800;font-size:1.05rem;color:#fff;text-decoration:none;
+    background:linear-gradient(115deg,var(--rosa),var(--rosa-luz));
+    box-shadow:0 8px 24px rgba(212,77,110,.4);
+    transition:transform .2s ease;
+  }
+  .cta-hero:hover{transform:translateY(-2px)}
+  .cta-hero small{display:block;font-weight:700;font-size:.72rem;opacity:.85;margin-top:3px;text-transform:none;letter-spacing:0}
+
   /* ---------- PASOS ---------- */
   .pasos{background:#fff;padding:56px 20px}
   .wrap{max-width:640px;margin:0 auto}
@@ -128,6 +150,12 @@ fbq('track', 'PageView');
     <span class="eyebrow anim-in d1">Compra confirmada</span>
     <h1 class="anim-in d2">¡Gracias! Tu compra fue exitosa 🎉</h1>
     <p class="sub anim-in d3">Tu proceso ya te está esperando dentro de la app. Solo faltan 2 minutos para empezar.</p>
+
+    <div class="entrega anim-in d3">
+      <span class="tag">📲 Cómo recibes tu producto</span>
+      <p>Todo tu contenido está <b>dentro de la app Reconectar</b> — no llega por correo ni hay nada que descargar aparte. Entra, crea tu cuenta con el <b>mismo correo de tu compra</b>, y tu acceso se abre solo.</p>
+      <a class="cta-hero" href="https://app.clubdigital.site/login">Entrar a la app ahora →<small>app.clubdigital.site</small></a>
+    </div>
   </div>
 </header>
 
