@@ -94,7 +94,7 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
   .nota-cta{margin-top:14px;font-size:.85rem;color:#d9aebf}
 
   /* ---------- VSL (video) ---------- */
-  .vsl{background:var(--noche);text-align:center}
+  .vsl{background:var(--noche);text-align:center;padding:48px 14px}
   .vsl-caja{
     max-width:720px;margin:0 auto;border-radius:20px;padding:3px;
     background:linear-gradient(120deg,var(--oro-luz),var(--rosa-luz),var(--oro-luz));
@@ -103,6 +103,12 @@ fbq('track', 'ViewContent', {content_name: 'Metodo Mente Plena', content_type: '
   }
   .vsl-video{
     background:#1c0b13;border-radius:18px;overflow:hidden;
+  }
+  /* En mobile, el video ocupa casi todo el ancho de la pantalla (se ve más grande) */
+  @media (max-width:640px){
+    .vsl{padding:14px 6px 24px}
+    .vsl-caja{border-radius:14px;padding:2px}
+    .vsl-video{border-radius:12px}
   }
 
   /* ---------- DOLOR (crema) ---------- */
