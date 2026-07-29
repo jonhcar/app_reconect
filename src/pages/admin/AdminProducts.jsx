@@ -14,6 +14,8 @@ export default function AdminProducts() {
   const [editing, setEditing] = useState(null); // null | {product}
   const [modules, setModules] = useState([]);
   const [saving, setSaving] = useState(false);
+  const [dragMod, setDragMod] = useState(null); // índice do módulo sendo arrastado
+  const [dragMat, setDragMat] = useState(null); // {i, j} do material sendo arrastado
 
   const load = () => {
     base44.entities.Product.list("-created_at").then(setProducts);
@@ -127,6 +129,23 @@ export default function AdminProducts() {
     setModule(i, "audios", auds);
   };
   const removeAudio = (i, j) => setModule(i, "audios", (modules[i].audios || []).filter((_, x) => x !== j));
+
+  // Arrastar para reordenar os módulos (aulas). Renumera "order" (0, 10, 20…) na nova sequência.
+  const reorderModules = (from, to) => {
+    const next = [...modules];
+    const [moved] = next.splice(from, 1);
+    next.splice(to, 0, moved);
+    let n = 0;
+    setModules(next.map((m) => (m._deleted ? m : { ...m, order: n++ * 10 })));
+  };
+
+  // Arrastar para reordenar os materiais (PDFs) dentro de um módulo
+  const reorderMaterials = (i, from, to) => {
+    const mats = [...(modules[i].materials || [])];
+    const [moved] = mats.splice(from, 1);
+    mats.splice(to, 0, moved);
+    setModule(i, "materials", mats);
+  };
 
   const addMaterial = (i) => setModule(i, "materials", [...(modules[i].materials || []), { name: "", url: "", is_printable: false }]);
   const setMaterial = (i, j, k, v) => {
@@ -264,9 +283,24 @@ export default function AdminProducts() {
               </div>
               <div className="space-y-3">
                 {modules.map((mod, i) => mod._deleted ? null : (
-                  <div key={mod.id || `new-${i}`} className="bg-rosa-50 rounded-2xl p-3 space-y-2">
+                  <div
+                    key={mod.id || `new-${i}`}
+                    className={`bg-rosa-50 rounded-2xl p-3 space-y-2 ${dragMod === i ? "opacity-40" : ""}`}
+                    onDragOver={(e) => e.preventDefault()}
+                    onDrop={() => {
+                      if (dragMod === null || dragMod === i) return;
+                      reorderModules(dragMod, i);
+                      setDragMod(null);
+                    }}
+                  >
                     <div className="flex items-center gap-2">
-                      <GripVertical size={16} className="text-malva-300" />
+                      <GripVertical
+                        size={16}
+                        className="text-malva-300 cursor-grab active:cursor-grabbing shrink-0"
+                        draggable
+                        onDragStart={() => setDragMod(i)}
+                        onDragEnd={() => setDragMod(null)}
+                      />
                       <input placeholder="Título del módulo" value={mod.title} onChange={(e) => setModule(i, "title", e.target.value)} className="input flex-1" />
                       <input type="number" title="Orden" value={mod.order ?? 0} onChange={(e) => setModule(i, "order", Number(e.target.value))} className="input w-16 text-center" />
                       <button type="button" onClick={() => setModule(i, "_deleted", true)}><Trash2 size={16} className="text-malva-400" /></button>
@@ -302,7 +336,23 @@ export default function AdminProducts() {
                     <button type="button" onClick={() => addAudio(i)} className="text-xs font-bold text-malva-400">+ audio</button>
                     {/* Materiais */}
                     {(mod.materials || []).map((mat, j) => (
-                      <div key={j} className="flex items-center gap-2 text-sm">
+                      <div
+                        key={j}
+                        className={`flex items-center gap-2 text-sm ${dragMat?.i === i && dragMat?.j === j ? "opacity-40" : ""}`}
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={() => {
+                          if (!dragMat || dragMat.i !== i || dragMat.j === j) return;
+                          reorderMaterials(i, dragMat.j, j);
+                          setDragMat(null);
+                        }}
+                      >
+                        <GripVertical
+                          size={14}
+                          className="text-malva-300 cursor-grab active:cursor-grabbing shrink-0"
+                          draggable
+                          onDragStart={() => setDragMat({ i, j })}
+                          onDragEnd={() => setDragMat(null)}
+                        />
                         <input placeholder="Nombre del material" value={mat.name} onChange={(e) => setMaterial(i, j, "name", e.target.value)} className="input flex-1" />
                         <label className="text-xs font-bold text-rosa-500 cursor-pointer whitespace-nowrap">
                           {mat.url ? "PDF ✓" : "Subir PDF"}
