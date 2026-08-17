@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to Stop Overthinking — Calm Mind Method</title>
+<meta name="description" content="Calm Mind Method: a guided journal to stop overthinking, understand your anxiety triggers, and find calm every day. Instant PDF download.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<!-- 🔧 PENDIENTE: agregar aquí el Google Ads Conversion Tag (gtag.js) cuando João cree la cuenta de Google Ads -->
+
+<style>
+  :root{
+    --noche:#2b1220;
+    --malva:#7a3b5e;
+    --rosa:#d44d6e;
+    --rosa-luz:#ff7a9c;
+    --dorado:#c9a24b;
+    --oro-luz:#ffd98a;
+    --crema:#fdf8f3;
+    --tinta:#3a2230;
+    --suave:#8a6577;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Nunito Sans",system-ui,sans-serif;
+    color:var(--tinta);background:var(--noche);
+    line-height:1.65;overflow-x:hidden;
+  }
+  h1,h2,h3,.display{font-family:"Playfair Display",Georgia,serif;text-wrap:balance;line-height:1.15}
+  section{padding:72px 20px}
+  .wrap{max-width:680px;margin:0 auto}
+  .eyebrow{
+    display:inline-block;font-size:.78rem;font-weight:800;letter-spacing:.18em;
+    text-transform:uppercase;margin-bottom:18px;
+  }
+  .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease,transform .8s ease}
+  .reveal.visible{opacity:1;transform:none}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;
+    text-align:center;color:var(--crema);
+    background:
+      radial-gradient(ellipse 70% 55% at 50% 38%, rgba(212,77,110,.38), transparent 65%),
+      radial-gradient(ellipse 45% 35% at 50% 40%, rgba(255,217,138,.20), transparent 70%),
+      linear-gradient(180deg,#1d0b16 0%, var(--noche) 55%, #43152b 100%);
+  }
+  .hero canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+  .hero .wrap{position:relative;z-index:2;padding:40px 0}
+  .hero .eyebrow{color:var(--oro-luz)}
+  .hero h1{
+    font-size:clamp(2.2rem,6.2vw,3.7rem);font-weight:900;color:#fff;
+    text-shadow:0 0 42px rgba(255,122,156,.55),0 0 90px rgba(212,77,110,.35);
+  }
+  .hero h1 em{font-style:italic;color:var(--oro-luz);text-shadow:0 0 34px rgba(255,217,138,.7)}
+  .hero p.sub{margin:22px auto 0;max-width:34em;font-size:1.12rem;color:#f4dbe4}
+  .anim-in{opacity:0;transform:translateY(18px);animation:entra .9s ease forwards}
+  .anim-in.d1{animation-delay:.15s}.anim-in.d2{animation-delay:.35s}.anim-in.d3{animation-delay:.6s}
+  @keyframes entra{to{opacity:1;transform:none}}
+
+  .cta{
+    display:inline-block;margin-top:34px;padding:18px 42px;border-radius:999px;
+    font-family:"Nunito Sans",sans-serif;font-weight:800;font-size:1.1rem;letter-spacing:.02em;
+    color:#3a1420;text-decoration:none;
+    background:linear-gradient(115deg,var(--oro-luz),#ffb35c 45%,var(--rosa-luz));
+    background-size:200% 200%;
+    box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45);
+    animation:brillo 2.6s ease-in-out infinite, mareo 6s ease infinite;
+    transition:transform .25s ease;
+  }
+  .cta:hover{transform:translateY(-3px) scale(1.03)}
+  .cta small{display:block;font-weight:700;font-size:.78rem;opacity:.75;letter-spacing:.06em}
+  @keyframes brillo{
+    0%,100%{box-shadow:0 0 0 0 rgba(255,179,92,.55),0 8px 30px rgba(212,77,110,.45)}
+    50%{box-shadow:0 0 24px 6px rgba(255,179,92,.65),0 8px 44px rgba(255,122,156,.55)}
+  }
+  @keyframes mareo{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  .nota-cta{margin-top:14px;font-size:.85rem;color:#d9aebf}
+
+  /* ---------- PAIN ---------- */
+  .dolor{background:var(--crema)}
+  .dolor .eyebrow{color:var(--rosa)}
+  .dolor h2{font-size:clamp(1.7rem,4.5vw,2.4rem);margin-bottom:26px}
+  .lista-dolor{list-style:none;display:flex;flex-direction:column;gap:14px;margin-top:8px}
+  .lista-dolor li{
+    background:#fff;border-left:4px solid var(--rosa);border-radius:14px;
+    padding:16px 20px;font-size:1.04rem;box-shadow:0 3px 16px rgba(122,59,94,.08);
+  }
+  .lista-dolor b{color:var(--malva)}
+
+  /* ---------- REASSURANCE ---------- */
+  .culpa{
+    color:var(--crema);text-align:center;
+    background:
+      radial-gradient(ellipse 80% 70% at 50% 20%, rgba(255,122,156,.28), transparent 60%),
+      linear-gradient(160deg,var(--malva),#54263f 80%);
+  }
+  .culpa h2{font-size:clamp(1.8rem,5vw,2.6rem);color:#fff;text-shadow:0 0 30px rgba(255,122,156,.45)}
+  .culpa h2 em{color:var(--oro-luz);font-style:italic}
+  .culpa p{max-width:36em;margin:18px auto 0;font-size:1.08rem;color:#f6e3ea}
+
+  /* ---------- METHOD ---------- */
+  .proceso{background:var(--crema)}
+  .proceso .eyebrow{color:var(--dorado)}
+  .proceso h2{font-size:clamp(1.7rem,4.5vw,2.4rem)}
+  .proceso .intro{margin-top:14px;color:var(--suave);max-width:38em}
+  .fases{display:grid;grid-template-columns:1fr;gap:18px;margin-top:36px}
+  @media(min-width:640px){.fases{grid-template-columns:1fr 1fr}}
+  .fase{
+    position:relative;background:#fff;border-radius:20px;padding:26px 24px 24px;
+    box-shadow:0 4px 22px rgba(122,59,94,.09);overflow:hidden;
+    transition:transform .3s ease,box-shadow .3s ease;
+  }
+  .fase:hover{transform:translateY(-5px);box-shadow:0 14px 34px rgba(212,77,110,.18)}
+  .fase::before{
+    content:"";position:absolute;top:0;left:0;right:0;height:5px;
+    background:linear-gradient(90deg,var(--rosa-luz),var(--oro-luz));
+  }
+  .fase .ico{font-size:1.8rem}
+  .fase h3{font-size:1.12rem;margin:6px 0 8px;color:var(--malva)}
+  .fase p{font-size:.95rem;color:#5d3c4d}
+
+  /* ---------- AUTHENTICITY ---------- */
+  .libro{background:#fff}
+  .libro blockquote{
+    font-family:"Playfair Display",serif;font-style:italic;font-size:clamp(1.2rem,3.4vw,1.55rem);
+    color:var(--malva);border-left:4px solid var(--dorado);padding-left:22px;margin-bottom:22px;
+  }
+  .libro p{max-width:40em}
+
+  /* ---------- STACK / OFFER ---------- */
+  .stack{
+    color:var(--crema);
+    background:
+      radial-gradient(ellipse 75% 60% at 50% 8%, rgba(255,217,138,.16), transparent 60%),
+      linear-gradient(180deg,#43152b,var(--noche));
+  }
+  .stack h2{text-align:center;font-size:clamp(1.8rem,5vw,2.5rem);color:#fff}
+  .caja-oferta{
+    margin-top:36px;border-radius:24px;padding:3px;
+    background:linear-gradient(120deg,var(--oro-luz),var(--rosa-luz),var(--oro-luz));
+    background-size:250% 250%;animation:mareo 5s ease infinite;
+    box-shadow:0 0 46px rgba(255,179,92,.28);
+  }
+  .caja-oferta .dentro{background:#31101f;border-radius:21px;padding:30px 26px}
+  .item{display:flex;justify-content:space-between;gap:14px;align-items:baseline;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+  .item:last-of-type{border-bottom:none}
+  .item .que{font-size:1.02rem}
+  .item .que b{color:var(--oro-luz)}
+  .item .valor{font-weight:800;color:#caa3b3;white-space:nowrap;text-decoration:line-through;font-variant-numeric:tabular-nums}
+  .total{display:flex;justify-content:space-between;padding-top:18px;font-weight:800;font-size:1.05rem;color:#e8c9d5}
+  .total .tachado{text-decoration:line-through;opacity:.7}
+  .precio-hoy{text-align:center;margin-top:22px}
+  .precio-hoy .hoy{font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;font-weight:800;color:var(--rosa-luz)}
+  .precio-hoy .cifra{
+    font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(3rem,10vw,4.4rem);color:#fff;
+    text-shadow:0 0 40px rgba(255,217,138,.65),0 0 80px rgba(255,122,156,.4);
+  }
+  .precio-hoy .unica{color:#d9aebf;font-size:.92rem}
+  .urgencia{margin-top:20px;text-align:center;color:#f2d4a6;font-size:.98rem;max-width:34em;margin-left:auto;margin-right:auto}
+
+  /* ---------- GUARANTEE ---------- */
+  .garantia{background:var(--crema);text-align:center}
+  .sello{
+    width:92px;height:92px;margin:0 auto 20px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:radial-gradient(circle at 35% 30%,var(--oro-luz),var(--dorado));
+    box-shadow:0 0 34px rgba(201,162,75,.5);
+    font-family:"Playfair Display",serif;font-weight:900;font-size:1.6rem;color:#4b3413;
+  }
+  .garantia h2{font-size:clamp(1.6rem,4.2vw,2.1rem)}
+  .garantia p{max-width:36em;margin:16px auto 0}
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff}
+  .faq h2{font-size:clamp(1.6rem,4.2vw,2.1rem);margin-bottom:26px}
+  .faq details{border-bottom:1px solid #eadfe5;padding:16px 4px}
+  .faq summary{
+    cursor:pointer;font-weight:800;color:var(--malva);font-size:1.03rem;list-style:none;
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+  }
+  .faq summary::after{content:"+";font-size:1.4rem;color:var(--rosa);transition:transform .3s}
+  .faq details[open] summary::after{transform:rotate(45deg)}
+  .faq details p{margin-top:10px;color:#5d3c4d}
+
+  /* ---------- CLOSE ---------- */
+  .cierre{
+    text-align:center;color:var(--crema);padding-bottom:88px;
+    background:
+      radial-gradient(ellipse 80% 65% at 50% 80%, rgba(255,217,138,.24), transparent 65%),
+      radial-gradient(ellipse 65% 55% at 50% 75%, rgba(255,122,156,.30), transparent 60%),
+      linear-gradient(180deg,var(--noche) 0%, #4d1a30 70%, #6d2a47 100%);
+  }
+  .cierre h2{font-size:clamp(1.9rem,5.5vw,2.8rem);color:#fff;text-shadow:0 0 34px rgba(255,122,156,.5)}
+  .cierre h2 em{color:var(--oro-luz);font-style:italic}
+  .cierre p{max-width:32em;margin:18px auto 0;color:#f4dbe4;font-size:1.08rem}
+  footer{background:#170a12;color:#a97f92;text-align:center;font-size:.82rem;padding:26px 20px}
+  footer a{color:#c9a3b5}
+
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .reveal{opacity:1;transform:none}
+    .anim-in{opacity:1;transform:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======== HERO ======== -->
+<header class="hero">
+  <canvas id="luces" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <span class="eyebrow anim-in">For the overthinker who never gets a break</span>
+    <h1 class="anim-in d1">How to stop overthinking.<br><em>Starting today.</em></h1>
+    <p class="sub anim-in d2">You're not broken. Nobody ever gave you a map for this loop in your head. The <strong>Calm Mind Method</strong> is a guided journal — written by someone who lives with anxiety too — to help you understand your triggers and find calm, one day at a time.</p>
+    <div class="anim-in d3">
+      <a class="cta" href="#offer">Get my Calm Mind Method<small>instant PDF download · 7-day guarantee</small></a>
+      <p class="nota-cta">Full 7-day guarantee. If it's not for you, you get your money back.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ======== PAIN ======== -->
+<section class="dolor">
+  <div class="wrap">
+    <span class="eyebrow reveal">Does this sound familiar?</span>
+    <h2 class="reveal">Your mind never seems to rest.</h2>
+    <ul class="lista-dolor">
+      <li class="reveal">Your heart races <b>for no clear reason</b>, and you can't explain why today of all days.</li>
+      <li class="reveal">You replay the same conversation <b>over and over</b>, looking for what you did wrong.</li>
+      <li class="reveal">You lie awake because your mind <b>won't stop running through worst-case scenarios</b>.</li>
+      <li class="reveal">You've tried generic advice — breathe, relax, don't worry — and <b>none of it felt made for you</b>.</li>
+      <li class="reveal">You end most days exhausted from just <b>holding it all together</b>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ======== REASSURANCE ======== -->
+<section class="culpa">
+  <div class="wrap">
+    <h2 class="reveal">You're not overthinking because something's wrong with you.</h2>
+    <p class="reveal">Overthinking isn't a character flaw — it's a pattern. A loop your mind learned to protect you, that now runs on its own. Patterns have triggers, timing, and shape — and once you can see them, you can start to interrupt them.</p>
+    <p class="reveal">That's why generic advice doesn't work: it was never built around <strong>your</strong> mind. You need something guided — a method, not a slogan.</p>
+  </div>
+</section>
+
+<!-- ======== METHOD ======== -->
+<section class="proceso">
+  <div class="wrap">
+    <span class="eyebrow reveal">The method</span>
+    <h2 class="reveal">Calm Mind Method — 4 tools for every day</h2>
+    <p class="intro reveal">A guided PDF journal, ready to print or fill out digitally, with simple and direct exercises.</p>
+    <div class="fases">
+      <div class="fase reveal">
+        <div class="ico">📅</div>
+        <h3>Overthinking Tracker</h3>
+        <p>A 12-month calendar to log your anxiety level day by day, so you can finally see your own patterns clearly.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">🔍</div>
+        <h3>Understand Your Triggers</h3>
+        <p>Guided exercises to identify what sets your mind spinning, why it happens, and how it makes you feel.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">🌙</div>
+        <h3>Calm Routines</h3>
+        <p>Organize your sleep, relaxation, and meditation — at your own pace, no pressure, no perfection.</p>
+      </div>
+      <div class="fase reveal">
+        <div class="ico">✍️</div>
+        <h3>Thought Journal</h3>
+        <p>A daily space to put down what's on your mind — without judging yourself for it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== AUTHENTICITY ======== -->
+<section class="libro">
+  <div class="wrap">
+    <blockquote class="reveal">"I've lived with anxiety since childhood, and I'm also a highly sensitive person. For years I thought something was wrong with me — until I understood it wasn't."</blockquote>
+    <p class="reveal">This journal wasn't written by someone who just studied overthinking — it was written by someone who <strong>lives it</strong>. No empty motivational quotes here — just real tools to understand your mind and support yourself through it, one day at a time.</p>
+  </div>
+</section>
+
+<!-- ======== STACK / OFFER ======== -->
+<section class="stack" id="offer">
+  <div class="wrap">
+    <h2 class="reveal">Everything you get today</h2>
+    <div class="caja-oferta reveal">
+      <div class="dentro">
+        <div class="item"><span class="que"><b>Calm Mind Method</b> — the complete guided overthinking &amp; anxiety journal (PDF)</span><span class="valor">$27</span></div>
+        <div class="item"><span class="que"><b>BONUS 1:</b> Emotional Communication Guide — express what you feel without guilt</span><span class="valor">$17</span></div>
+        <div class="item"><span class="que"><b>BONUS 2:</b> Guided Breathing &amp; Calm Audio — 10 minutes to lower anxiety right now</span><span class="valor">$15</span></div>
+        <div class="item"><span class="que"><b>BONUS 3:</b> 100 Reconnection Messages — words to reconnect with the people you love</span><span class="valor">$9</span></div>
+        <div class="item"><span class="que"><b>BONUS 4:</b> 7 Days to Reconnect — one small step a day back to yourself</span><span class="valor">$7</span></div>
+        <div class="total"><span>Total value</span><span class="tachado">$75</span></div>
+        <div class="precio-hoy">
+          <div class="hoy">Today's launch price</div>
+          <div class="cifra">$9.90</div>
+          <div class="unica">one-time payment · instant download</div>
+        </div>
+      </div>
+    </div>
+    <p class="urgencia reveal">⚠ This is the real launch price. Once this phase ends, it goes up. If you're seeing this page, you're still in time.</p>
+    <div style="text-align:center">
+      <a class="cta reveal" href="https://pay.hotmart.com/PENDIENTE">Yes, I want my Calm Mind Method<small>secure checkout · instant PDF</small></a>
+    </div>
+  </div>
+</section>
+
+<!-- ======== GUARANTEE ======== -->
+<section class="garantia">
+  <div class="wrap">
+    <div class="sello reveal">7<span style="font-size:.75rem;margin-left:2px">days</span></div>
+    <h2 class="reveal">Full 7-day guarantee</h2>
+    <p class="reveal">Open it and use your Overthinking Tracker this week. If you don't feel something start to shift, request a refund with one click — no questions asked. All the risk is on us.</p>
+  </div>
+</section>
+
+<!-- ======== FAQ ======== -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="reveal">Frequently asked questions</h2>
+    <details class="reveal">
+      <summary>How do I get it?</summary>
+      <p>Right after your payment, you'll get instant access to download your PDF — no waiting, no shipping.</p>
+    </details>
+    <details class="reveal">
+      <summary>Do I need extra time or experience?</summary>
+      <p>No. Each exercise takes just a few minutes a day. Go at your own pace — there's no "wrong" way to use it.</p>
+    </details>
+    <details class="reveal">
+      <summary>Is it a physical journal or digital?</summary>
+      <p>It's a 100% digital PDF. Print the pages you want, or fill them out on your phone, tablet, or computer.</p>
+    </details>
+    <details class="reveal">
+      <summary>What if it doesn't work for me?</summary>
+      <p>You have a full 7-day guarantee. If you don't feel the shift, you get a full refund with one click.</p>
+    </details>
+    <details class="reveal">
+      <summary>Is payment secure?</summary>
+      <p>Yes. Payment is processed by <strong>Hotmart</strong>, a global platform for digital products, trusted in over 180 countries.</p>
+    </details>
+  </div>
+</section>
+
+<!-- ======== CLOSE ======== -->
+<section class="cierre">
+  <div class="wrap">
+    <h2 class="reveal">You weren't meant to live on repeat.<br><em>You deserve a quiet mind.</em></h2>
+    <p class="reveal">Today can be the day you start seeing your own patterns — for less than the price of a coffee.</p>
+    <div>
+      <a class="cta reveal" href="https://pay.hotmart.com/PENDIENTE">Get my Calm Mind Method<small>7-day guarantee · instant download</small></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Reconectar · Calm Mind Method — <a href="https://app.clubdigital.site">app.clubdigital.site</a><br>
+  Payment processed by Hotmart. This product does not replace professional mental health care.
+</footer>
+
+<script>
+  document.querySelectorAll(".cta").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (window.gtag) gtag("event", "conversion", { send_to: "PENDIENTE" });
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("visible"); io.unobserve(e.target); } });
+  }, { threshold: 0.15 });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const cv = document.getElementById("luces");
+  if (cv && !reduce) {
+    const ctx = cv.getContext("2d");
+    let W, H, parts;
+    const COLORS = ["255,217,138", "255,122,156", "253,248,243"];
+    function resize() {
+      W = cv.width = cv.offsetWidth;
+      H = cv.height = cv.offsetHeight;
+      parts = Array.from({ length: Math.min(46, Math.floor(W / 22)) }, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: 0.8 + Math.random() * 2.4,
+        vy: 0.12 + Math.random() * 0.4, vx: (Math.random() - 0.5) * 0.18,
+        c: COLORS[(Math.random() * COLORS.length) | 0],
+        tw: Math.random() * Math.PI * 2,
+      }));
+    }
+    resize();
+    addEventListener("resize", resize);
+    (function tick() {
+      ctx.clearRect(0, 0, W, H);
+      for (const p of parts) {
+        p.y -= p.vy; p.x += p.vx; p.tw += 0.03;
+        if (p.y < -8) { p.y = H + 8; p.x = Math.random() * W; }
+        const a = 0.25 + 0.45 * Math.abs(Math.sin(p.tw));
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${p.c},${a})`;
+        ctx.shadowColor = `rgba(${p.c},.9)`;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
+</script>
+</body>
+</html>

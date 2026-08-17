@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Protocolo Menopausia Cero Crisis</title>
+<meta name="description" content="Página estática para print screen — fondo del checkout de Hotmart. No es una página navegable para clientas.">
+<style>
+  :root{
+    --negro:#000;
+    --oro:#c9a24b;--oro-luz:#ffd98a;
+    --verde:#3fae7a;--verde-luz:#7fe3ae;
+    --rojo:#8a2332;--rojo-luz:#ff6b7a;
+    --blanco:#f4f1ec;--gris:#9a958d;--gris-osc:#565349;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{background:var(--negro)}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",Helvetica,Arial,sans-serif;
+    color:var(--blanco);line-height:1.6;overflow-x:hidden;
+  }
+  section{background:#000;padding:76px 22px;position:relative}
+  .wrap{max-width:640px;margin:0 auto;position:relative;z-index:2}
+  h1,h2,h3{font-weight:700;letter-spacing:-.01em;text-wrap:balance;line-height:1.18}
+  p{color:#d8d4cb}
+
+  .badge{
+    display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--oro-luz);border:1px solid rgba(201,162,75,.45);padding:7px 16px;
+    background:linear-gradient(180deg, rgba(201,162,75,.12), transparent);
+    margin-bottom:22px;
+  }
+  .badge.rojo{color:var(--rojo-luz);border-color:rgba(255,107,122,.4)}
+  .badge.verde{color:var(--verde-luz);border-color:rgba(127,227,174,.4)}
+
+  .glow-text{
+    background:linear-gradient(100deg,#fff 10%, var(--oro-luz) 45%, #fff 75%);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    filter:drop-shadow(0 0 22px rgba(201,162,75,.35));
+  }
+
+  .arrow{
+    text-align:center;color:var(--oro);font-size:1.4rem;opacity:.75;
+    padding:10px 0 0;position:relative;
+  }
+  .arrow::before{
+    content:"";display:block;width:1px;height:38px;margin:0 auto 8px;
+    background:linear-gradient(180deg, transparent, rgba(201,162,75,.55));
+  }
+
+  /* HERO */
+  .hero{
+    min-height:min(880px,110vh);display:flex;align-items:flex-end;justify-content:center;
+    text-align:center;padding-bottom:64px;
+    background:
+      radial-gradient(ellipse 60% 42% at 50% 30%, rgba(255,217,138,.16), transparent 70%),
+      radial-gradient(ellipse 90% 60% at 50% 8%, rgba(201,162,75,.10), transparent 65%),
+      linear-gradient(180deg, #0a0806 0%, #050403 42%, #000 100%);
+    position:relative;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:
+      radial-gradient(circle at 50% 22%, rgba(255,217,138,.20), transparent 32%),
+      repeating-radial-gradient(circle at 50% 50%, rgba(255,255,255,.015) 0, rgba(255,255,255,.015) 1px, transparent 1px, transparent 3px);
+    opacity:.9;
+  }
+  .hero::after{
+    content:"";position:absolute;left:0;right:0;bottom:0;height:55%;
+    background:linear-gradient(180deg, transparent, #000 85%);
+  }
+  .hero .wrap{padding-bottom:6px}
+  .hero .badge{color:var(--oro-luz)}
+  .hero h1{
+    font-size:clamp(2rem,7vw,3.1rem);color:#fff;
+    text-shadow:0 0 30px rgba(255,217,138,.30), 0 0 70px rgba(0,0,0,.9);
+  }
+  .hero p.sub{max-width:30em;margin:22px auto 0;font-size:1.06rem;color:#e4dfd4}
+
+  /* ICONS (hex) */
+  .hex{
+    width:76px;height:76px;margin:0 auto 16px;
+    clip-path:polygon(50% 0,100% 25%,100% 75%,50% 100%,0 75%,0 25%);
+    background:linear-gradient(160deg, rgba(201,162,75,.22), rgba(0,0,0,.4));
+    border:1px solid rgba(201,162,75,.5);
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 22px rgba(201,162,75,.22), inset 0 0 14px rgba(201,162,75,.15);
+  }
+  .hex svg{width:34px;height:34px;stroke:var(--oro-luz);fill:none;stroke-width:1.6}
+
+  /* CHAMFERED CARD */
+  .chamfer-outer{
+    clip-path:polygon(18px 0,100% 0,100% calc(100% - 18px),calc(100% - 18px) 100%,0 100%,0 18px);
+    padding:1.5px;
+  }
+  .chamfer-inner{
+    clip-path:polygon(17px 0,100% 0,100% calc(100% - 17px),calc(100% - 17px) 100%,0 100%,0 17px);
+    background:#0a0908;padding:26px 24px;
+  }
+  .c-rojo .chamfer-outer{background:linear-gradient(160deg, rgba(255,107,122,.55), rgba(138,35,50,.15))}
+  .c-verde .chamfer-outer{background:linear-gradient(160deg, rgba(127,227,174,.6), rgba(63,174,122,.15))}
+  .c-oro .chamfer-outer{background:linear-gradient(160deg, rgba(255,217,138,.7), rgba(201,162,75,.2))}
+
+  /* PROBLEMA / VERDAD */
+  .textsec{text-align:center}
+  .textsec h2{font-size:clamp(1.6rem,5vw,2.15rem);margin-bottom:18px}
+  .textsec p{max-width:32em;margin:0 auto;font-size:1.02rem}
+  .textsec p + p{margin-top:14px}
+  .destaque-rojo{color:var(--rojo-luz);font-weight:700}
+  .destaque-verde{color:var(--verde-luz);font-weight:700}
+  .destaque-oro{color:var(--oro-luz);font-weight:700}
+
+  /* SEPARACION */
+  .separacion .wrap{max-width:700px}
+  .cards-contraste{display:grid;grid-template-columns:1fr;gap:16px;margin-top:8px}
+  @media(min-width:640px){.cards-contraste{grid-template-columns:1fr 1fr;align-items:stretch}}
+  .cards-contraste .chamfer-inner{height:100%}
+  .card-tag{font-size:.68rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;margin-bottom:10px;display:block}
+  .c-rojo .card-tag{color:var(--rojo-luz)}
+  .c-verde .card-tag{color:var(--verde-luz)}
+  .card-item{font-size:.94rem;color:#d8d4cb;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .card-item:last-of-type{border-bottom:none}
+  .card-result{margin-top:14px;font-weight:700;font-size:.9rem}
+  .c-rojo .card-result{color:var(--rojo-luz)}
+  .c-verde .card-result{color:var(--verde-luz)}
+  .flecha-central{text-align:center;font-size:1.6rem;color:var(--oro);margin:14px 0;opacity:.85}
+  @media(min-width:640px){.flecha-central{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin:0;background:#000;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,162,75,.4)}}
+
+  /* METODO */
+  .metodo-pasos{margin-top:40px;display:flex;flex-direction:column;gap:0;align-items:center}
+  .paso-box{
+    width:100%;max-width:420px;text-align:center;padding:20px 22px;
+    border:1px solid rgba(201,162,75,.35);background:rgba(201,162,75,.05);
+    clip-path:polygon(14px 0,100% 0,100% calc(100% - 14px),calc(100% - 14px) 100%,0 100%,0 14px);
+  }
+  .paso-box .num{font-size:.72rem;letter-spacing:.2em;color:var(--oro-luz);font-weight:700;margin-bottom:8px}
+  .paso-box b{font-size:1.05rem;color:#fff}
+  .paso-conector{width:1px;height:30px;background:linear-gradient(180deg, rgba(201,162,75,.55), rgba(201,162,75,.1))}
+
+  /* BENEFICIOS GRID */
+  .grid-beneficios{display:grid;grid-template-columns:1fr;gap:30px;margin-top:44px;text-align:center}
+  @media(min-width:600px){.grid-beneficios{grid-template-columns:repeat(2,1fr)}}
+  .beneficio b{display:block;color:#fff;font-size:1.02rem;margin-bottom:4px}
+  .beneficio p{font-size:.9rem}
+
+  /* LO QUE RECIBES */
+  .recibes-lista{margin-top:36px;display:flex;flex-direction:column;gap:14px}
+  .recibe-item{
+    display:flex;gap:14px;align-items:flex-start;padding:16px 18px;
+    border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);
+    clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);
+  }
+  .recibe-item .dot{width:8px;height:8px;background:var(--oro-luz);margin-top:7px;flex-shrink:0;
+    clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);box-shadow:0 0 8px rgba(255,217,138,.7)}
+  .recibe-item b{color:#fff;font-size:.98rem;display:block}
+  .recibe-item span{font-size:.86rem;color:var(--gris)}
+  .bonus-label{margin-top:30px;text-align:center;font-size:.72rem;letter-spacing:.18em;color:var(--oro-luz);text-transform:uppercase}
+
+  /* TESTIMONIOS */
+  .testi-wrap{display:flex;flex-direction:column;gap:16px;margin-top:36px}
+  .testi{
+    background:#0b0a08;border:1px solid rgba(255,255,255,.07);border-radius:18px 18px 18px 4px;
+    padding:16px 18px;display:flex;gap:12px;
+  }
+  .avatar{
+    width:44px;height:44px;border-radius:50%;flex-shrink:0;
+    display:flex;align-items:center;justify-content:center;font-weight:700;color:#1a1a1a;
+    background:linear-gradient(140deg, var(--oro-luz), var(--oro));
+  }
+  .testi-body b{color:#fff;font-size:.92rem}
+  .testi-body .ctx{color:var(--gris);font-size:.78rem;display:block;margin-bottom:6px}
+  .testi-body p{font-size:.92rem;color:#e2ded5}
+  .check-verde{color:var(--verde-luz);font-size:.75rem}
+
+  /* ANCLAJE */
+  .anclaje-box{margin-top:30px;display:flex;flex-direction:column;gap:10px}
+  .anclaje-linea{display:flex;justify-content:space-between;font-size:.92rem;color:var(--gris);border-bottom:1px dashed rgba(255,255,255,.1);padding-bottom:8px}
+  .anclaje-linea b{color:#c9c4b8;font-weight:600}
+  .anclaje-total{display:flex;justify-content:space-between;font-size:1rem;color:#fff;font-weight:700;padding-top:4px}
+
+  /* CARD FINAL */
+  .final-outer{max-width:460px;margin:0 auto}
+  .final-tag{
+    display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+    color:#1a1305;background:linear-gradient(90deg,var(--oro-luz),#ffb35c);padding:6px 16px;
+    box-shadow:0 0 20px rgba(255,179,92,.4);
+  }
+  .final-card{text-align:center}
+  .final-card{
+    background:
+      repeating-linear-gradient(0deg, rgba(201,162,75,.05) 0px, rgba(201,162,75,.05) 1px, transparent 1px, transparent 26px),
+      repeating-linear-gradient(90deg, rgba(201,162,75,.05) 0px, rgba(201,162,75,.05) 1px, transparent 1px, transparent 26px),
+      radial-gradient(ellipse 90% 70% at 50% 0%, rgba(201,162,75,.14), transparent 70%),
+      #060503;
+  }
+  .final-outer .chamfer-outer{
+    background:linear-gradient(160deg, rgba(255,217,138,.8), rgba(201,162,75,.25));
+    filter:drop-shadow(0 0 34px rgba(201,162,75,.35));
+  }
+  .precio-tachado{color:var(--gris);font-size:1rem;text-decoration:line-through;margin-top:18px}
+  .precio-final{
+    font-size:clamp(2.6rem,10vw,3.6rem);font-weight:800;margin:6px 0 0;
+    color:#fff;text-shadow:0 0 40px rgba(255,217,138,.5);
+  }
+  .precio-final small{display:block;font-size:1rem;font-weight:600;color:var(--oro-luz);margin-top:2px}
+  .precio-sub{margin-top:10px;font-size:.95rem;color:#e2ded5}
+  .logo-final{margin:26px 0 20px}
+  .logo-final .top{font-size:.68rem;letter-spacing:.3em;color:var(--gris);text-transform:uppercase}
+  .logo-final .main{
+    font-size:clamp(1.7rem,6vw,2.3rem);font-weight:800;letter-spacing:.04em;margin-top:6px;
+    background:linear-gradient(100deg,#fff, var(--oro-luz) 50%, #fff);
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .logo-final .sub{font-size:.72rem;letter-spacing:.22em;color:var(--oro);text-transform:uppercase;margin-top:6px}
+  .garantia-final{
+    margin-top:22px;padding-top:20px;border-top:1px solid rgba(255,255,255,.08);
+    display:flex;flex-direction:column;align-items:center;gap:8px;
+  }
+  .garantia-final svg{width:34px;height:34px;stroke:var(--verde-luz);fill:none;stroke-width:1.5}
+  .garantia-final b{color:#fff;font-size:.94rem}
+  .garantia-final p{font-size:.82rem;max-width:26em}
+
+  footer{background:#000;color:#4a463d;text-align:center;font-size:.72rem;padding:30px 20px 60px}
+</style>
+</head>
+<body>
+
+<!-- 1. HERO -->
+<header class="hero">
+  <div class="wrap">
+    <span class="badge">PARA MUJERES DE 45+</span>
+    <h1>Hay una alarma que suena<br>a las 3 de la madrugada.<br><span class="glow-text">Nadie te enseñó a apagarla.</span></h1>
+    <p class="sub">El protocolo natural para apagar los sofocos, recuperar el sueño profundo y encender de nuevo tu cuerpo — sin dietas de hambre, sin pastillas, sin correr en la cinta.</p>
+  </div>
+</header>
+
+<div class="arrow">↓</div>
+
+<!-- 2. EL PROBLEMA -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge rojo">LA HERIDA QUE NADIE NOMBRA</span>
+    <h2>Te despiertas empapada.<br>Comes menos y subes de peso igual.</h2>
+    <p>Tu cuerpo cambió las reglas y nadie te avisó. El calor que te quema por dentro a mitad de la noche. La ropa que ya no cierra, aunque comas casi nada. Las palabras que se te escapan a mitad de una frase importante.</p>
+    <p>Y al final, siempre la misma frase en el consultorio: <span class="destaque-rojo">"es tu edad, tienes que aprender a vivir con esto."</span></p>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 3. LA VERDAD -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge">LO QUE LA MEDICINA DE PRISA NO TE EXPLICÓ</span>
+    <h2>No es tu metabolismo.<br>Es una <span class="glow-text">alarma de cortisol</span> que nadie apagó.</h2>
+    <p>Cuando baja el estrógeno, tu cuerpo entra en modo defensa. Comer menos y correr más solo suben el cortisol — y el cortisol le ordena a tu cuerpo guardar cada gramo de grasa como si fuera una guerra.</p>
+    <p><span class="destaque-oro">No estás rota.</span> Estás usando un manual viejo para un cuerpo que cambió de reglas.</p>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 4. LA SEPARACION -->
+<section class="separacion">
+  <div class="wrap">
+    <div style="text-align:center">
+      <span class="badge">DOS CAMINOS</span>
+      <h2 style="font-size:clamp(1.5rem,4.5vw,2rem)">¿Cuál está viviendo tu cuerpo hoy?</h2>
+    </div>
+    <div class="cards-contraste" style="position:relative;margin-top:34px">
+      <div class="c-rojo chamfer-outer">
+        <div class="chamfer-inner">
+          <span class="card-tag">El camino de siempre</span>
+          <div class="card-item">Contar calorías sin parar</div>
+          <div class="card-item">Horas de cardio que agotan</div>
+          <div class="card-item">Pastillas y dietas de moda</div>
+          <div class="card-item">"Acostúmbrate, es tu edad"</div>
+          <p class="card-result">Más cansancio. Cero cambios.</p>
+        </div>
+      </div>
+      <div class="flecha-central">→</div>
+      <div class="c-verde chamfer-outer">
+        <div class="chamfer-inner">
+          <span class="card-tag">El Reinicio 360°</span>
+          <div class="card-item">Apagar la alarma del cortisol</div>
+          <div class="card-item">Comer a favor de tus hormonas</div>
+          <div class="card-item">Activar el músculo en 15 minutos</div>
+          <div class="card-item">Tu cuerpo, trabajando contigo</div>
+          <p class="card-result">Sueño profundo. Cuerpo que responde.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 5. LA SOLUCION -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge">EL MÉTODO</span>
+    <h2>Reinicio Metabólico <span class="glow-text">360°</span></h2>
+    <p>Tres pasos simples para devolverle a tu cuerpo la capacidad de descansar, quemar grasa y pensar con claridad — trabajando a favor de tus hormonas, no en contra.</p>
+    <div class="metodo-pasos">
+      <div class="paso-box">
+        <div class="num">PASO 1</div>
+        <b>Apagar la alarma</b>
+        <p style="font-size:.86rem;margin-top:4px">Sueño profundo, sin sofocos nocturnos</p>
+      </div>
+      <div class="paso-conector"></div>
+      <div class="paso-box">
+        <div class="num">PASO 2</div>
+        <b>Nutrición antiinflamatoria</b>
+        <p style="font-size:.86rem;margin-top:4px">Comer a favor de tus hormonas, sin contar calorías</p>
+      </div>
+      <div class="paso-conector"></div>
+      <div class="paso-box">
+        <div class="num">PASO 3</div>
+        <b>Activación muscular · 15'</b>
+        <p style="font-size:.86rem;margin-top:4px">El estímulo que quema grasa y protege tus huesos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 6. BENEFICIOS -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge">LO QUE VUELVE A TI</span>
+    <h2>Cuatro señales de que tu cuerpo despertó</h2>
+    <div class="grid-beneficios">
+      <div class="beneficio">
+        <div class="hex"><svg viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 0 0 10.5 10.5z"/></svg></div>
+        <b>Sueño profundo</b>
+        <p>Desde la primera semana, sin interrupciones nocturnas</p>
+      </div>
+      <div class="beneficio">
+        <div class="hex"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M8 12h8M12 8v8"/></svg></div>
+        <b>Grasa abdominal que cede</b>
+        <p>Tu cuerpo vuelve a responder, sin pasar hambre</p>
+      </div>
+      <div class="beneficio">
+        <div class="hex"><svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-6 6c0 2 1 3 1 5h10c0-2 1-3 1-5a6 6 0 0 0-6-6z"/><path d="M9 19h6M10 22h4"/></svg></div>
+        <b>Mente clara</b>
+        <p>La niebla se despeja, la memoria vuelve a estar contigo</p>
+      </div>
+      <div class="beneficio">
+        <div class="hex"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.35-9.5-8.5C1 9 2.5 6 5.5 6c1.8 0 3 1 4.5 3 1.5-2 2.7-3 4.5-3 3 0 4.5 3 3 6.5C19 16.65 12 21 12 21z"/></svg></div>
+        <b>Deseo y vitalidad</b>
+        <p>Tu energía y tu conexión con tu pareja, de vuelta</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 7. LO QUE RECIBES -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge">TODO ESTO ES TUYO HOY</span>
+    <h2>Lo que recibes</h2>
+    <div class="recibes-lista">
+      <div class="recibe-item"><span class="dot"></span><div><b>Cronograma Reinicio 360°</b><span>Contenido en video, corto y directo al grano</span></div></div>
+      <div class="recibe-item"><span class="dot"></span><div><b>Guía de Crononutrición Antiinflamatoria</b><span>Recetas de 15 minutos para equilibrar tus hormonas</span></div></div>
+      <div class="recibe-item"><span class="dot"></span><div><b>Biblioteca de Activación Muscular · 15'</b><span>Rutinas cortas para hacer en casa, sin gimnasio</span></div></div>
+      <div class="recibe-item"><span class="dot"></span><div><b>Comunidad privada de apoyo</b><span>Un espacio diario para acompañarte y compartir tus avances</span></div></div>
+    </div>
+    <p class="bonus-label">+ bonos incluidos</p>
+    <div class="recibes-lista" style="margin-top:14px">
+      <div class="recibe-item"><span class="dot"></span><div><b>Guía de Suplementación Natural Segura</b><span>Qué tomar, cuánto y dónde conseguirlo</span></div></div>
+      <div class="recibe-item"><span class="dot"></span><div><b>Guía "Pánico en el Restaurante"</b><span>Elige bien fuera de casa, sin sabotear tu progreso</span></div></div>
+      <div class="recibe-item"><span class="dot"></span><div><b>Protocolo "Niebla Cero"</b><span>Estrategias rápidas para recuperar foco y memoria</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 8. PRUEBA SOCIAL -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge verde">LO QUE ELLAS VIVEN</span>
+    <h2>No eres la única que se lo pregunta</h2>
+    <div class="testi-wrap">
+      <div class="testi">
+        <div class="avatar">M</div>
+        <div class="testi-body">
+          <b>Marcela</b><span class="ctx">49 años · contadora</span>
+          <p>Dormí 7 horas seguidas la primera semana. No lo sentía desde hace años. <span class="check-verde">✓✓</span></p>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="avatar">R</div>
+        <div class="testi-body">
+          <b>Rosa</b><span class="ctx">46 años · docente</span>
+          <p>Volví a usar ropa que tenía guardada hace dos años. Sin pasar hambre en ningún momento. <span class="check-verde">✓✓</span></p>
+        </div>
+      </div>
+      <div class="testi">
+        <div class="avatar">S</div>
+        <div class="testi-body">
+          <b>Silvia</b><span class="ctx">51 años · gerente comercial</span>
+          <p>La niebla mental desapareció. Vuelvo a sentirme yo en las reuniones importantes. <span class="check-verde">✓✓</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 9. ANCLAJE -->
+<section class="textsec">
+  <div class="wrap">
+    <span class="badge">LA CUENTA REAL</span>
+    <h2>¿Por qué tan accesible?</h2>
+    <p>Una consulta con ginecóloga integrativa, una nutricionista especializada en climaterio y un entrenador para tu edad — fácilmente suman más de lo que cuesta este protocolo completo. Y muchas veces, sin ningún resultado real.</p>
+    <div class="anclaje-box">
+      <div class="anclaje-linea"><span>Consulta ginecología integrativa</span><b>$40</b></div>
+      <div class="anclaje-linea"><span>Nutricionista especializada</span><b>$32</b></div>
+      <div class="anclaje-linea"><span>Entrenador personal</span><b>$25</b></div>
+      <div class="anclaje-total"><span>Valor real</span><span>$97+</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="arrow">↓</div>
+
+<!-- 10. BLOQUE FINAL -->
+<section>
+  <div class="wrap final-outer">
+    <div class="chamfer-outer">
+      <div class="chamfer-inner final-card">
+        <span class="final-tag">LLÉVATELO HOY</span>
+        <p class="precio-tachado">$97</p>
+        <p class="precio-final">$19,90<small>pago único</small></p>
+        <p class="precio-sub">Acceso inmediato y de por vida</p>
+
+        <div class="logo-final">
+          <div class="top">Protocolo</div>
+          <div class="main">CERO CRISIS</div>
+          <div class="sub">Reinicio Metabólico 360°</div>
+        </div>
+
+        <div class="garantia-final">
+          <svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 11 4.5-2.5 8-6 8-11V5l-8-3z"/><path d="m9 12 2 2 4-4"/></svg>
+          <b>Garantía total de 7 días</b>
+          <p>Si no es para ti, te devolvemos el 100% — y te quedas con los bonos, sin preguntas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Este protocolo es un contenido educativo y no sustituye una consulta médica profesional.
+</footer>
+
+</body>
+</html>
